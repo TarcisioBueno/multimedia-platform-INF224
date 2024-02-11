@@ -12,7 +12,7 @@ private:
 public:
     Video() : Base("", ""), duree(0) {}
     Video(std::string nom, std::string nomDuFichier, int duree) : Base(nom, nomDuFichier), duree(duree) {}
-    virtual ~Video(){}
+    virtual ~Video(){std::cout << "Video destructor was called!" << std::endl;}
     int getDuree() const
     {
         return duree;

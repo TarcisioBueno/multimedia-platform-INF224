@@ -26,6 +26,7 @@ public:
     ~Film()
     {
         delete[] chapitres;
+        std::cout << "Film destructor was called!" << std::endl;
     }
 
     Film(const Film &original) : Video(original), taille(original.taille) {

@@ -13,6 +13,7 @@ private:
 public:
     Photo() : Base("", ""), latitude(0), longitude(0) {}
     Photo(std::string nom, std::string nomDuFichier, double latitude, double longitude) : Base(nom, nomDuFichier), latitude(latitude), longitude(longitude) {}
+    ~Photo(){std::cout << "Photo destructor was called!" << std::endl;}
     double getLatitude() const
     {
         return latitude;
