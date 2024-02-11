@@ -1,0 +1,24 @@
+#ifndef BASE_H
+#define BASE_H
+
+#include <iostream>
+
+class Base
+{
+private:
+    std::string nom;
+    std::string nomDuFichier;
+
+public:
+    Base();
+    Base(std::string nom, std::string nomDuFishier);
+    virtual ~Base();
+    std::string getNom() const;
+    std::string getNomDuFichier() const;
+    void setNom(std::string nom);
+    void setNomDuFichier(std::string nomDuFichier);
+    virtual void afficher(std::ostream &os) const;
+    virtual void jouer() const = 0;
+};
+
+#endif

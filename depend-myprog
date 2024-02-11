@@ -1,0 +1,2 @@
+Base.o: Base.cpp Base.h
+main.o: main.cpp Base.h Photo.h Video.h
