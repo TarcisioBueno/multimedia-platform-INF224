@@ -63,4 +63,24 @@ Le problème se produit lorsque vous effectuez une copie superficielle d'un obje
 
 La solution à ce problème est de faire une copie profonde. Dans une copie profonde, une nouvelle mémoire est allouée pour la copie, et l'objet vers lequel pointe l'original est copié dans la nouvelle mémoire. Cela signifie que la copie et l'original sont complètement indépendants.
 
-Pour implémenter une copie profonde, il faut écrire un construteur de copie. 
+Pour implémenter une copie profonde, il faut écrire un construteur de copie:
+
+```
+    Film(const Film &original) : Video(original), taille(original.taille) {
+        chapitres = new int[taille];
+        for(int i = 0; i < taille; i++){
+            chapitres[i] = original.chapitres[i];
+        }
+    }
+```
+# 8e étape. Créer des groupes
+
+**On rappelle aussi que la liste d'objets doit en fait être une liste de pointeurs d'objets. Pourquoi ? Comparer à Java.**
+
+La première raison pour laquelle la liste d'objets doit être une liste de pointeurs est de permettre le polymorphisme.
+
+La deuxième raison est la suivante :
+
+En C++, lorsque vous créez une liste d'objets (comme std::list<Base>), les objets sont stockés directement dans la liste. Si vous retirez un objet de la liste ou si la liste est détruite, l'objet est également détruit. C'est différent de Java, où tous les objets non primitifs sont en fait des références (similaires aux pointeurs en C++). Donc, lorsque vous avez une liste d'objets en Java, vous avez en fait une liste de références. Lorsque la liste est détruite, les références sont détruites, mais pas les objets auxquels elles font référence.
+
+Lorsque l'on utilise une liste de pointeurs, la liste contient des pointeurs vers les objets, et non les objets eux-mêmes. Lorsqu'un pointeur est retiré de la liste ou que la liste est détruite, seul le pointeur est détruit, pas l'objet auquel il pointe.

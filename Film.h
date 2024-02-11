@@ -64,6 +64,16 @@ public:
     {
         return taille;
     }
+
+    void afficher(std::ostream &os) const override
+    {   
+        os << "Durée des chapitres: ";
+        for (int i = 0; i < taille; i++) {
+           
+            os <<  chapitres[i] << " ";
+        }
+        os << std::endl;
+    }
 };
 
 #endif
