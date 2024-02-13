@@ -7,6 +7,7 @@
 #include "Film.h"
 #include "Groupe.h"
 #include <map>
+#include <sstream>
 
 class DataBase
 {
@@ -15,56 +16,63 @@ private:
     std::map<std::string, std::shared_ptr<Groupe>> Groupes;
 
 public:
-BasePointer creerPhoto(std::string nom, std::string nomDuFichier, double latitude, double longitude)
-{
-    BasePointer photo(new Photo(nom, nomDuFichier, latitude, longitude));
-    Multimedia.insert(std::pair<std::string, BasePointer>(nom, photo));
-    return photo;
-}
-BasePointer creerVideo(std::string nom, std::string nomDuFichier, int duree)
-{
-    BasePointer video(new Video(nom, nomDuFichier, duree));
-    Multimedia.insert(std::pair<std::string, BasePointer>(nom, video));
-    return video;
-}
+    BasePointer creerPhoto(std::string nom, std::string nomDuFichier, double latitude, double longitude)
+    {
+        BasePointer photo(new Photo(nom, nomDuFichier, latitude, longitude));
+        Multimedia.insert(std::pair<std::string, BasePointer>(nom, photo));
+        return photo;
+    }
+    BasePointer creerVideo(std::string nom, std::string nomDuFichier, int duree)
+    {
+        BasePointer video(new Video(nom, nomDuFichier, duree));
+        Multimedia.insert(std::pair<std::string, BasePointer>(nom, video));
+        return video;
+    }
 
     BasePointer creerFilm(std::string nom, std::string nomDuFichier, int duree, int *chapitres, int taille)
-{
-    BasePointer film(new Film(nom, nomDuFichier, duree, chapitres, taille));
-    Multimedia.insert(std::pair<std::string, BasePointer>(nom, film));
-    return film;
-    }
-std::shared_ptr<Groupe> creerGroupe(const std::string &nom)
-{
-    std::shared_ptr<Groupe> groupe(new Groupe(nom));
-    Groupes.insert(std::pair<std::string, std::shared_ptr<Groupe>>(nom, groupe));
-    return groupe;
-}
-    void rechercherMultimedia(const std::string &nom)
     {
+        BasePointer film(new Film(nom, nomDuFichier, duree, chapitres, taille));
+        Multimedia.insert(std::pair<std::string, BasePointer>(nom, film));
+        return film;
+    }
+    std::shared_ptr<Groupe> creerGroupe(const std::string &nom)
+    {
+        std::shared_ptr<Groupe> groupe(new Groupe(nom));
+        Groupes.insert(std::pair<std::string, std::shared_ptr<Groupe>>(nom, groupe));
+        return groupe;
+    }
+
+    std::string rechercherMultimedia(const std::string &nom)
+    {
+        std::stringstream ss;
         auto it = Multimedia.find(nom);
         if (it != Multimedia.end())
         {
-            it->second->afficher(std::cout);
+            it->second->afficher(ss);
         }
         else
         {
-            std::cout << "Multimedia object not found: " << nom << std::endl;
+            ss << "Multimedia object not found: " << nom;
         }
+        return ss.str();
     }
 
-    void rechercherGroupe(const std::string &nom)
+    std::string rechercherGroupe(const std::string &nom)
     {
+        std::stringstream ss;
         auto it = Groupes.find(nom);
         if (it != Groupes.end())
         {
-            it->second->afficher(std::cout);
+            it->second->afficher(ss);
         }
         else
         {
-            std::cout << "Group not found: " << nom << std::endl;
+            ss << "Group not found: " << nom;
         }
+        return ss.str();
     }
+
+
     void jouer(const std::string &nom)
     {
         auto it = Multimedia.find(nom);
@@ -74,7 +82,7 @@ std::shared_ptr<Groupe> creerGroupe(const std::string &nom)
         }
         else
         {
-            std::cout << "Multimedia object not found: " << nom << std::endl;
+            std::cout << "Multimedia object not found: " << nom << " ";
         }
     }
 
@@ -102,7 +110,7 @@ std::shared_ptr<Groupe> creerGroupe(const std::string &nom)
             }
             else
             {
-                std::cout << "Object not found: " << nom << std::endl;
+                std::cout << "Object not found: " << nom << " ";
             }
         }
     }

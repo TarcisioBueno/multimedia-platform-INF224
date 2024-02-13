@@ -16,7 +16,7 @@ protected:
 
 public:    
     
-    virtual ~Video(){std::cout << "Video destructor was called!" << std::endl;}
+    virtual ~Video(){}
     int getDuree() const
     {
         return duree;
@@ -29,7 +29,7 @@ public:
     virtual void afficher(std::ostream &os) const override
     {
         Base::afficher(os);
-        os << "Durée: " << duree << std::endl;
+        os << "Durée: " << duree << " ";
     }
 
     // linux

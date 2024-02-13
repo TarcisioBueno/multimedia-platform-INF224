@@ -37,7 +37,6 @@ public:
       ~Film()
     {
         delete[] chapitres;
-        std::cout << "Film destructor was called!" << std::endl;
     }
 
     void setChapitres(int *chapitres, int taille)
@@ -70,15 +69,14 @@ public:
         return taille;
     }
 
-    void afficher(std::ostream &os) const override
-    {   
-        os << "Durée des chapitres: ";
-        for (int i = 0; i < taille; i++) {
-           
-            os <<  chapitres[i] << " ";
-        }
-        os << std::endl;
+void afficher(std::ostream &os) const override
+{
+    Video::afficher(os);
+    os << "Durée des chapitres: ";
+    for (int i = 0; i < taille; i++) {
+        os <<  chapitres[i] << " ";
     }
+}
 };
 
 #endif

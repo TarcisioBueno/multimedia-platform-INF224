@@ -16,7 +16,7 @@ private:
    
 public:
     
-    ~Photo(){std::cout << "Photo destructor was called!" << std::endl;}
+    ~Photo(){}
     double getLatitude() const
     {
         return latitude;
@@ -36,7 +36,7 @@ public:
     void afficher(std::ostream &os) const override
     {
         Base::afficher(os);
-        os << "Latitude: " << latitude << " Longitude: " << longitude << std::endl;
+        os << "Latitude: " << latitude << " Longitude: " << longitude << " ";
     }
 
     // Linux

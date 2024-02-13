@@ -31,5 +31,5 @@ void Base::setNomDuFichier(std::string nomDuFichier)
 
 void Base::afficher(std::ostream &os) const
 {
-    os << "Nom: " << nom << "\nNom du fichier: " << nomDuFichier << std::endl;
+    os << "Nom: " << nom << " Nom du fichier: " << nomDuFichier << " ";
 }

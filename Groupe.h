@@ -12,14 +12,13 @@ class Groupe : public std::list<BasePointer>
 {
 private:
     std::string nom;
-        Groupe(const std::string &nom) : std::list<BasePointer>(), nom(nom) {}
+    Groupe(const std::string &nom) : std::list<BasePointer>(), nom(nom) {}
 
     friend class DataBase;
 
 public:
+    ~Groupe() {}
 
-    ~Groupe() { std::cout << "Groupe destructor was called!" << std::endl; }
-    
     std::string getNom() const
     {
         return nom;
