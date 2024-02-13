@@ -11,7 +11,6 @@
 #include <fstream>
 #include <algorithm>
 #include <cctype>
-#include "Exceptions.h"
 
 class DataBase
 {
@@ -52,12 +51,19 @@ public:
 
     BasePointer creerFilm(std::string nom, std::string nomDuFichier, int duree, int *chapitres, int taille)
     {
-        // Check if a multimedia object with the same name already exists
-        if (Multimedia.find(nom) != Multimedia.end())
-        {
-            // Return a null BasePointer
-            return BasePointer();
-        }
+    // Check if a multimedia object with the same name already exists
+    if (Multimedia.find(nom) != Multimedia.end())
+    {
+        std::cout << "A multimedia object with the name " << nom << " already exists.\n";
+        // Return a null BasePointer
+        return BasePointer();
+    }
+    else if (taille <= 0)
+    {
+        std::cout << "The taille parameter must be greater than 0.\n";
+        // Return a null BasePointer
+        return BasePointer();
+    }
 
         // Create the new Film
         BasePointer film(new Film(nom, nomDuFichier, duree, chapitres, taille));

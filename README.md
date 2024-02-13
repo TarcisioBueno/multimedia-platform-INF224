@@ -109,3 +109,58 @@ Returning a bool or a null pointer: This approach can make your code simpler and
 In your case, if the creation of one item is independent of the creation of the others (i.e., if one creation fails, it doesn't affect the others), and if you want to attempt all creations even if some of them fail, it might be simpler and cleaner to use the second approach (returning a bool or a null pointer).
 
 However, if the creations are dependent on each other (i.e., if one creation fails, the others shouldn't be attempted), or if you want to provide detailed error information when a creation fails, it might be better to use the first approach (using try-catch for each creation).
+
+
+si le tableau de durées d'un Film a une taille nulle ou inférieure à zéro
+si on crée plusieurs groupes ou objets ayant le même nom
+
+```c++
+BasePointer creerFilm(std::string nom, std::string nomDuFichier, int duree, int *chapitres, int taille)
+    {
+        // Check if a multimedia object with the same name already exists
+        if (Multimedia.find(nom) != Multimedia.end() || taille <= 0)
+        {
+            // Return a null BasePointer
+            return BasePointer();
+        }
+
+        // Create the new Film
+        BasePointer film(new Film(nom, nomDuFichier, duree, chapitres, taille));
+        Multimedia.insert(std::pair<std::string, BasePointer>(nom, film));
+        return film;
+    }
+```
+
+si on supprime un groupe ou un objet qui n'existe pas
+
+```c++
+    void supprimer(const std::string &nom)
+    {
+        auto multimedia_it = Multimedia.find(nom);
+        if (multimedia_it != Multimedia.end())
+        {
+            // Remove the multimedia object from all groups
+            for (auto &pair : Groupes)
+            {
+                pair.second->enleverMultimedia(multimedia_it->second);
+            }
+
+            // Delete the multimedia object
+            Multimedia.erase(multimedia_it);
+        }
+        else
+        {
+            auto group_it = Groupes.find(nom);
+            if (group_it != Groupes.end())
+            {
+                // Delete the group
+                Groupes.erase(group_it);
+            }
+            else
+            {
+                std::cout << "Object not found: " << nom << " ";
+            }
+        }
+    }
+```
+
