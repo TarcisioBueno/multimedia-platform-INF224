@@ -9,10 +9,13 @@ class Photo : public Base
 private:
     double latitude;
     double longitude;
-
-public:
     Photo() : Base("", ""), latitude(0), longitude(0) {}
     Photo(std::string nom, std::string nomDuFichier, double latitude, double longitude) : Base(nom, nomDuFichier), latitude(latitude), longitude(longitude) {}
+
+    friend class DataBase;
+   
+public:
+    
     ~Photo(){std::cout << "Photo destructor was called!" << std::endl;}
     double getLatitude() const
     {

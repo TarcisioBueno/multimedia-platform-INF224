@@ -8,32 +8,36 @@ class Film : public Video
 {
 private:
     int *chapitres;
-    int taille;
+    int taille; 
 
-public:
-    Film() : Video()
-    {
-        chapitres = nullptr;
-        taille = 0;
+       Film(const Film &original) : Video(original), taille(original.taille) {
+        chapitres = new int[taille];
+        for(int i = 0; i < taille; i++){
+            chapitres[i] = original.chapitres[i];
+        }
     }
-    Film(std::string nom, std::string nomDuFichier, int duree, int *chapitres, int taille) : Video(nom, nomDuFichier, duree), chapitres(new int[taille]), taille(taille)
+
+        Film(std::string nom, std::string nomDuFichier, int duree, int *chapitres, int taille) : Video(nom, nomDuFichier, duree), chapitres(new int[taille]), taille(taille)
     {
         for (int i = 0; i < taille; i++)
         {
             this->chapitres[i] = chapitres[i];
         }
     }
-    ~Film()
+
+     Film() : Video()
+    {
+        chapitres = nullptr;
+        taille = 0;
+    } 
+
+    friend class DataBase;
+public:
+
+      ~Film()
     {
         delete[] chapitres;
         std::cout << "Film destructor was called!" << std::endl;
-    }
-
-    Film(const Film &original) : Video(original), taille(original.taille) {
-        chapitres = new int[taille];
-        for(int i = 0; i < taille; i++){
-            chapitres[i] = original.chapitres[i];
-        }
     }
 
     void setChapitres(int *chapitres, int taille)

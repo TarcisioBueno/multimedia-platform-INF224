@@ -8,10 +8,11 @@ class Base
 private:
     std::string nom;
     std::string nomDuFichier;
-
-public:
+protected:
     Base();
-    Base(std::string nom, std::string nomDuFishier);
+    Base(std::string nom, std::string nomDuFishier);  
+    friend class DataBase;  
+public:    
     virtual ~Base();
     std::string getNom() const;
     std::string getNomDuFichier() const;

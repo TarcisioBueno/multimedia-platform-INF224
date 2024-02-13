@@ -16,8 +16,8 @@ PROG = myprog
 #
 #SOURCES = Base.cpp main.cpp
 
-SOURCES = $(wildcard *.cpp)
-
+SOURCES = $(wildcard *.cpp) $(wildcard server/*.cpp)
+LDLIBS = -lpthread
 #
 # Fichiers objets (ne pas modifier sauf si l'extension n'est pas .cpp)
 #

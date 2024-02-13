@@ -7,11 +7,15 @@
 class Video : public Base
 {
 private:
-    int duree;
+    int duree;  
 
-public:
+protected:
     Video() : Base("", ""), duree(0) {}
     Video(std::string nom, std::string nomDuFichier, int duree) : Base(nom, nomDuFichier), duree(duree) {}
+    friend class DataBase;
+
+public:    
+    
     virtual ~Video(){std::cout << "Video destructor was called!" << std::endl;}
     int getDuree() const
     {

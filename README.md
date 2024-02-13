@@ -84,3 +84,8 @@ La deuxième raison est la suivante :
 En C++, lorsque vous créez une liste d'objets (comme std::list<Base>), les objets sont stockés directement dans la liste. Si vous retirez un objet de la liste ou si la liste est détruite, l'objet est également détruit. C'est différent de Java, où tous les objets non primitifs sont en fait des références (similaires aux pointeurs en C++). Donc, lorsque vous avez une liste d'objets en Java, vous avez en fait une liste de références. Lorsque la liste est détruite, les références sont détruites, mais pas les objets auxquels elles font référence.
 
 Lorsque l'on utilise une liste de pointeurs, la liste contient des pointeurs vers les objets, et non les objets eux-mêmes. Lorsqu'un pointeur est retiré de la liste ou que la liste est détruite, seul le pointeur est détruit, pas l'objet auquel il pointe.
+
+# 10e étape. Gestion cohérente des données
+
+Pour garantir que seules certaines classes peuvent créer des instances d'une autre classe, il faut rendre les constructeurs protected, puis déclarer la classes DataBase comme friend.
+
