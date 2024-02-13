@@ -15,6 +15,8 @@ const std::string MULTIMEDIA = "multimedia";
 const std::string GROUP = "group";
 const std::string SEARCH = "search";
 const std::string PLAY = "play";
+const std::string CREATE = "create";
+const std::string DELETE_ = "delete";
 
 void handleServerRequest(const std::string& request, std::string& response, DataBase& db) {
     std::cout << "request: " << request << std::endl;
