@@ -8,6 +8,9 @@
 #include "Groupe.h"
 #include <map>
 #include <sstream>
+#include <fstream>
+#include <algorithm>
+#include <cctype>
 
 class DataBase
 {
@@ -72,7 +75,6 @@ public:
         return ss.str();
     }
 
-
     void jouer(const std::string &nom)
     {
         auto it = Multimedia.find(nom);
@@ -114,6 +116,89 @@ public:
             }
         }
     }
+
+    // Serialization and deserialization
+
+    BasePointer creerMultimedia(std::string classname)
+    {   
+        std::cout << "##########" << std::endl;
+        if (classname == "Photo")
+        {
+            return BasePointer(new Photo());
+        }
+        else if (classname == "Video")
+        {
+            return BasePointer(new Video());
+        }
+        else if (classname == "Film")
+        {
+            return BasePointer(new Film());
+        }
+        else
+        {
+            std::cerr << "Unknown class name: " << classname << std::endl;
+            return nullptr;
+        }
+    }
+
+    bool saveAll(const std::string &filename)
+    {
+        std::ofstream f(filename);
+        if (!f)
+        {
+            std::cerr << "Can't open file " << filename << std::endl;
+            return false;
+        }
+
+        // Save all multimedia objects
+        for (const auto &pair : Multimedia)
+        {
+            f << pair.second->className() << '\n';
+            pair.second->write(f);
+            if (f.fail())
+            {
+                std::cerr << "Write error in " << filename << std::endl;
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+bool readAll(const std::string &filename) {   
+    std::ifstream f(filename);
+    if (!f)
+    {
+        std::cerr << "Can't open file " << filename << std::endl;
+        return false;
+    }
+
+    std::string classname;
+    while (std::getline(f, classname))
+    {
+        // Skip lines that are empty or only contain whitespace
+        if (classname.empty() || std::all_of(classname.begin(), classname.end(), ::isspace)) {
+            continue;
+        }
+
+        BasePointer obj = creerMultimedia(classname); // Assuming you have a createMultimedia method
+        if (obj) {
+            obj->read(f); // Assuming you have a read method in your base class
+            if (f.fail())
+            {
+                std::cerr << "Read error in " << filename << std::endl;
+                return false;
+            }
+            else
+            {
+                Multimedia.insert(std::pair<std::string, BasePointer>(obj->getNom(), obj));
+                std::cout << "Successfully created and added " << obj->getNom() << std::endl;
+            }
+        }
+    }
+
+    return true;
+}
 };
 
 #endif

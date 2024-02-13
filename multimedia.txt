@@ -1,0 +1,21 @@
+Film
+film1
+/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/video2.mp4
+100
+3
+30 30 40 
+Film
+film2
+/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/video2.mp4
+100
+3
+30 30 40 
+Photo
+photo1
+/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/picture1.jpg
+40.7488
+-73.9854
+Video
+video1
+/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/video1.mp4
+120

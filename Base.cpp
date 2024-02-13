@@ -33,3 +33,15 @@ void Base::afficher(std::ostream &os) const
 {
     os << "Nom: " << nom << " Nom du fichier: " << nomDuFichier << " ";
 }
+
+std::string Base::className() const {
+    return "Base";
+}
+
+void Base::write(std::ostream & f) {
+    f << nom << '\n' << nomDuFichier << '\n';
+}
+
+void Base::read(std::istream & f){
+    f >> nom >> nomDuFichier;
+}

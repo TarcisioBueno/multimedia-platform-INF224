@@ -53,7 +53,20 @@ int main(int argc, const char *argv[]) {
     auto video1 = db.creerVideo("video1", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/video1.mp4", 120);
     int chapters[] = {30, 30, 40};
     auto film1 = db.creerFilm("film1", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/video2.mp4", 100, chapters, 3);
+    auto film3 = db.creerFilm("film2", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/video2.mp4", 100, chapters, 3);
     auto group = db.creerGroupe("group1");
+
+    // Save all multimedia objects to a file
+    if (!db.saveAll("multimedia.txt")) {
+        std::cerr << "Failed to save multimedia objects" << std::endl;
+        return 1;
+    }
+
+    // Read all multimedia objects from the file
+    if (!db.readAll("multimedia.txt")) {
+        std::cerr << "Failed to read multimedia objects" << std::endl;
+        return 1;
+    }
 
     group->push_back(video1);
     group->push_back(photo1);

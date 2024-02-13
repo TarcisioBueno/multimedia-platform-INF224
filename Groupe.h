@@ -36,6 +36,10 @@ public:
     {
         this->remove(multimedia);
     }
+
+    std::string className() const {
+        return "Groupe";
+    }
 };
 
 #endif

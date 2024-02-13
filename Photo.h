@@ -13,10 +13,9 @@ private:
     Photo(std::string nom, std::string nomDuFichier, double latitude, double longitude) : Base(nom, nomDuFichier), latitude(latitude), longitude(longitude) {}
 
     friend class DataBase;
-   
+
 public:
-    
-    ~Photo(){}
+    ~Photo() {}
     double getLatitude() const
     {
         return latitude;
@@ -45,6 +44,24 @@ public:
     {
         std::string argument = "imagej " + getNomDuFichier() + "&";
         system(argument.data());
+    }
+
+    std::string className() const override
+    {
+        return "Photo";
+    }
+
+    void write(std::ostream &f)
+    {
+        Base::write(f); // Write the base attributes
+        f << latitude << '\n'
+          << longitude << '\n';
+    }
+
+    void read(std::istream &f)
+    {
+        Base::read(f); // Read the base attributes
+        f >> latitude >> longitude;
     }
 };
 

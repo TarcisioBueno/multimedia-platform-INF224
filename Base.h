@@ -20,6 +20,10 @@ public:
     void setNomDuFichier(std::string nomDuFichier);
     virtual void afficher(std::ostream &os) const;
     virtual void jouer() const = 0;
+
+    virtual std::string className() const;
+    virtual void write(std::ostream & f);
+    virtual void read(std::istream & f);
 };
 
 #endif

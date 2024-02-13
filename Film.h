@@ -8,16 +8,18 @@ class Film : public Video
 {
 private:
     int *chapitres;
-    int taille; 
+    int taille;
 
-       Film(const Film &original) : Video(original), taille(original.taille) {
+    Film(const Film &original) : Video(original), taille(original.taille)
+    {
         chapitres = new int[taille];
-        for(int i = 0; i < taille; i++){
+        for (int i = 0; i < taille; i++)
+        {
             chapitres[i] = original.chapitres[i];
         }
     }
 
-        Film(std::string nom, std::string nomDuFichier, int duree, int *chapitres, int taille) : Video(nom, nomDuFichier, duree), chapitres(new int[taille]), taille(taille)
+    Film(std::string nom, std::string nomDuFichier, int duree, int *chapitres, int taille) : Video(nom, nomDuFichier, duree), chapitres(new int[taille]), taille(taille)
     {
         for (int i = 0; i < taille; i++)
         {
@@ -25,16 +27,16 @@ private:
         }
     }
 
-     Film() : Video()
+    Film() : Video()
     {
         chapitres = nullptr;
         taille = 0;
-    } 
+    }
 
     friend class DataBase;
-public:
 
-      ~Film()
+public:
+    ~Film()
     {
         delete[] chapitres;
     }
@@ -69,14 +71,43 @@ public:
         return taille;
     }
 
-void afficher(std::ostream &os) const override
-{
-    Video::afficher(os);
-    os << "Durée des chapitres: ";
-    for (int i = 0; i < taille; i++) {
-        os <<  chapitres[i] << " ";
+    void afficher(std::ostream &os) const override
+    {
+        Video::afficher(os);
+        os << "Durée des chapitres: ";
+        for (int i = 0; i < taille; i++)
+        {
+            os << chapitres[i] << " ";
+        }
     }
-}
+
+    std::string className() const override
+    {
+        return "Film";
+    }
+
+    void write(std::ostream &f)
+    {
+        Video::write(f); // Write the base attributes
+        f << taille << '\n';
+        for (int i = 0; i < taille; i++)
+        {
+            f << chapitres[i] << ' ';
+        }
+        f << '\n';
+    }
+
+    void read(std::istream &f)
+    {
+        Video::read(f); // Read the base attributes
+        f >> taille;
+        delete[] chapitres;
+        chapitres = new int[taille];
+        for (int i = 0; i < taille; i++)
+        {
+            f >> chapitres[i];
+        }
+    }
 };
 
 #endif
