@@ -89,3 +89,9 @@ Lorsque l'on utilise une liste de pointeurs, la liste contient des pointeurs ver
 
 Pour garantir que seules certaines classes peuvent créer des instances d'une autre classe, il faut rendre les constructeurs protected, puis déclarer la classes DataBase comme friend.
 
+# 11e étape. Client / serveur
+
+**SEARCH command:** The client sends a command in the format SEARCH type name, where type can be either multimedia or group, and name is the name of the multimedia or group to be searched. 
+The server then searches for the multimedia or group with the given name and sends back its attributes. For example, SEARCH multimedia song1 or SEARCH group group1.
+
+**PLAY command:**The client sends a command in the format PLAY name, where name is the name of the multimedia to be played. The server then plays the multimedia with the given name. For example, PLAY song1.
