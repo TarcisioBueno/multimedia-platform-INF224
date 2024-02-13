@@ -47,14 +47,31 @@ void handleServerRequest(const std::string& request, std::string& response, Data
 
 int main(int argc, const char *argv[]) {
     DataBase db;
+    std::shared_ptr<Groupe> group1;
+    std::shared_ptr<Groupe> group2;
+    BasePointer photo1;
+    BasePointer video1;
+    BasePointer video2;
+    BasePointer video3;
+    BasePointer film1;
+    BasePointer film2;
+    BasePointer film3;
+    BasePointer film4;
 
-    // Create multimedia objects and add them to the database
-    auto photo1 = db.creerPhoto("photo1", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/picture1.jpg", 40.748817, -73.985428);
-    auto video1 = db.creerVideo("video1", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/video1.mp4", 120);
+    // Create multimedia objects and add them to the database 
+    
+    group1 = db.creerGroupe("group1");
+    group2 = db.creerGroupe("group1");
+    photo1 = db.creerPhoto("photo1", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/picture1.jpg", 40.748817, -73.985428);
+    video1 = db.creerVideo("video1", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/video1.mp4", 120);
+    video2 = db.creerVideo("video1", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/video1.mp4", 120);
+    video3 = db.creerVideo("video2", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/video1.mp4", 120);
     int chapters[] = {30, 30, 40};
-    auto film1 = db.creerFilm("film1", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/video2.mp4", 100, chapters, 3);
-    auto film3 = db.creerFilm("film2", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/video2.mp4", 100, chapters, 3);
-    auto group = db.creerGroupe("group1");
+    film1 = db.creerFilm("film1", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/video2.mp4", 100, chapters, 3);
+    film2 = db.creerFilm("film2", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/video2.mp4", 100, chapters, 3);
+    film3 = db.creerFilm("film3", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/video2.mp4", 100, chapters, 3);
+    film4 = db.creerFilm("film4", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/video2.mp4", 100, chapters, 3);
+
 
     // Save all multimedia objects to a file
     if (!db.saveAll("multimedia.txt")) {
@@ -68,9 +85,9 @@ int main(int argc, const char *argv[]) {
         return 1;
     }
 
-    group->push_back(video1);
-    group->push_back(photo1);
-    group->push_back(film1);
+    group1->push_back(video1);
+    group1->push_back(photo1);
+    group1->push_back(film1);
 
     auto *server = new TCPServer([&](std::string const &request, std::string &response) {
         handleServerRequest(request, response, db);

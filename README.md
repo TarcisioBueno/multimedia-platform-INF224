@@ -95,3 +95,17 @@ Pour garantir que seules certaines classes peuvent créer des instances d'une au
 The server then searches for the multimedia or group with the given name and sends back its attributes. For example, SEARCH multimedia song1 or SEARCH group group1.
 
 **PLAY command:**The client sends a command in the format PLAY name, where name is the name of the multimedia to be played. The server then plays the multimedia with the given name. For example, PLAY song1.
+
+# 13
+
+To change later
+
+The best approach depends on your specific needs and the context of your application. Here are some considerations:
+
+Using try-catch for each creation: This approach allows you to handle exceptions right where they occur. It provides a clear separation between normal code and error-handling code. However, it can make your code more verbose if you have many calls that can throw exceptions.
+
+Returning a bool or a null pointer: This approach can make your code simpler and easier to read, especially if you have many calls that can fail. However, it can make it harder to provide detailed information about what went wrong, and it requires you to check the return value of each call.
+
+In your case, if the creation of one item is independent of the creation of the others (i.e., if one creation fails, it doesn't affect the others), and if you want to attempt all creations even if some of them fail, it might be simpler and cleaner to use the second approach (returning a bool or a null pointer).
+
+However, if the creations are dependent on each other (i.e., if one creation fails, the others shouldn't be attempted), or if you want to provide detailed error information when a creation fails, it might be better to use the first approach (using try-catch for each creation).

@@ -11,6 +11,7 @@
 #include <fstream>
 #include <algorithm>
 #include <cctype>
+#include "Exceptions.h"
 
 class DataBase
 {
@@ -21,12 +22,29 @@ private:
 public:
     BasePointer creerPhoto(std::string nom, std::string nomDuFichier, double latitude, double longitude)
     {
+        // Check if a multimedia object with the same name already exists
+        if (Multimedia.find(nom) != Multimedia.end())
+        {
+            // Return a null BasePointer
+            return BasePointer();
+        }
+
+        // Create the new Photo
         BasePointer photo(new Photo(nom, nomDuFichier, latitude, longitude));
         Multimedia.insert(std::pair<std::string, BasePointer>(nom, photo));
         return photo;
     }
+
     BasePointer creerVideo(std::string nom, std::string nomDuFichier, int duree)
     {
+        // Check if a multimedia object with the same name already exists
+        if (Multimedia.find(nom) != Multimedia.end())
+        {
+            // Return a null BasePointer
+            return BasePointer();
+        }
+
+        // Create the new Video
         BasePointer video(new Video(nom, nomDuFichier, duree));
         Multimedia.insert(std::pair<std::string, BasePointer>(nom, video));
         return video;
@@ -34,12 +52,29 @@ public:
 
     BasePointer creerFilm(std::string nom, std::string nomDuFichier, int duree, int *chapitres, int taille)
     {
+        // Check if a multimedia object with the same name already exists
+        if (Multimedia.find(nom) != Multimedia.end())
+        {
+            // Return a null BasePointer
+            return BasePointer();
+        }
+
+        // Create the new Film
         BasePointer film(new Film(nom, nomDuFichier, duree, chapitres, taille));
         Multimedia.insert(std::pair<std::string, BasePointer>(nom, film));
         return film;
     }
+
     std::shared_ptr<Groupe> creerGroupe(const std::string &nom)
     {
+        // Check if a group with the same name already exists
+        if (Groupes.find(nom) != Groupes.end())
+        {
+            // Return a null shared_ptr<Groupe>
+            return std::shared_ptr<Groupe>();
+        }
+
+        // Create the new group
         std::shared_ptr<Groupe> groupe(new Groupe(nom));
         Groupes.insert(std::pair<std::string, std::shared_ptr<Groupe>>(nom, groupe));
         return groupe;
@@ -120,7 +155,7 @@ public:
     // Serialization and deserialization
 
     BasePointer creerMultimedia(std::string classname)
-    {   
+    {
         std::cout << "##########" << std::endl;
         if (classname == "Photo")
         {
@@ -165,40 +200,43 @@ public:
         return true;
     }
 
-bool readAll(const std::string &filename) {   
-    std::ifstream f(filename);
-    if (!f)
+    bool readAll(const std::string &filename)
     {
-        std::cerr << "Can't open file " << filename << std::endl;
-        return false;
-    }
-
-    std::string classname;
-    while (std::getline(f, classname))
-    {
-        // Skip lines that are empty or only contain whitespace
-        if (classname.empty() || std::all_of(classname.begin(), classname.end(), ::isspace)) {
-            continue;
+        std::ifstream f(filename);
+        if (!f)
+        {
+            std::cerr << "Can't open file " << filename << std::endl;
+            return false;
         }
 
-        BasePointer obj = creerMultimedia(classname); // Assuming you have a createMultimedia method
-        if (obj) {
-            obj->read(f); // Assuming you have a read method in your base class
-            if (f.fail())
+        std::string classname;
+        while (std::getline(f, classname))
+        {
+            // Skip lines that are empty or only contain whitespace
+            if (classname.empty() || std::all_of(classname.begin(), classname.end(), ::isspace))
             {
-                std::cerr << "Read error in " << filename << std::endl;
-                return false;
+                continue;
             }
-            else
+
+            BasePointer obj = creerMultimedia(classname); // Assuming you have a createMultimedia method
+            if (obj)
             {
-                Multimedia.insert(std::pair<std::string, BasePointer>(obj->getNom(), obj));
-                std::cout << "Successfully created and added " << obj->getNom() << std::endl;
+                obj->read(f); // Assuming you have a read method in your base class
+                if (f.fail())
+                {
+                    std::cerr << "Read error in " << filename << std::endl;
+                    return false;
+                }
+                else
+                {
+                    Multimedia.insert(std::pair<std::string, BasePointer>(obj->getNom(), obj));
+                    std::cout << "Successfully created and added " << obj->getNom() << std::endl;
+                }
             }
         }
-    }
 
-    return true;
-}
+        return true;
+    }
 };
 
 #endif
