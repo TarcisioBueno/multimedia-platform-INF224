@@ -10,45 +10,43 @@
 #include "Film.h"
 #include "Groupe.h"
 #include "DataBase.h"
+#include <memory>
+#include <string>
+#include <sstream>
+#include "server/tcpserver.h"
+
+
+const int PORT = 3331;
 
 int main(int argc, const char *argv[])
 {
 
-// Create an instance of DataBase
-    DataBase db;
+    // cree le TCPServer
+  auto* server =
+  new TCPServer( [&](std::string const& request, std::string& response) {
 
-    // Create multimedia objects and add them to the database
-    db.creerPhoto("photo1", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/picture1.jpg", 40.748817, -73.985428);
-    db.creerVideo("video1", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/video1.mp4", 120);
-    int chapters[] = {30, 30, 40};
-    db.creerFilm("film1", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/video2.mp4", 100, chapters, 3);
+    // the request sent by the client to the server
+    std::cout << "request: " << request << std::endl;
 
-    // Create a group and add it to the database
-    db.creerGroupe("group1");
+    // the response that the server sends back to the client
+    response = "RECEIVED: " + request;
 
-    // Search and display a multimedia object
-    std::cout << "Searching for photo1:\n";
-    db.rechercherMultimedia("photo1");
+    // return false would close the connecytion with the client
+    return true;
+  });
 
-    // Search and display a group
-    std::cout << "Searching for group1:\n";
-    db.rechercherGroupe("group1");
 
-    std::cout << "Searching for inexistent photo:\n";
-    db.rechercherMultimedia("ddasf");
-    /* // Play a multimedia object
-    std::cout << "Playing video1:\n";
-    db.jouer("video1"); */
+  // lance la boucle infinie du serveur
+  std::cout << "Starting Server on port " << PORT << std::endl;
 
-    // Delete a multimedia object
-    std::cout << "Deleting film1:\n";
-    db.supprimer("film1");
+  int status = server->run(PORT);
 
-    // Delete a group
-    std::cout << "Deleting group1:\n";
-    db.supprimer("group1");
+  // en cas d'erreur
+  if (status < 0) {
+    std::cerr << "Could not start Server on port " << PORT << std::endl;
+    return 1;
+  }
 
-    std::cout << "Deleting group1:\n";
+  return 0;
 
-    return 0;
 }
