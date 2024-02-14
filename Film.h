@@ -79,6 +79,7 @@ public:
         {
             os << chapitres[i] << " ";
         }
+        os << "::";
     }
 
     std::string className() const override

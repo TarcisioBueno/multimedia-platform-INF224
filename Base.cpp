@@ -31,7 +31,7 @@ void Base::setNomDuFichier(std::string nomDuFichier)
 
 void Base::afficher(std::ostream &os) const
 {
-    os << "Nom: " << nom << " Nom du fichier: " << nomDuFichier << " ";
+    os << "Nom: " << nom << "::" << "Nom du fichier: " << nomDuFichier << "::";
 }
 
 std::string Base::className() const {

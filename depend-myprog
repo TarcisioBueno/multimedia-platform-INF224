@@ -1,2 +1,5 @@
 Base.o: Base.cpp Base.h
-main.o: main.cpp Base.h Photo.h Video.h
+main.o: main.cpp Base.h Photo.h Video.h Film.h Groupe.h DataBase.h \
+ server/tcpserver.h server/ccsocket.h
+ccsocket.o: server/ccsocket.cpp server/ccsocket.h
+tcpserver.o: server/tcpserver.cpp server/tcpserver.h server/ccsocket.h

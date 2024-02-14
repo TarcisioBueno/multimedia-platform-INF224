@@ -17,6 +17,7 @@ const std::string SEARCH = "search";
 const std::string PLAY = "play";
 const std::string CREATE = "create";
 const std::string DELETE_ = "delete";
+const std::string LIST = "list";
 
 void handleServerRequest(const std::string& request, std::string& response, DataBase& db) {
     std::cout << "request: " << request << std::endl;
@@ -27,20 +28,20 @@ void handleServerRequest(const std::string& request, std::string& response, Data
     if (command == SEARCH) {
         if (type == MULTIMEDIA) {
             std::string message = db.rechercherMultimedia(name);
-            response = "MULTIMEDIA ATTRIBUTES: " + message;
+            response = message;
         } else if (type == GROUP) {
             std::string message = db.rechercherGroupe(name);
-            std::cout << message << "######" ;
-            response = "GROUP ATTRIBUTES: " + message;
+            response = message;
         } else {
             response = "UNKNOWN TYPE";
         }
     } else if (command == PLAY) {
-        name =  type;
-        db.jouer(name);
+        name =  type;        
         std::cout << name << std::endl;
-        response = "PLAYING: " + name;
-    } else {
+        response = db.jouer(name);;
+    } else if (command == LIST) {
+        response = db.listerMultimedia();
+    }else {
         response = "UNKNOWN COMMAND";
     }
 }

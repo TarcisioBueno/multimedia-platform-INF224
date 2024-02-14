@@ -28,7 +28,7 @@ public:
     virtual void afficher(std::ostream &os) const override
     {
         Base::afficher(os);
-        os << "Durée: " << duree << " ";
+        os << "Durée: " << duree << "::";
     }
 
     // linux

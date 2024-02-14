@@ -51,19 +51,19 @@ public:
 
     BasePointer creerFilm(std::string nom, std::string nomDuFichier, int duree, int *chapitres, int taille)
     {
-    // Check if a multimedia object with the same name already exists
-    if (Multimedia.find(nom) != Multimedia.end())
-    {
-        std::cout << "A multimedia object with the name " << nom << " already exists.\n";
-        // Return a null BasePointer
-        return BasePointer();
-    }
-    else if (taille <= 0)
-    {
-        std::cout << "The taille parameter must be greater than 0.\n";
-        // Return a null BasePointer
-        return BasePointer();
-    }
+        // Check if a multimedia object with the same name already exists
+        if (Multimedia.find(nom) != Multimedia.end())
+        {
+            std::cout << "Un objet multimédia avec le nom " << nom << " existe déjà.\n";
+            // Return a null BasePointer
+            return BasePointer();
+        }
+        else if (taille <= 0)
+        {
+            std::cout << "Le paramètre taille doit être supérieur à 0.\n";
+            // Return a null BasePointer
+            return BasePointer();
+        }
 
         // Create the new Film
         BasePointer film(new Film(nom, nomDuFichier, duree, chapitres, taille));
@@ -96,7 +96,7 @@ public:
         }
         else
         {
-            ss << "Multimedia object not found: " << nom;
+            ss << "Objet multimédia non trouvé: " << nom;
         }
         return ss.str();
     }
@@ -111,22 +111,26 @@ public:
         }
         else
         {
-            ss << "Group not found: " << nom;
+            ss << "Groupe non trouvé: " << nom;
         }
         return ss.str();
     }
 
-    void jouer(const std::string &nom)
+    std::string jouer(const std::string &nom)
     {
+        std::stringstream ss;
         auto it = Multimedia.find(nom);
         if (it != Multimedia.end())
         {
             it->second->jouer();
+            ss << "Jouant: " << nom << " ";
         }
         else
         {
-            std::cout << "Multimedia object not found: " << nom << " ";
+            ss << "Objet multimédia non trouvé: " << nom << " ";
         }
+
+        return ss.str();
     }
 
     void supprimer(const std::string &nom)
@@ -153,7 +157,7 @@ public:
             }
             else
             {
-                std::cout << "Object not found: " << nom << " ";
+                std::cout << "Objet non trouvé: " << nom << " ";
             }
         }
     }
@@ -162,7 +166,7 @@ public:
 
     BasePointer creerMultimedia(std::string classname)
     {
-        std::cout << "##########" << std::endl;
+
         if (classname == "Photo")
         {
             return BasePointer(new Photo());
@@ -243,6 +247,16 @@ public:
 
         return true;
     }
+
+std::string listerMultimedia()
+{
+    std::stringstream ss;
+    for (const auto& pair : Multimedia)
+    {
+        ss << pair.first << " ";
+    }
+    return ss.str();
+}
 };
 
 #endif
