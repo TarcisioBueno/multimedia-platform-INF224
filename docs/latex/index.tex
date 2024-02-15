@@ -1,7 +1,11 @@
+\hypertarget{index_autotoc_md0}{}\doxysection{Projet de développement logiciel}\label{index_autotoc_md0}
+{\bfseries{Nom du projet \+:}} INF224 -\/ Travaux Pratiques C++/\+Objet et Java/\+Swing
 
-\begin{DoxyItemize}
-\item Ce fichier README contient des instructions et des informations importantes concernant ce projet.
-\end{DoxyItemize}\hypertarget{index_autotoc_md0}{}\doxysection{4e Etape\+: Photos et videos}\label{index_autotoc_md0}
+{\bfseries{Auteur \+:}} Tarcisio da Silva Bueno
+
+{\bfseries{Objectif du projet \+:}} Créer l\textquotesingle{}ébauche du logiciel d\textquotesingle{}une set-\/top box multimédia permettant de jouer des vidéos, des films, d\textquotesingle{}afficher des photos, etc.
+
+{\bfseries{À propos de ce fichier README \+:}} Ce fichier README contient des instructions et des informations importantes concernant ce projet. Il comprend des questions et des réponses sur les différentes étapes du projet.\hypertarget{index_autotoc_md1}{}\doxysection{4e Etape\+: Photos et videos}\label{index_autotoc_md1}
 {\bfseries{Comment appelle-\/t\textquotesingle{}on ce type de méthode et comment faut-\/il les déclarer ?}}
 
 Le type de méthode que vous décrivez est appelé une \char`\"{}méthode purement virtuelle\char`\"{} en C++.
@@ -17,7 +21,7 @@ Pour déclarer une méthode comme purement virtuelle, vous utilisez le mot-\/cl�
 
 {\bfseries{Si vous avez fait ce qui précède comme demandé, il ne sera plus possible d\textquotesingle{}instancer des objets de la classe de base. Pourquoi ?}}
 
-Lorsqu\textquotesingle{}une classe contient au moins une méthode purement virtuelle, cette classe est considérée comme une classe abstraite. Les classes abstraites ne peuvent pas être instanciées directement, elles sont destinées à être héritées par d\textquotesingle{}autres classes.\hypertarget{index_autotoc_md1}{}\doxysection{5e Etape\+: Traitement uniforme (en utilisant le polymorphisme)}\label{index_autotoc_md1}
+Lorsqu\textquotesingle{}une classe contient au moins une méthode purement virtuelle, cette classe est considérée comme une classe abstraite. Les classes abstraites ne peuvent pas être instanciées directement, elles sont destinées à être héritées par d\textquotesingle{}autres classes.\hypertarget{index_autotoc_md2}{}\doxysection{5e Etape\+: Traitement uniforme (en utilisant le polymorphisme)}\label{index_autotoc_md2}
 {\bfseries{Quelle est la propriété caractéristique de l\textquotesingle{}orienté objet qui permet de faire cela ?}}
 
 La propriété caractéristique de l\textquotesingle{}orienté objet qui permet de traiter de manière uniforme une liste comprenant à la fois des photos et des vidéos sans avoir à se préoccuper de leur type est le polymorphisme. Le polymorphisme permet à une classe dérivée d\textquotesingle{}hériter des méthodes et des attributs d\textquotesingle{}une classe de base, et de les redéfinir si nécessaire.
@@ -30,8 +34,8 @@ En C++, pour utiliser le polymorphisme, il est nécessaire de déclarer les mét
 
 le tableau doit contenir des pointeurs vers des objets de ses classes dérivées. Cela permet de traiter de manière uniforme les objets de différentes classes dérivées.
 
-En Java, tous les objets sont manipulés par référence, ce qui signifie que lorsque vous créez un objet et l\textquotesingle{}assignez à une variable ou le placez dans un tableau, vous travaillez avec une référence à l\textquotesingle{}objet, pas l\textquotesingle{}objet lui-\/même.\hypertarget{index_autotoc_md2}{}\doxysection{6e étape. Films et tableaux}\label{index_autotoc_md2}
-\hypertarget{index_autotoc_md3}{}\doxysection{7e étape. Destruction et copie des objets}\label{index_autotoc_md3}
+En Java, tous les objets sont manipulés par référence, ce qui signifie que lorsque vous créez un objet et l\textquotesingle{}assignez à une variable ou le placez dans un tableau, vous travaillez avec une référence à l\textquotesingle{}objet, pas l\textquotesingle{}objet lui-\/même.\hypertarget{index_autotoc_md3}{}\doxysection{6e étape. Films et tableaux}\label{index_autotoc_md3}
+\hypertarget{index_autotoc_md4}{}\doxysection{7e étape. Destruction et copie des objets}\label{index_autotoc_md4}
 Ci-\/dessous est le résultat de la commande valgrind --leak-\/check=full ./myprog.
 
 
@@ -77,7 +81,7 @@ Pour implémenter une copie profonde, il faut écrire un construteur de copie\+:
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
- \hypertarget{index_autotoc_md4}{}\doxysection{8e étape. Créer des groupes}\label{index_autotoc_md4}
+ \hypertarget{index_autotoc_md5}{}\doxysection{8e étape. Créer des groupes}\label{index_autotoc_md5}
 {\bfseries{On rappelle aussi que la liste d\textquotesingle{}objets doit en fait être une liste de pointeurs d\textquotesingle{}objets. Pourquoi ? Comparer à Java.}}
 
 La première raison pour laquelle la liste d\textquotesingle{}objets doit être une liste de pointeurs est de permettre le polymorphisme.
@@ -86,11 +90,11 @@ La deuxième raison est la suivante \+:
 
 En C++, lorsque vous créez une liste d\textquotesingle{}objets (comme std\+::list$<$\+Base$>$), les objets sont stockés directement dans la liste. Si vous retirez un objet de la liste ou si la liste est détruite, l\textquotesingle{}objet est également détruit. C\textquotesingle{}est différent de Java, où tous les objets non primitifs sont en fait des références (similaires aux pointeurs en C++). Donc, lorsque vous avez une liste d\textquotesingle{}objets en Java, vous avez en fait une liste de références. Lorsque la liste est détruite, les références sont détruites, mais pas les objets auxquels elles font référence.
 
-Lorsque l\textquotesingle{}on utilise une liste de pointeurs, la liste contient des pointeurs vers les objets, et non les objets eux-\/mêmes. Lorsqu\textquotesingle{}un pointeur est retiré de la liste ou que la liste est détruite, seul le pointeur est détruit, pas l\textquotesingle{}objet auquel il pointe.\hypertarget{index_autotoc_md5}{}\doxysection{10e étape. Gestion cohérente des données}\label{index_autotoc_md5}
-Pour garantir que seules certaines classes peuvent créer des instances d\textquotesingle{}une autre classe, il faut rendre les constructeurs protected, puis déclarer la classes \mbox{\hyperlink{classDataBase}{Data\+Base}} comme friend.\hypertarget{index_autotoc_md6}{}\doxysection{11e étape. Client / serveur}\label{index_autotoc_md6}
+Lorsque l\textquotesingle{}on utilise une liste de pointeurs, la liste contient des pointeurs vers les objets, et non les objets eux-\/mêmes. Lorsqu\textquotesingle{}un pointeur est retiré de la liste ou que la liste est détruite, seul le pointeur est détruit, pas l\textquotesingle{}objet auquel il pointe.\hypertarget{index_autotoc_md6}{}\doxysection{10e étape. Gestion cohérente des données}\label{index_autotoc_md6}
+Pour garantir que seules certaines classes peuvent créer des instances d\textquotesingle{}une autre classe, il faut rendre les constructeurs protected, puis déclarer la classes \mbox{\hyperlink{classDataBase}{Data\+Base}} comme friend.\hypertarget{index_autotoc_md7}{}\doxysection{11e étape. Client / serveur}\label{index_autotoc_md7}
 {\bfseries{SEARCH command\+:}} The client sends a command in the format SEARCH type name, where type can be either multimedia or group, and name is the name of the multimedia or group to be searched. The server then searches for the multimedia or group with the given name and sends back its attributes. For example, SEARCH multimedia song1 or SEARCH group group1.
 
-$\ast$$\ast$\+PLAY command\+:$\ast$$\ast$\+The client sends a command in the format PLAY name, where name is the name of the multimedia to be played. The server then plays the multimedia with the given name. For example, PLAY song1.\hypertarget{index_autotoc_md7}{}\doxysection{13}\label{index_autotoc_md7}
+$\ast$$\ast$\+PLAY command\+:$\ast$$\ast$\+The client sends a command in the format PLAY name, where name is the name of the multimedia to be played. The server then plays the multimedia with the given name. For example, PLAY song1.\hypertarget{index_autotoc_md8}{}\doxysection{13}\label{index_autotoc_md8}
 To change later
 
 The best approach depends on your specific needs and the context of your application. Here are some considerations\+:

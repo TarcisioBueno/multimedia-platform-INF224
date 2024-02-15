@@ -8,6 +8,7 @@
  * Il contient également la fonction `handleServerRequest` qui traite les requêtes du serveur.
  */
 
+
 #include <iostream>
 #include "Base.h"
 #include "Photo.h"

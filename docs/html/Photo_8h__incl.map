@@ -1,5 +1,5 @@
-<map id="/mnt/c/Users/Usuario/Desktop/P2/INF224/TP_scratch/DA_SILVA_BUENO_Tarcisio/cpp/Photo.h" name="/mnt/c/Users/Usuario/Desktop/P2/INF224/TP_scratch/DA_SILVA_BUENO_Tarcisio/cpp/Photo.h">
-<area shape="rect" id="node1" title="Ce fichier contient la classe Photo, qui représente une photo avec des coordonnées géographiques." alt="" coords="5,5,200,76"/>
-<area shape="rect" id="node2" title=" " alt="" coords="63,199,143,225"/>
-<area shape="rect" id="node3" href="$Base_8h.html" title="Ce fichier contient la classe Base, qui représente une entité de base abstraite." alt="" coords="105,124,172,151"/>
+<map id="Photo.h" name="Photo.h">
+<area shape="rect" id="node1" title="Ce fichier contient la classe Photo, qui représente une photo avec des coordonnées géographiques." alt="" coords="10,5,81,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,155,85,181"/>
+<area shape="rect" id="node3" href="$Base_8h.html" title="Ce fichier contient la classe Base, qui représente une entité de base abstraite." alt="" coords="48,80,115,107"/>
 </map>

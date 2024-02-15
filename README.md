@@ -1,8 +1,16 @@
 /**
- * \mainpage Écrit par Tarcisio da Silva Bueno
- * Ce fichier README contient des instructions et des informations importantes concernant ce projet.
+ * \mainpage 
 
- 
+# Projet de développement logiciel
+
+**Nom du projet :** INF224 - Travaux Pratiques C++/Objet et Java/Swing
+
+**Auteur :** Tarcisio DA SILVA BUENO
+
+**Objectif du projet :** Créer l'ébauche du logiciel d'une set-top box multimédia permettant de jouer des vidéos, des films, d'afficher des photos, etc.
+
+**À propos de ce fichier README :** Ce fichier README contient des instructions et des informations importantes concernant ce projet. Il comprend des questions et des réponses sur les différentes étapes du projet.
+
 # 4e Etape: Photos et videos
 
 **Comment appelle-t'on ce type de méthode et comment faut-il les déclarer ?**
