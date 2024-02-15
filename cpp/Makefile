@@ -14,10 +14,8 @@ PROG = myprog
 #
 # Fichiers sources (NE PAS METTRE les .h ni les .o seulement les .cpp)
 #
-#SOURCES = Base.cpp main.cpp
+SOURCES = Base.cpp main.cpp ccsocket.cpp tcpserver.cpp
 
-SOURCES = $(wildcard *.cpp) $(wildcard server/*.cpp)
-LDLIBS = -lpthread
 #
 # Fichiers objets (ne pas modifier sauf si l'extension n'est pas .cpp)
 #

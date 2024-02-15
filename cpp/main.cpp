@@ -8,7 +8,7 @@
 #include <memory>
 #include <string>
 #include <sstream>
-#include "server/tcpserver.h"
+#include "tcpserver.h"
 
 const int PORT = 3331;
 const std::string MULTIMEDIA = "multimedia";
