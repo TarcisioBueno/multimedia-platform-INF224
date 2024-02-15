@@ -51,28 +51,29 @@ int main(int argc, const char *argv[]) {
     std::shared_ptr<Groupe> group1;
     std::shared_ptr<Groupe> group2;
     BasePointer photo1;
+    BasePointer photo2;
+    BasePointer photo3;
     BasePointer video1;
     BasePointer video2;
     BasePointer video3;
     BasePointer film1;
     BasePointer film2;
     BasePointer film3;
-    BasePointer film4;
 
     // Create multimedia objects and add them to the database 
     
     group1 = db.creerGroupe("group1");
-    group2 = db.creerGroupe("group1");
-    photo1 = db.creerPhoto("photo1", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/picture1.jpg", 40.748817, -73.985428);
-    video1 = db.creerVideo("video1", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/video1.mp4", 120);
-    video2 = db.creerVideo("video1", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/video1.mp4", 120);
-    video3 = db.creerVideo("video2", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/video1.mp4", 120);
+    group2 = db.creerGroupe("group2");
+    photo1 = db.creerPhoto("photo1", "./media/photo1.jpg", 40.748817, -73.985428);
+    photo1 = db.creerPhoto("photo2", "./media/photo2.jpg", 40.748817, -73.985428);
+    photo1 = db.creerPhoto("photo3", "./media/photo3.jpg", 40.748817, -73.985428);
+    video1 = db.creerVideo("video1", "./media/video1.mp4", 120);
+    video2 = db.creerVideo("video1", "./media/video2.mp4", 120);
+    video3 = db.creerVideo("video2", "./media/video3.mp4", 120);
     int chapters[] = {30, 30, 40};
-    film1 = db.creerFilm("film1", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/video2.mp4", 100, chapters, 3);
-    film2 = db.creerFilm("film2", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/video2.mp4", 100, chapters, 3);
-    film3 = db.creerFilm("film3", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/video2.mp4", 100, chapters, 3);
-    film4 = db.creerFilm("film4", "/mnt/c/Users/Usuario/Desktop/P2/INF224/multimedia/video2.mp4", 100, chapters, 3);
-
+    film1 = db.creerFilm("film1", "./media/video1.mp4", 100, chapters, 3);
+    film2 = db.creerFilm("film2", "./media/video2.mp4", 100, chapters, 3);
+    film3 = db.creerFilm("film3", "./media/video3.mp4", 100, chapters, 3);
 
     // Save all multimedia objects to a file
     if (!db.saveAll("multimedia.txt")) {
