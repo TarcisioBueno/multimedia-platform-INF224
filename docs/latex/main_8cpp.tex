@@ -1,0 +1,155 @@
+\hypertarget{main_8cpp}{}\doxysection{/mnt/c/\+Users/\+Usuario/\+Desktop/\+P2/\+INF224/\+TP\+\_\+scratch/\+DA\+\_\+\+SILVA\+\_\+\+BUENO\+\_\+\+Tarcisio/cpp/main.cpp File Reference}
+\label{main_8cpp}\index{/mnt/c/Users/Usuario/Desktop/P2/INF224/TP\_scratch/DA\_SILVA\_BUENO\_Tarcisio/cpp/main.cpp@{/mnt/c/Users/Usuario/Desktop/P2/INF224/TP\_scratch/DA\_SILVA\_BUENO\_Tarcisio/cpp/main.cpp}}
+
+
+Fichier principal du programme.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}Base.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Photo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Video.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Film.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Groupe.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Data\+Base.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include \char`\"{}tcpserver.\+h\char`\"{}}\newline
+Include dependency graph for main.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_a3e1a22c0025191c28af267d560f0bdc8}{handle\+Server\+Request}} (const std\+::string \&request, std\+::string \&response, \mbox{\hyperlink{classDataBase}{Data\+Base}} \&db)
+\begin{DoxyCompactList}\small\item\em Traite une requête du serveur. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_ac0f2228420376f4db7e1274f2b41667c}{main}} (int argc, const char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Fonction principale du programme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{main_8cpp_a11717c934f77ad5167dac5d28562d85a}{PORT}} = 3331
+\item 
+const std\+::string \mbox{\hyperlink{main_8cpp_aca24577c03c1867115b00c48535bb8ad}{MULTIMEDIA}} = \char`\"{}multimedia\char`\"{}
+\item 
+const std\+::string \mbox{\hyperlink{main_8cpp_a892b6dd5a49224f3e7646b914c4462fb}{GROUP}} = \char`\"{}group\char`\"{}
+\item 
+const std\+::string \mbox{\hyperlink{main_8cpp_a95e89210c73001b90d23631c5611fd7a}{SEARCH}} = \char`\"{}search\char`\"{}
+\item 
+const std\+::string \mbox{\hyperlink{main_8cpp_a7aaa554cb6286696d5fedd436cfd2434}{PLAY}} = \char`\"{}play\char`\"{}
+\item 
+const std\+::string \mbox{\hyperlink{main_8cpp_aacd738bad4810676e38f703f7dac4835}{CREATE}} = \char`\"{}create\char`\"{}
+\item 
+const std\+::string \mbox{\hyperlink{main_8cpp_ade21ee340db9166f0709e2e3148382cb}{DELETE\+\_\+}} = \char`\"{}delete\char`\"{}
+\item 
+const std\+::string \mbox{\hyperlink{main_8cpp_a118b9e357367d4d085f41a0f68486b2b}{LIST}} = \char`\"{}list\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fichier principal du programme. 
+
+Ce fichier contient la fonction principale {\ttfamily main} qui lance le serveur et gère les requêtes. Il inclut les en-\/têtes nécessaires, définit les constantes et les variables globales, et crée les objets multimédias et les ajoute à la base de données. Il contient également la fonction {\ttfamily handle\+Server\+Request} qui traite les requêtes du serveur. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a3e1a22c0025191c28af267d560f0bdc8}\label{main_8cpp_a3e1a22c0025191c28af267d560f0bdc8}} 
+\index{main.cpp@{main.cpp}!handleServerRequest@{handleServerRequest}}
+\index{handleServerRequest@{handleServerRequest}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{handleServerRequest()}{handleServerRequest()}}
+{\footnotesize\ttfamily void handle\+Server\+Request (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{request,  }\item[{std\+::string \&}]{response,  }\item[{\mbox{\hyperlink{classDataBase}{Data\+Base}} \&}]{db }\end{DoxyParamCaption})}
+
+
+
+Traite une requête du serveur. 
+
+Cette fonction prend en paramètre une requête du serveur, une référence à une chaîne de caractères pour stocker la réponse, et une référence à la base de données. Elle analyse la requête, exécute la commande correspondante et met à jour la réponse.
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & La requête du serveur. \\
+\hline
+{\em response} & La réponse à renvoyer au serveur. \\
+\hline
+{\em db} & La base de données. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8cpp_ac0f2228420376f4db7e1274f2b41667c}\label{main_8cpp_ac0f2228420376f4db7e1274f2b41667c}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{const char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Fonction principale du programme. 
+
+Cette fonction crée les objets multimédias, les ajoute à la base de données, sauvegarde les objets multimédias dans un fichier, lit les objets multimédias à partir du fichier, crée les groupes et les associe aux objets multimédias, puis lance le serveur.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Le nombre d\textquotesingle{}arguments de la ligne de commande. \\
+\hline
+{\em argv} & Les arguments de la ligne de commande. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Le code de sortie du programme. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cpp_aacd738bad4810676e38f703f7dac4835}\label{main_8cpp_aacd738bad4810676e38f703f7dac4835}} 
+\index{main.cpp@{main.cpp}!CREATE@{CREATE}}
+\index{CREATE@{CREATE}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{CREATE}{CREATE}}
+{\footnotesize\ttfamily const std\+::string CREATE = \char`\"{}create\char`\"{}}
+
+La commande de création. \mbox{\Hypertarget{main_8cpp_ade21ee340db9166f0709e2e3148382cb}\label{main_8cpp_ade21ee340db9166f0709e2e3148382cb}} 
+\index{main.cpp@{main.cpp}!DELETE\_@{DELETE\_}}
+\index{DELETE\_@{DELETE\_}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{DELETE\_}{DELETE\_}}
+{\footnotesize\ttfamily const std\+::string DELETE\+\_\+ = \char`\"{}delete\char`\"{}}
+
+La commande de suppression. \mbox{\Hypertarget{main_8cpp_a892b6dd5a49224f3e7646b914c4462fb}\label{main_8cpp_a892b6dd5a49224f3e7646b914c4462fb}} 
+\index{main.cpp@{main.cpp}!GROUP@{GROUP}}
+\index{GROUP@{GROUP}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{GROUP}{GROUP}}
+{\footnotesize\ttfamily const std\+::string GROUP = \char`\"{}group\char`\"{}}
+
+Le type de recherche pour les groupes. \mbox{\Hypertarget{main_8cpp_a118b9e357367d4d085f41a0f68486b2b}\label{main_8cpp_a118b9e357367d4d085f41a0f68486b2b}} 
+\index{main.cpp@{main.cpp}!LIST@{LIST}}
+\index{LIST@{LIST}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{LIST}{LIST}}
+{\footnotesize\ttfamily const std\+::string LIST = \char`\"{}list\char`\"{}}
+
+La commande de listage. \mbox{\Hypertarget{main_8cpp_aca24577c03c1867115b00c48535bb8ad}\label{main_8cpp_aca24577c03c1867115b00c48535bb8ad}} 
+\index{main.cpp@{main.cpp}!MULTIMEDIA@{MULTIMEDIA}}
+\index{MULTIMEDIA@{MULTIMEDIA}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{MULTIMEDIA}{MULTIMEDIA}}
+{\footnotesize\ttfamily const std\+::string MULTIMEDIA = \char`\"{}multimedia\char`\"{}}
+
+Le type de recherche pour les objets multimédias. \mbox{\Hypertarget{main_8cpp_a7aaa554cb6286696d5fedd436cfd2434}\label{main_8cpp_a7aaa554cb6286696d5fedd436cfd2434}} 
+\index{main.cpp@{main.cpp}!PLAY@{PLAY}}
+\index{PLAY@{PLAY}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{PLAY}{PLAY}}
+{\footnotesize\ttfamily const std\+::string PLAY = \char`\"{}play\char`\"{}}
+
+La commande de lecture. \mbox{\Hypertarget{main_8cpp_a11717c934f77ad5167dac5d28562d85a}\label{main_8cpp_a11717c934f77ad5167dac5d28562d85a}} 
+\index{main.cpp@{main.cpp}!PORT@{PORT}}
+\index{PORT@{PORT}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{PORT}{PORT}}
+{\footnotesize\ttfamily const int PORT = 3331}
+
+Le numéro de port utilisé par le serveur. \mbox{\Hypertarget{main_8cpp_a95e89210c73001b90d23631c5611fd7a}\label{main_8cpp_a95e89210c73001b90d23631c5611fd7a}} 
+\index{main.cpp@{main.cpp}!SEARCH@{SEARCH}}
+\index{SEARCH@{SEARCH}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SEARCH}{SEARCH}}
+{\footnotesize\ttfamily const std\+::string SEARCH = \char`\"{}search\char`\"{}}
+
+La commande de recherche. 

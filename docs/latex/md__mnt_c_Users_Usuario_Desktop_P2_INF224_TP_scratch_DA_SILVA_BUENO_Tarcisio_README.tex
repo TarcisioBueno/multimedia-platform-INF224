@@ -1,0 +1,165 @@
+/$\ast$$\ast$
+\begin{DoxyItemize}
+\item README -\/ Tarcisio da Silva Bueno
+\item Ce fichier README contient des instructions et des informations importantes concernant ce projet. $\ast$/
+\end{DoxyItemize}\hypertarget{md__mnt_c_Users_Usuario_Desktop_P2_INF224_TP_scratch_DA_SILVA_BUENO_Tarcisio_README_autotoc_md0}{}\doxysection{4e Etape\+: Photos et videos}\label{md__mnt_c_Users_Usuario_Desktop_P2_INF224_TP_scratch_DA_SILVA_BUENO_Tarcisio_README_autotoc_md0}
+{\bfseries{Comment appelle-\/t\textquotesingle{}on ce type de méthode et comment faut-\/il les déclarer ?}}
+
+Le type de méthode que vous décrivez est appelé une \char`\"{}méthode purement virtuelle\char`\"{} en C++.
+
+Pour déclarer une méthode comme purement virtuelle, vous utilisez le mot-\/clé virtual suivi de = 0 à la fin de la déclaration de la méthode. Par exemple \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{virtual void maMethode() const = 0;}
+
+\end{DoxyCode}
+
+
+{\bfseries{Si vous avez fait ce qui précède comme demandé, il ne sera plus possible d\textquotesingle{}instancer des objets de la classe de base. Pourquoi ?}}
+
+Lorsqu\textquotesingle{}une classe contient au moins une méthode purement virtuelle, cette classe est considérée comme une classe abstraite. Les classes abstraites ne peuvent pas être instanciées directement, elles sont destinées à être héritées par d\textquotesingle{}autres classes.\hypertarget{md__mnt_c_Users_Usuario_Desktop_P2_INF224_TP_scratch_DA_SILVA_BUENO_Tarcisio_README_autotoc_md1}{}\doxysection{5e Etape\+: Traitement uniforme (en utilisant le polymorphisme)}\label{md__mnt_c_Users_Usuario_Desktop_P2_INF224_TP_scratch_DA_SILVA_BUENO_Tarcisio_README_autotoc_md1}
+{\bfseries{Quelle est la propriété caractéristique de l\textquotesingle{}orienté objet qui permet de faire cela ?}}
+
+La propriété caractéristique de l\textquotesingle{}orienté objet qui permet de traiter de manière uniforme une liste comprenant à la fois des photos et des vidéos sans avoir à se préoccuper de leur type est le polymorphisme. Le polymorphisme permet à une classe dérivée d\textquotesingle{}hériter des méthodes et des attributs d\textquotesingle{}une classe de base, et de les redéfinir si nécessaire.
+
+{\bfseries{Qu\textquotesingle{}est-\/il spécifiquement nécessaire de faire dans le cas du C++ ?}}
+
+En C++, pour utiliser le polymorphisme, il est nécessaire de déclarer les méthodes que vous souhaitez redéfinir dans les classes dérivées comme virtual dans la classe de base. Si vous voulez que la méthode soit purement virtuelle (c\textquotesingle{}est-\/à-\/dire qu\textquotesingle{}elle doit être redéfinie dans toutes les classes dérivées), vous pouvez utiliser virtual suivi de = 0.
+
+{\bfseries{Quel est le type des éléments du tableau \+: le tableau doit-\/il contenir des objets ou des pointeurs vers ces objets ? Pourquoi ? Comparer à Java.}}
+
+le tableau doit contenir des pointeurs vers des objets de ses classes dérivées. Cela permet de traiter de manière uniforme les objets de différentes classes dérivées.
+
+En Java, tous les objets sont manipulés par référence, ce qui signifie que lorsque vous créez un objet et l\textquotesingle{}assignez à une variable ou le placez dans un tableau, vous travaillez avec une référence à l\textquotesingle{}objet, pas l\textquotesingle{}objet lui-\/même.\hypertarget{md__mnt_c_Users_Usuario_Desktop_P2_INF224_TP_scratch_DA_SILVA_BUENO_Tarcisio_README_autotoc_md2}{}\doxysection{6e étape. Films et tableaux}\label{md__mnt_c_Users_Usuario_Desktop_P2_INF224_TP_scratch_DA_SILVA_BUENO_Tarcisio_README_autotoc_md2}
+\hypertarget{md__mnt_c_Users_Usuario_Desktop_P2_INF224_TP_scratch_DA_SILVA_BUENO_Tarcisio_README_autotoc_md3}{}\doxysection{7e étape. Destruction et copie des objets}\label{md__mnt_c_Users_Usuario_Desktop_P2_INF224_TP_scratch_DA_SILVA_BUENO_Tarcisio_README_autotoc_md3}
+Ci-\/dessous est le résultat de la commande valgrind --leak-\/check=full ./myprog.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{==682== HEAP SUMMARY:}
+\DoxyCodeLine{==682==     in use at exit: 0 bytes in 0 blocks}
+\DoxyCodeLine{==682==   total heap usage: 26 allocs, 26 frees, 75,351 bytes allocated}
+\DoxyCodeLine{==682==}
+\DoxyCodeLine{==682== All heap blocks were freed -\/-\/ no leaks are possible}
+
+\end{DoxyCode}
+
+
+{\bfseries{Parmi les classes précédemment écrites quelles sont celles qu\textquotesingle{}il faut modifier afin qu\textquotesingle{}il n\textquotesingle{}y ait pas de fuite mémoire quand on détruit les objets ? Modifiez le code de manière à l\textquotesingle{}éviter.}}
+
+Parmi les classes précédemment écrites, la seule qui a le potentiel de causer des fuites de mémoire est la classe \mbox{\hyperlink{classFilm}{Film}}, car il y a pas mal de \char`\"{}new\char`\"{} qui est utilisé. En tout cas, comme on peut voir le résultat du Valgrind, il n\textquotesingle{}y a pas de fuites de mémoire, ce qui veut dire que la mémoire a été bien utilisée. Pour obtenir ce résultat, il fallait écrire le destructeur comme montré ci-\/dessous \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\string~Film()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    delete[] chapitres;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+{\bfseries{La copie d\textquotesingle{}objet peut également poser problème quand ils ont des variables d\textquotesingle{}instance qui sont des pointeurs. Quel est le problème et quelles sont les solutions ? Implementez-\/en une.}}
+
+Le problème se produit lorsque vous effectuez une copie superficielle d\textquotesingle{}un objet qui a des pointeurs comme variables d\textquotesingle{}instance. Dans une copie superficielle, les pointeurs sont copiés, pas les objets auxquels ils pointent. Cela signifie que la copie et l\textquotesingle{}original pointent vers le même objet. Si l\textquotesingle{}original est détruit et que sa mémoire est libérée, la copie se retrouve avec un pointeur vers de la mémoire qui a été libérée, ce qui peut entraîner des erreurs.
+
+La solution à ce problème est de faire une copie profonde. Dans une copie profonde, une nouvelle mémoire est allouée pour la copie, et l\textquotesingle{}objet vers lequel pointe l\textquotesingle{}original est copié dans la nouvelle mémoire. Cela signifie que la copie et l\textquotesingle{}original sont complètement indépendants.
+
+Pour implémenter une copie profonde, il faut écrire un construteur de copie\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Film(const Film \&original) : Video(original), taille(original.taille) \{}
+\DoxyCodeLine{    chapitres = new int[taille];}
+\DoxyCodeLine{    for(int i = 0; i < taille; i++)\{}
+\DoxyCodeLine{        chapitres[i] = original.chapitres[i];}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \hypertarget{md__mnt_c_Users_Usuario_Desktop_P2_INF224_TP_scratch_DA_SILVA_BUENO_Tarcisio_README_autotoc_md4}{}\doxysection{8e étape. Créer des groupes}\label{md__mnt_c_Users_Usuario_Desktop_P2_INF224_TP_scratch_DA_SILVA_BUENO_Tarcisio_README_autotoc_md4}
+{\bfseries{On rappelle aussi que la liste d\textquotesingle{}objets doit en fait être une liste de pointeurs d\textquotesingle{}objets. Pourquoi ? Comparer à Java.}}
+
+La première raison pour laquelle la liste d\textquotesingle{}objets doit être une liste de pointeurs est de permettre le polymorphisme.
+
+La deuxième raison est la suivante \+:
+
+En C++, lorsque vous créez une liste d\textquotesingle{}objets (comme std\+::list$<$\+Base$>$), les objets sont stockés directement dans la liste. Si vous retirez un objet de la liste ou si la liste est détruite, l\textquotesingle{}objet est également détruit. C\textquotesingle{}est différent de Java, où tous les objets non primitifs sont en fait des références (similaires aux pointeurs en C++). Donc, lorsque vous avez une liste d\textquotesingle{}objets en Java, vous avez en fait une liste de références. Lorsque la liste est détruite, les références sont détruites, mais pas les objets auxquels elles font référence.
+
+Lorsque l\textquotesingle{}on utilise une liste de pointeurs, la liste contient des pointeurs vers les objets, et non les objets eux-\/mêmes. Lorsqu\textquotesingle{}un pointeur est retiré de la liste ou que la liste est détruite, seul le pointeur est détruit, pas l\textquotesingle{}objet auquel il pointe.\hypertarget{md__mnt_c_Users_Usuario_Desktop_P2_INF224_TP_scratch_DA_SILVA_BUENO_Tarcisio_README_autotoc_md5}{}\doxysection{10e étape. Gestion cohérente des données}\label{md__mnt_c_Users_Usuario_Desktop_P2_INF224_TP_scratch_DA_SILVA_BUENO_Tarcisio_README_autotoc_md5}
+Pour garantir que seules certaines classes peuvent créer des instances d\textquotesingle{}une autre classe, il faut rendre les constructeurs protected, puis déclarer la classes \mbox{\hyperlink{classDataBase}{Data\+Base}} comme friend.\hypertarget{md__mnt_c_Users_Usuario_Desktop_P2_INF224_TP_scratch_DA_SILVA_BUENO_Tarcisio_README_autotoc_md6}{}\doxysection{11e étape. Client / serveur}\label{md__mnt_c_Users_Usuario_Desktop_P2_INF224_TP_scratch_DA_SILVA_BUENO_Tarcisio_README_autotoc_md6}
+{\bfseries{SEARCH command\+:}} The client sends a command in the format SEARCH type name, where type can be either multimedia or group, and name is the name of the multimedia or group to be searched. The server then searches for the multimedia or group with the given name and sends back its attributes. For example, SEARCH multimedia song1 or SEARCH group group1.
+
+$\ast$$\ast$\+PLAY command\+:$\ast$$\ast$\+The client sends a command in the format PLAY name, where name is the name of the multimedia to be played. The server then plays the multimedia with the given name. For example, PLAY song1.\hypertarget{md__mnt_c_Users_Usuario_Desktop_P2_INF224_TP_scratch_DA_SILVA_BUENO_Tarcisio_README_autotoc_md7}{}\doxysection{13}\label{md__mnt_c_Users_Usuario_Desktop_P2_INF224_TP_scratch_DA_SILVA_BUENO_Tarcisio_README_autotoc_md7}
+To change later
+
+The best approach depends on your specific needs and the context of your application. Here are some considerations\+:
+
+Using try-\/catch for each creation\+: This approach allows you to handle exceptions right where they occur. It provides a clear separation between normal code and error-\/handling code. However, it can make your code more verbose if you have many calls that can throw exceptions.
+
+Returning a bool or a null pointer\+: This approach can make your code simpler and easier to read, especially if you have many calls that can fail. However, it can make it harder to provide detailed information about what went wrong, and it requires you to check the return value of each call.
+
+In your case, if the creation of one item is independent of the creation of the others (i.\+e., if one creation fails, it doesn\textquotesingle{}t affect the others), and if you want to attempt all creations even if some of them fail, it might be simpler and cleaner to use the second approach (returning a bool or a null pointer).
+
+However, if the creations are dependent on each other (i.\+e., if one creation fails, the others shouldn\textquotesingle{}t be attempted), or if you want to provide detailed error information when a creation fails, it might be better to use the first approach (using try-\/catch for each creation).
+
+si le tableau de durées d\textquotesingle{}un \mbox{\hyperlink{classFilm}{Film}} a une taille nulle ou inférieure à zéro si on crée plusieurs groupes ou objets ayant le même nom
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c++\}}
+\DoxyCodeLine{BasePointer creerFilm(std::string nom, std::string nomDuFichier, int duree, int *chapitres, int taille)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        // Check if a multimedia object with the same name already exists}
+\DoxyCodeLine{        if (Multimedia.find(nom) != Multimedia.end() || taille <= 0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            // Return a null BasePointer}
+\DoxyCodeLine{            return BasePointer();}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        // Create the new Film}
+\DoxyCodeLine{        BasePointer film(new Film(nom, nomDuFichier, duree, chapitres, taille));}
+\DoxyCodeLine{        Multimedia.insert(std::pair<std::string, BasePointer>(nom, film));}
+\DoxyCodeLine{        return film;}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+si on supprime un groupe ou un objet qui n\textquotesingle{}existe pas
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{c++\}}
+\DoxyCodeLine{   void supprimer(const std::string \&nom)}
+\DoxyCodeLine{   \{}
+\DoxyCodeLine{       auto multimedia\_it = Multimedia.find(nom);}
+\DoxyCodeLine{       if (multimedia\_it != Multimedia.end())}
+\DoxyCodeLine{       \{}
+\DoxyCodeLine{           // Remove the multimedia object from all groups}
+\DoxyCodeLine{           for (auto \&pair : Groupes)}
+\DoxyCodeLine{           \{}
+\DoxyCodeLine{               pair.second-\/>enleverMultimedia(multimedia\_it-\/>second);}
+\DoxyCodeLine{           \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{           // Delete the multimedia object}
+\DoxyCodeLine{           Multimedia.erase(multimedia\_it);}
+\DoxyCodeLine{       \}}
+\DoxyCodeLine{       else}
+\DoxyCodeLine{       \{}
+\DoxyCodeLine{           auto group\_it = Groupes.find(nom);}
+\DoxyCodeLine{           if (group\_it != Groupes.end())}
+\DoxyCodeLine{           \{}
+\DoxyCodeLine{               // Delete the group}
+\DoxyCodeLine{               Groupes.erase(group\_it);}
+\DoxyCodeLine{           \}}
+\DoxyCodeLine{           else}
+\DoxyCodeLine{           \{}
+\DoxyCodeLine{               std::cout << "{}Object not found: "{} << nom << "{} "{};}
+\DoxyCodeLine{           \}}
+\DoxyCodeLine{       \}}
+\DoxyCodeLine{   \}}
+
+\end{DoxyCode}
+ 

@@ -1,0 +1,16 @@
+<map id="/mnt/c/Users/Usuario/Desktop/P2/INF224/TP_scratch/DA_SILVA_BUENO_Tarcisio/cpp/DataBase.h" name="/mnt/c/Users/Usuario/Desktop/P2/INF224/TP_scratch/DA_SILVA_BUENO_Tarcisio/cpp/DataBase.h">
+<area shape="rect" id="node1" title="Ce fichier contient la classe DataBase, qui représente une base de données multimédia." alt="" coords="339,5,534,76"/>
+<area shape="rect" id="node2" href="$Base_8h.html" title="Ce fichier contient la classe Base, qui représente une entité de base abstraite." alt="" coords="131,273,198,300"/>
+<area shape="rect" id="node4" href="$Photo_8h.html" title="Ce fichier contient la classe Photo, qui représente une photo avec des coordonnées géographiques." alt="" coords="5,199,76,225"/>
+<area shape="rect" id="node5" href="$Video_8h.html" title="Ce fichier contient la classe Video, qui représente un objet vidéo avec une durée spécifique." alt="" coords="371,199,441,225"/>
+<area shape="rect" id="node6" href="$Film_8h.html" title="Ce fichier contient la classe Film, qui représente un film héritant de la classe Video." alt="" coords="365,124,428,151"/>
+<area shape="rect" id="node7" href="$Groupe_8h.html" title="Ce fichier contient la classe Groupe, qui représente un groupe d&#39;objets de type Base." alt="" coords="191,124,272,151"/>
+<area shape="rect" id="node10" title=" " alt="" coords="453,124,503,151"/>
+<area shape="rect" id="node11" title=" " alt="" coords="527,124,602,151"/>
+<area shape="rect" id="node12" title=" " alt="" coords="627,124,700,151"/>
+<area shape="rect" id="node13" title=" " alt="" coords="725,124,810,151"/>
+<area shape="rect" id="node14" title=" " alt="" coords="835,124,900,151"/>
+<area shape="rect" id="node3" title=" " alt="" coords="245,348,325,375"/>
+<area shape="rect" id="node8" title=" " alt="" coords="202,199,245,225"/>
+<area shape="rect" id="node9" title=" " alt="" coords="269,199,346,225"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Photo" name="Photo">
+<area shape="rect" id="node1" title="La classe Photo représente une photo avec des coordonnées géographiques." alt="" coords="5,80,64,107"/>
+<area shape="rect" id="node2" href="$classBase.html" title="Classe de base abstraite pour représenter une entité de base." alt="" coords="7,5,62,32"/>
+</map>

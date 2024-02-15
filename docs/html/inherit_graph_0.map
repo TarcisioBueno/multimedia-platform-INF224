@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classBase.html" title="Classe de base abstraite pour représenter une entité de base." alt="" coords="5,31,60,57"/>
+<area shape="rect" id="node2" href="$classPhoto.html" title="La classe Photo représente une photo avec des coordonnées géographiques." alt="" coords="108,5,167,32"/>
+<area shape="rect" id="node3" href="$classVideo.html" title="La classe Video représente un objet vidéo." alt="" coords="108,56,167,83"/>
+<area shape="rect" id="node4" href="$classFilm.html" title="Classe représentant un film héritant de la classe Video." alt="" coords="215,56,265,83"/>
+</map>

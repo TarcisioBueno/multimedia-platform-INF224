@@ -1,0 +1,75 @@
+\hypertarget{classClient}{}\doxysection{Client Class Reference}
+\label{classClient}\index{Client@{Client}}
+
+
+Cette classe représente un client qui se connecte à un serveur distant.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classClient_a163113b9c3fda23dcdc750db9278afbe}{Client}} (String host, int port)  throws Unknown\+Host\+Exception, IOException 
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \mbox{\hyperlink{classClient}{Client}}. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classClient_ab26831c395da92b5893066f9ce7963a4}{send}} (String request)  throws IOException 
+\begin{DoxyCompactList}\small\item\em Envoie une requête au serveur distant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Cette classe représente un client qui se connecte à un serveur distant. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classClient_a163113b9c3fda23dcdc750db9278afbe}\label{classClient_a163113b9c3fda23dcdc750db9278afbe}} 
+\index{Client@{Client}!Client@{Client}}
+\index{Client@{Client}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{Client()}{Client()}}
+{\footnotesize\ttfamily Client.\+Client (\begin{DoxyParamCaption}\item[{String}]{host,  }\item[{int}]{port }\end{DoxyParamCaption}) throws Unknown\+Host\+Exception, IOException\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructeur de la classe \mbox{\hyperlink{classClient}{Client}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em host} & L\textquotesingle{}hôte du serveur distant. \\
+\hline
+{\em port} & Le port du serveur distant. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Unknown\+Host\+Exception} & Si l\textquotesingle{}hôte est inconnu. \\
+\hline
+{\em IOException} & En cas d\textquotesingle{}erreur d\textquotesingle{}entrée/sortie lors de la création du socket. \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classClient_ab26831c395da92b5893066f9ce7963a4}\label{classClient_ab26831c395da92b5893066f9ce7963a4}} 
+\index{Client@{Client}!send@{send}}
+\index{send@{send}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily String Client.\+send (\begin{DoxyParamCaption}\item[{String}]{request }\end{DoxyParamCaption}) throws IOException\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Envoie une requête au serveur distant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & La requête à envoyer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+La réponse du serveur distant. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & En cas d\textquotesingle{}erreur d\textquotesingle{}entrée/sortie lors de l\textquotesingle{}envoi ou de la réception de la requête. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/\+Users/\+Usuario/\+Desktop/\+P2/\+INF224/\+TP\+\_\+scratch/\+DA\+\_\+\+SILVA\+\_\+\+BUENO\+\_\+\+Tarcisio/swing/\mbox{\hyperlink{Client_8java}{Client.\+java}}\end{DoxyCompactItemize}

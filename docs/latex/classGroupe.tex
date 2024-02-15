@@ -1,0 +1,118 @@
+\hypertarget{classGroupe}{}\doxysection{Groupe Class Reference}
+\label{classGroupe}\index{Groupe@{Groupe}}
+
+
+Représente un groupe d\textquotesingle{}objets de type \mbox{\hyperlink{classBase}{Base}}.  
+
+
+
+
+{\ttfamily \#include $<$Groupe.\+h$>$}
+
+
+
+Inheritance diagram for Groupe\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classGroupe__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Groupe\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classGroupe__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGroupe_a99dd414922635dcc0585aabb2a330f63}\label{classGroupe_a99dd414922635dcc0585aabb2a330f63}} 
+\mbox{\hyperlink{classGroupe_a99dd414922635dcc0585aabb2a330f63}{$\sim$\+Groupe}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe \mbox{\hyperlink{classGroupe}{Groupe}}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classGroupe_ac4e9d20e36ea6bdae74b7fed18c28dc4}{get\+Nom}} () const
+\begin{DoxyCompactList}\small\item\em Obtient le nom du groupe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGroupe_ad3c324f0195cd4a170291efdb2482b65}{afficher}} (std\+::ostream \&os) const
+\begin{DoxyCompactList}\small\item\em Affiche les objets du groupe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGroupe_a55175002a8c0e14a72f658833a7fe70a}{enlever\+Multimedia}} (const Base\+Pointer \&multimedia)
+\begin{DoxyCompactList}\small\item\em Enlève un objet multimédia du groupe. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classGroupe_ad1dc967bdf8e953b2d88c252173c4ff8}{class\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Obtient le nom de la classe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGroupe_a86626eec6660d843db053761db67336e}\label{classGroupe_a86626eec6660d843db053761db67336e}} 
+class {\bfseries Data\+Base}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Représente un groupe d\textquotesingle{}objets de type \mbox{\hyperlink{classBase}{Base}}. 
+
+Cette classe hérite de la classe std\+::list$<$\+Base\+Pointer$>$ et permet de stocker un ensemble d\textquotesingle{}objets de type \mbox{\hyperlink{classBase}{Base}} dans une liste. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGroupe_ad3c324f0195cd4a170291efdb2482b65}\label{classGroupe_ad3c324f0195cd4a170291efdb2482b65}} 
+\index{Groupe@{Groupe}!afficher@{afficher}}
+\index{afficher@{afficher}!Groupe@{Groupe}}
+\doxysubsubsection{\texorpdfstring{afficher()}{afficher()}}
+{\footnotesize\ttfamily void Groupe\+::afficher (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Affiche les objets du groupe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Le flux de sortie sur lequel afficher les objets. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGroupe_ad1dc967bdf8e953b2d88c252173c4ff8}\label{classGroupe_ad1dc967bdf8e953b2d88c252173c4ff8}} 
+\index{Groupe@{Groupe}!className@{className}}
+\index{className@{className}!Groupe@{Groupe}}
+\doxysubsubsection{\texorpdfstring{className()}{className()}}
+{\footnotesize\ttfamily std\+::string Groupe\+::class\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtient le nom de la classe. 
+
+\begin{DoxyReturn}{Returns}
+Le nom de la classe. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGroupe_a55175002a8c0e14a72f658833a7fe70a}\label{classGroupe_a55175002a8c0e14a72f658833a7fe70a}} 
+\index{Groupe@{Groupe}!enleverMultimedia@{enleverMultimedia}}
+\index{enleverMultimedia@{enleverMultimedia}!Groupe@{Groupe}}
+\doxysubsubsection{\texorpdfstring{enleverMultimedia()}{enleverMultimedia()}}
+{\footnotesize\ttfamily void Groupe\+::enlever\+Multimedia (\begin{DoxyParamCaption}\item[{const Base\+Pointer \&}]{multimedia }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Enlève un objet multimédia du groupe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em multimedia} & L\textquotesingle{}objet multimédia à enlever. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGroupe_ac4e9d20e36ea6bdae74b7fed18c28dc4}\label{classGroupe_ac4e9d20e36ea6bdae74b7fed18c28dc4}} 
+\index{Groupe@{Groupe}!getNom@{getNom}}
+\index{getNom@{getNom}!Groupe@{Groupe}}
+\doxysubsubsection{\texorpdfstring{getNom()}{getNom()}}
+{\footnotesize\ttfamily std\+::string Groupe\+::get\+Nom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtient le nom du groupe. 
+
+\begin{DoxyReturn}{Returns}
+Le nom du groupe. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/\+Users/\+Usuario/\+Desktop/\+P2/\+INF224/\+TP\+\_\+scratch/\+DA\+\_\+\+SILVA\+\_\+\+BUENO\+\_\+\+Tarcisio/cpp/\mbox{\hyperlink{Groupe_8h}{Groupe.\+h}}\end{DoxyCompactItemize}

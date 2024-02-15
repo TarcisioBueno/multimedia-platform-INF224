@@ -1,0 +1,274 @@
+\hypertarget{classBase}{}\doxysection{Base Class Reference}
+\label{classBase}\index{Base@{Base}}
+
+
+Classe de base abstraite pour représenter une entité de base.  
+
+
+
+
+{\ttfamily \#include $<$Base.\+h$>$}
+
+
+
+Inheritance diagram for Base\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classBase__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classBase_a722da881b6c70cfcbde9243abcfbf334}{$\sim$\+Base}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur virtuel de la classe \mbox{\hyperlink{classBase}{Base}}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classBase_abf1a4e4933bb6f7183d72d2171d237e7}{get\+Nom}} () const
+\begin{DoxyCompactList}\small\item\em Obtient le nom de l\textquotesingle{}entité de base. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classBase_ac63b582d6a6fdd8e2e531bd7fdb20b5b}{get\+Nom\+Du\+Fichier}} () const
+\begin{DoxyCompactList}\small\item\em Obtient le nom du fichier associé à l\textquotesingle{}entité de base. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBase_a02212f2d244677100ceaa5a2bd6da178}{set\+Nom}} (std\+::string nom)
+\begin{DoxyCompactList}\small\item\em Définit le nom de l\textquotesingle{}entité de base. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBase_a0cf74a70d13616b48fc5367135b1d3ca}{set\+Nom\+Du\+Fichier}} (std\+::string nom\+Du\+Fichier)
+\begin{DoxyCompactList}\small\item\em Définit le nom du fichier associé à l\textquotesingle{}entité de base. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classBase_a901f9559fc79cf368f8add77cf5c352a}{afficher}} (std\+::ostream \&os) const
+\begin{DoxyCompactList}\small\item\em Affiche les informations de l\textquotesingle{}entité de base. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBase_a91008f466f53ab53f37168bc09ae29c4}\label{classBase_a91008f466f53ab53f37168bc09ae29c4}} 
+virtual void \mbox{\hyperlink{classBase_a91008f466f53ab53f37168bc09ae29c4}{jouer}} () const =0
+\begin{DoxyCompactList}\small\item\em Méthode virtuelle pure pour jouer avec l\textquotesingle{}entité de base. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classBase_a5cd4a5bf7b07daed7bde88331c0b80ad}{class\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Obtient le nom de la classe. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classBase_a53835c9ef1720f9aac00ad715cebb19f}{write}} (std\+::ostream \&f)
+\begin{DoxyCompactList}\small\item\em Écrit les informations de l\textquotesingle{}entité de base dans un flux de sortie. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classBase_aa2c8d282b6b0baf78889e0d38a30193d}{read}} (std\+::istream \&f)
+\begin{DoxyCompactList}\small\item\em Lit les informations de l\textquotesingle{}entité de base à partir d\textquotesingle{}un flux d\textquotesingle{}entrée. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBase_a5ffe0568374d8b9b4c4ec32953fd6453}\label{classBase_a5ffe0568374d8b9b4c4ec32953fd6453}} 
+\mbox{\hyperlink{classBase_a5ffe0568374d8b9b4c4ec32953fd6453}{Base}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut de la classe \mbox{\hyperlink{classBase}{Base}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBase_a60376095733bc39aa92866473d441003}{Base}} (std\+::string nom, std\+::string nom\+Du\+Fishier)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \mbox{\hyperlink{classBase}{Base}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classBase_a86626eec6660d843db053761db67336e}{Data\+Base}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe de base abstraite pour représenter une entité de base. 
+
+La classe \mbox{\hyperlink{classBase}{Base}} est une classe abstraite qui sert de base pour d\textquotesingle{}autres classes. Elle contient des méthodes virtuelles pures et des méthodes virtuelles redéfinissables. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBase_a60376095733bc39aa92866473d441003}\label{classBase_a60376095733bc39aa92866473d441003}} 
+\index{Base@{Base}!Base@{Base}}
+\index{Base@{Base}!Base@{Base}}
+\doxysubsubsection{\texorpdfstring{Base()}{Base()}}
+{\footnotesize\ttfamily Base\+::\+Base (\begin{DoxyParamCaption}\item[{std\+::string}]{nom,  }\item[{std\+::string}]{nom\+Du\+Fichier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Constructeur de la classe \mbox{\hyperlink{classBase}{Base}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom} & Le nom de l\textquotesingle{}entité de base. \\
+\hline
+{\em nom\+Du\+Fichier} & Le nom du fichier associé à l\textquotesingle{}entité de base.\\
+\hline
+{\em nom} & Le nom de la base \\
+\hline
+{\em nom\+Du\+Fichier} & Le nom du fichier de la base \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBase_a722da881b6c70cfcbde9243abcfbf334}\label{classBase_a722da881b6c70cfcbde9243abcfbf334}} 
+\index{Base@{Base}!````~Base@{$\sim$Base}}
+\index{````~Base@{$\sim$Base}!Base@{Base}}
+\doxysubsubsection{\texorpdfstring{$\sim$Base()}{~Base()}}
+{\footnotesize\ttfamily Base\+::$\sim$\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructeur virtuel de la classe \mbox{\hyperlink{classBase}{Base}}. 
+
+Destructeur de la classe \mbox{\hyperlink{classBase}{Base}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBase_a901f9559fc79cf368f8add77cf5c352a}\label{classBase_a901f9559fc79cf368f8add77cf5c352a}} 
+\index{Base@{Base}!afficher@{afficher}}
+\index{afficher@{afficher}!Base@{Base}}
+\doxysubsubsection{\texorpdfstring{afficher()}{afficher()}}
+{\footnotesize\ttfamily void Base\+::afficher (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Affiche les informations de l\textquotesingle{}entité de base. 
+
+Affiche les informations de la base.
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Le flux de sortie sur lequel afficher les informations.\\
+\hline
+{\em os} & Le flux de sortie \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classVideo_a73f0b97a0e737ab0e4d8c9cd5b89498e}{Video}}, \mbox{\hyperlink{classPhoto_adc109e3d361c2204936f01d8478391db}{Photo}}, and \mbox{\hyperlink{classFilm_aeb7d38bebb4014354ebd18e65ffc2ae2}{Film}}.
+
+\mbox{\Hypertarget{classBase_a5cd4a5bf7b07daed7bde88331c0b80ad}\label{classBase_a5cd4a5bf7b07daed7bde88331c0b80ad}} 
+\index{Base@{Base}!className@{className}}
+\index{className@{className}!Base@{Base}}
+\doxysubsubsection{\texorpdfstring{className()}{className()}}
+{\footnotesize\ttfamily std\+::string Base\+::class\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Obtient le nom de la classe. 
+
+\begin{DoxyReturn}{Returns}
+Le nom de la classe.
+
+Le nom de la classe 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classVideo_a1160f59b4bbfcdc56dd87579a54fd004}{Video}}, \mbox{\hyperlink{classPhoto_ad35e0d9a8ea80d98646de8047d705149}{Photo}}, and \mbox{\hyperlink{classFilm_a217b8d583c099bf407043b7e6893cb34}{Film}}.
+
+\mbox{\Hypertarget{classBase_abf1a4e4933bb6f7183d72d2171d237e7}\label{classBase_abf1a4e4933bb6f7183d72d2171d237e7}} 
+\index{Base@{Base}!getNom@{getNom}}
+\index{getNom@{getNom}!Base@{Base}}
+\doxysubsubsection{\texorpdfstring{getNom()}{getNom()}}
+{\footnotesize\ttfamily std\+::string Base\+::get\+Nom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Obtient le nom de l\textquotesingle{}entité de base. 
+
+Obtient le nom de la base.
+
+\begin{DoxyReturn}{Returns}
+Le nom de l\textquotesingle{}entité de base.
+
+Le nom de la base 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBase_ac63b582d6a6fdd8e2e531bd7fdb20b5b}\label{classBase_ac63b582d6a6fdd8e2e531bd7fdb20b5b}} 
+\index{Base@{Base}!getNomDuFichier@{getNomDuFichier}}
+\index{getNomDuFichier@{getNomDuFichier}!Base@{Base}}
+\doxysubsubsection{\texorpdfstring{getNomDuFichier()}{getNomDuFichier()}}
+{\footnotesize\ttfamily std\+::string Base\+::get\+Nom\+Du\+Fichier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Obtient le nom du fichier associé à l\textquotesingle{}entité de base. 
+
+Obtient le nom du fichier de la base.
+
+\begin{DoxyReturn}{Returns}
+Le nom du fichier associé à l\textquotesingle{}entité de base.
+
+Le nom du fichier de la base 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBase_aa2c8d282b6b0baf78889e0d38a30193d}\label{classBase_aa2c8d282b6b0baf78889e0d38a30193d}} 
+\index{Base@{Base}!read@{read}}
+\index{read@{read}!Base@{Base}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void Base\+::read (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Lit les informations de l\textquotesingle{}entité de base à partir d\textquotesingle{}un flux d\textquotesingle{}entrée. 
+
+Lit les informations de la base à partir d\textquotesingle{}un flux.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Le flux d\textquotesingle{}entrée à partir duquel lire les informations.\\
+\hline
+{\em f} & Le flux d\textquotesingle{}entrée \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classVideo_a81bda60fa3961b854b8df1f5c850a2c1}{Video}}, \mbox{\hyperlink{classPhoto_ab95a2add66424a31b830d59765cd5c35}{Photo}}, and \mbox{\hyperlink{classFilm_a3faa8555d45bdffa430815a9cbd1a41e}{Film}}.
+
+\mbox{\Hypertarget{classBase_a02212f2d244677100ceaa5a2bd6da178}\label{classBase_a02212f2d244677100ceaa5a2bd6da178}} 
+\index{Base@{Base}!setNom@{setNom}}
+\index{setNom@{setNom}!Base@{Base}}
+\doxysubsubsection{\texorpdfstring{setNom()}{setNom()}}
+{\footnotesize\ttfamily void Base\+::set\+Nom (\begin{DoxyParamCaption}\item[{std\+::string}]{nom }\end{DoxyParamCaption})}
+
+
+
+Définit le nom de l\textquotesingle{}entité de base. 
+
+Définit le nom de la base.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom} & Le nom de l\textquotesingle{}entité de base.\\
+\hline
+{\em nom} & Le nom de la base \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBase_a0cf74a70d13616b48fc5367135b1d3ca}\label{classBase_a0cf74a70d13616b48fc5367135b1d3ca}} 
+\index{Base@{Base}!setNomDuFichier@{setNomDuFichier}}
+\index{setNomDuFichier@{setNomDuFichier}!Base@{Base}}
+\doxysubsubsection{\texorpdfstring{setNomDuFichier()}{setNomDuFichier()}}
+{\footnotesize\ttfamily void Base\+::set\+Nom\+Du\+Fichier (\begin{DoxyParamCaption}\item[{std\+::string}]{nom\+Du\+Fichier }\end{DoxyParamCaption})}
+
+
+
+Définit le nom du fichier associé à l\textquotesingle{}entité de base. 
+
+Définit le nom du fichier de la base.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom\+Du\+Fichier} & Le nom du fichier associé à l\textquotesingle{}entité de base.\\
+\hline
+{\em nom\+Du\+Fichier} & Le nom du fichier de la base \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBase_a53835c9ef1720f9aac00ad715cebb19f}\label{classBase_a53835c9ef1720f9aac00ad715cebb19f}} 
+\index{Base@{Base}!write@{write}}
+\index{write@{write}!Base@{Base}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void Base\+::write (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Écrit les informations de l\textquotesingle{}entité de base dans un flux de sortie. 
+
+Écrit les informations de la base dans un flux.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Le flux de sortie dans lequel écrire les informations.\\
+\hline
+{\em f} & Le flux de sortie \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classVideo_a4f7ceb53ee5f445f72745230e3446c7f}{Video}}, \mbox{\hyperlink{classPhoto_aba179d254abfb2c19e483b0f6ec09228}{Photo}}, and \mbox{\hyperlink{classFilm_ac9a4ee2cfedb9d894dd72a390bcc716f}{Film}}.
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classBase_a86626eec6660d843db053761db67336e}\label{classBase_a86626eec6660d843db053761db67336e}} 
+\index{Base@{Base}!DataBase@{DataBase}}
+\index{DataBase@{DataBase}!Base@{Base}}
+\doxysubsubsection{\texorpdfstring{DataBase}{DataBase}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classDataBase}{Data\+Base}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+Déclaration d\textquotesingle{}amitié avec la classe \mbox{\hyperlink{classDataBase}{Data\+Base}}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/\+Users/\+Usuario/\+Desktop/\+P2/\+INF224/\+TP\+\_\+scratch/\+DA\+\_\+\+SILVA\+\_\+\+BUENO\+\_\+\+Tarcisio/cpp/\mbox{\hyperlink{Base_8h}{Base.\+h}}\item 
+/mnt/c/\+Users/\+Usuario/\+Desktop/\+P2/\+INF224/\+TP\+\_\+scratch/\+DA\+\_\+\+SILVA\+\_\+\+BUENO\+\_\+\+Tarcisio/cpp/\mbox{\hyperlink{Base_8cpp}{Base.\+cpp}}\end{DoxyCompactItemize}

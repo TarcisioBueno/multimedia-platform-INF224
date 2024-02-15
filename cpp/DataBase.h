@@ -1,3 +1,8 @@
+/**
+ * @file DataBase.h
+ * @brief Ce fichier contient la classe DataBase, qui représente une base de données multimédia.
+ */
+
 #ifndef DATABASE_H
 #define DATABASE_H
 
@@ -12,6 +17,10 @@
 #include <algorithm>
 #include <cctype>
 
+/**
+ * @class DataBase
+ * @brief Classe pour gérer une base de données multimédia.
+ */
 class DataBase
 {
 private:
@@ -19,6 +28,14 @@ private:
     std::map<std::string, std::shared_ptr<Groupe>> Groupes;
 
 public:
+    /**
+     * @brief Crée une nouvelle photo.
+     * @param nom Le nom de la photo.
+     * @param nomDuFichier Le nom du fichier de la photo.
+     * @param latitude La latitude où la photo a été prise.
+     * @param longitude La longitude où la photo a été prise.
+     * @return Un pointeur vers la photo créée.
+     */
     BasePointer creerPhoto(std::string nom, std::string nomDuFichier, double latitude, double longitude)
     {
         // Check if a multimedia object with the same name already exists
@@ -34,6 +51,13 @@ public:
         return photo;
     }
 
+    /**
+     * @brief Crée une nouvelle vidéo.
+     * @param nom Le nom de la vidéo.
+     * @param nomDuFichier Le nom du fichier de la vidéo.
+     * @param duree La durée de la vidéo.
+     * @return Un pointeur vers la vidéo créée.
+     */
     BasePointer creerVideo(std::string nom, std::string nomDuFichier, int duree)
     {
         // Check if a multimedia object with the same name already exists
@@ -49,6 +73,15 @@ public:
         return video;
     }
 
+    /**
+     * @brief Crée un nouveau film.
+     * @param nom Le nom du film.
+     * @param nomDuFichier Le nom du fichier du film.
+     * @param duree La durée du film.
+     * @param chapitres Un tableau contenant la durée de chaque chapitre.
+     * @param taille La taille du tableau des chapitres.
+     * @return Un pointeur vers le film créé.
+     */
     BasePointer creerFilm(std::string nom, std::string nomDuFichier, int duree, int *chapitres, int taille)
     {
         // Check if a multimedia object with the same name already exists
@@ -71,6 +104,11 @@ public:
         return film;
     }
 
+    /**
+     * @brief Crée un nouveau groupe.
+     * @param nom Le nom du groupe.
+     * @return Un pointeur partagé vers le groupe créé.
+     */
     std::shared_ptr<Groupe> creerGroupe(const std::string &nom)
     {
         // Check if a group with the same name already exists
@@ -86,6 +124,11 @@ public:
         return groupe;
     }
 
+    /**
+     * @brief Recherche un objet multimédia par son nom.
+     * @param nom Le nom de l'objet multimédia à rechercher.
+     * @return Une chaîne de caractères contenant les détails de l'objet multimédia si trouvé, sinon un message d'erreur.
+     */
     std::string rechercherMultimedia(const std::string &nom)
     {
         std::stringstream ss;
@@ -101,6 +144,11 @@ public:
         return ss.str();
     }
 
+    /**
+     * @brief Recherche un groupe par son nom.
+     * @param nom Le nom du groupe à rechercher.
+     * @return Une chaîne de caractères contenant les détails du groupe si trouvé, sinon un message d'erreur.
+     */
     std::string rechercherGroupe(const std::string &nom)
     {
         std::stringstream ss;
@@ -116,6 +164,11 @@ public:
         return ss.str();
     }
 
+    /**
+     * @brief Joue un objet multimédia par son nom.
+     * @param nom Le nom de l'objet multimédia à jouer.
+     * @return Une chaîne de caractères indiquant que l'objet multimédia est en cours de lecture si trouvé, sinon un message d'erreur.
+     */
     std::string jouer(const std::string &nom)
     {
         std::stringstream ss;
@@ -133,6 +186,10 @@ public:
         return ss.str();
     }
 
+    /**
+     * @brief Supprime un objet multimédia ou un groupe par son nom.
+     * @param nom Le nom de l'objet multimédia ou du groupe à supprimer.
+     */
     void supprimer(const std::string &nom)
     {
         auto multimedia_it = Multimedia.find(nom);
@@ -162,7 +219,11 @@ public:
         }
     }
 
-    // Serialization and deserialization
+    /**
+     * @brief Crée un nouvel objet multimédia de la classe spécifiée.
+     * @param classname Le nom de la classe de l'objet multimédia à créer.
+     * @return Un pointeur vers le nouvel objet multimédia créé, ou nullptr si la classe est inconnue.
+     */
 
     BasePointer creerMultimedia(std::string classname)
     {
@@ -186,6 +247,11 @@ public:
         }
     }
 
+    /**
+     * @brief Sauvegarde tous les objets multimédia dans un fichier.
+     * @param filename Le nom du fichier dans lequel sauvegarder les objets multimédia.
+     * @return true si la sauvegarde a réussi, false sinon.
+     */
     bool saveAll(const std::string &filename)
     {
         std::ofstream f(filename);
@@ -210,6 +276,11 @@ public:
         return true;
     }
 
+    /**
+     * @brief Lit tous les objets multimédia à partir d'un fichier.
+     * @param filename Le nom du fichier à partir duquel lire les objets multimédia.
+     * @return true si la lecture a réussi, false sinon.
+     */
     bool readAll(const std::string &filename)
     {
         std::ifstream f(filename);
@@ -248,15 +319,19 @@ public:
         return true;
     }
 
-std::string listerMultimedia()
-{
-    std::stringstream ss;
-    for (const auto& pair : Multimedia)
+    /**
+     * @brief Liste tous les objets multimédia.
+     * @return Une chaîne de caractères contenant les noms de tous les objets multimédia.
+     */
+    std::string listerMultimedia()
     {
-        ss << pair.first << " ";
+        std::stringstream ss;
+        for (const auto &pair : Multimedia)
+        {
+            ss << pair.first << " ";
+        }
+        return ss.str();
     }
-    return ss.str();
-}
 };
 
 #endif

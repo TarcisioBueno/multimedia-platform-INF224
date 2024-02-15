@@ -1,0 +1,211 @@
+\hypertarget{classFilm}{}\doxysection{Film Class Reference}
+\label{classFilm}\index{Film@{Film}}
+
+
+Classe représentant un film héritant de la classe \mbox{\hyperlink{classVideo}{Video}}.  
+
+
+
+
+{\ttfamily \#include $<$Film.\+h$>$}
+
+
+
+Inheritance diagram for Film\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=124pt]{classFilm__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Film\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=124pt]{classFilm__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFilm_ae1b198943aa53b8239ef694c05487fe4}{Film}} (std\+::string nom, std\+::string nom\+Du\+Fichier, int duree, int $\ast$chapitres, int taille)
+\begin{DoxyCompactList}\small\item\em Constructeur de \mbox{\hyperlink{classFilm}{Film}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFilm_af2835db2b0ef3a87aaa3222f4d9d1ae3}\label{classFilm_af2835db2b0ef3a87aaa3222f4d9d1ae3}} 
+\mbox{\hyperlink{classFilm_af2835db2b0ef3a87aaa3222f4d9d1ae3}{Film}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut de \mbox{\hyperlink{classFilm}{Film}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFilm_a8dab653f8a6c0635ca5ddbe0bbdd9a25}\label{classFilm_a8dab653f8a6c0635ca5ddbe0bbdd9a25}} 
+\mbox{\hyperlink{classFilm_a8dab653f8a6c0635ca5ddbe0bbdd9a25}{$\sim$\+Film}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de \mbox{\hyperlink{classFilm}{Film}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFilm_a029f936eae6a7ab49a7acafbccab62f5}{set\+Chapitres}} (int $\ast$chapitres, int taille)
+\begin{DoxyCompactList}\small\item\em Définit les chapitres du film. \end{DoxyCompactList}\item 
+int $\ast$ \mbox{\hyperlink{classFilm_a72aba55c116ca5c90c8e8f5d14d3524c}{get\+Chapitres}} () const
+\begin{DoxyCompactList}\small\item\em Récupère les chapitres du film. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classFilm_ac0d3ee66ba21aed56fe4cd3bdce3fee2}{get\+Nombre\+De\+Chapitres}} () const
+\begin{DoxyCompactList}\small\item\em Récupère le nombre de chapitres du film. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFilm_aeb7d38bebb4014354ebd18e65ffc2ae2}{afficher}} (std\+::ostream \&os) const override
+\begin{DoxyCompactList}\small\item\em Affiche les informations du film. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classFilm_a217b8d583c099bf407043b7e6893cb34}{class\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Récupère le nom de la classe \mbox{\hyperlink{classFilm}{Film}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFilm_ac9a4ee2cfedb9d894dd72a390bcc716f}{write}} (std\+::ostream \&f)
+\begin{DoxyCompactList}\small\item\em Écrit les attributs du film dans un flux de sortie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFilm_a3faa8555d45bdffa430815a9cbd1a41e}{read}} (std\+::istream \&f)
+\begin{DoxyCompactList}\small\item\em Lit les attributs du film à partir d\textquotesingle{}un flux d\textquotesingle{}entrée. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Classe représentant un film héritant de la classe \mbox{\hyperlink{classVideo}{Video}}. 
+
+Cette classe représente un film avec des chapitres. Elle hérite des attributs et méthodes de la classe \mbox{\hyperlink{classVideo}{Video}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFilm_ae1b198943aa53b8239ef694c05487fe4}\label{classFilm_ae1b198943aa53b8239ef694c05487fe4}} 
+\index{Film@{Film}!Film@{Film}}
+\index{Film@{Film}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{Film()}{Film()}}
+{\footnotesize\ttfamily Film\+::\+Film (\begin{DoxyParamCaption}\item[{std\+::string}]{nom,  }\item[{std\+::string}]{nom\+Du\+Fichier,  }\item[{int}]{duree,  }\item[{int $\ast$}]{chapitres,  }\item[{int}]{taille }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructeur de \mbox{\hyperlink{classFilm}{Film}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom} & Le nom du film. \\
+\hline
+{\em nom\+Du\+Fichier} & Le nom du fichier du film. \\
+\hline
+{\em duree} & La durée du film. \\
+\hline
+{\em chapitres} & Le tableau des chapitres du film. \\
+\hline
+{\em taille} & La taille du tableau des chapitres. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFilm_aeb7d38bebb4014354ebd18e65ffc2ae2}\label{classFilm_aeb7d38bebb4014354ebd18e65ffc2ae2}} 
+\index{Film@{Film}!afficher@{afficher}}
+\index{afficher@{afficher}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{afficher()}{afficher()}}
+{\footnotesize\ttfamily void Film\+::afficher (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Affiche les informations du film. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Le flux de sortie. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classVideo_a73f0b97a0e737ab0e4d8c9cd5b89498e}{Video}}.
+
+\mbox{\Hypertarget{classFilm_a217b8d583c099bf407043b7e6893cb34}\label{classFilm_a217b8d583c099bf407043b7e6893cb34}} 
+\index{Film@{Film}!className@{className}}
+\index{className@{className}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{className()}{className()}}
+{\footnotesize\ttfamily std\+::string Film\+::class\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Récupère le nom de la classe \mbox{\hyperlink{classFilm}{Film}}. 
+
+\begin{DoxyReturn}{Returns}
+Le nom de la classe \mbox{\hyperlink{classFilm}{Film}}. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classBase_a5cd4a5bf7b07daed7bde88331c0b80ad}{Base}}.
+
+\mbox{\Hypertarget{classFilm_a72aba55c116ca5c90c8e8f5d14d3524c}\label{classFilm_a72aba55c116ca5c90c8e8f5d14d3524c}} 
+\index{Film@{Film}!getChapitres@{getChapitres}}
+\index{getChapitres@{getChapitres}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{getChapitres()}{getChapitres()}}
+{\footnotesize\ttfamily int$\ast$ Film\+::get\+Chapitres (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Récupère les chapitres du film. 
+
+\begin{DoxyReturn}{Returns}
+Un pointeur vers une copie du tableau des chapitres du film. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFilm_ac0d3ee66ba21aed56fe4cd3bdce3fee2}\label{classFilm_ac0d3ee66ba21aed56fe4cd3bdce3fee2}} 
+\index{Film@{Film}!getNombreDeChapitres@{getNombreDeChapitres}}
+\index{getNombreDeChapitres@{getNombreDeChapitres}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{getNombreDeChapitres()}{getNombreDeChapitres()}}
+{\footnotesize\ttfamily int Film\+::get\+Nombre\+De\+Chapitres (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Récupère le nombre de chapitres du film. 
+
+\begin{DoxyReturn}{Returns}
+Le nombre de chapitres du film. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFilm_a3faa8555d45bdffa430815a9cbd1a41e}\label{classFilm_a3faa8555d45bdffa430815a9cbd1a41e}} 
+\index{Film@{Film}!read@{read}}
+\index{read@{read}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void Film\+::read (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Lit les attributs du film à partir d\textquotesingle{}un flux d\textquotesingle{}entrée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Le flux d\textquotesingle{}entrée. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classBase_aa2c8d282b6b0baf78889e0d38a30193d}{Base}}.
+
+\mbox{\Hypertarget{classFilm_a029f936eae6a7ab49a7acafbccab62f5}\label{classFilm_a029f936eae6a7ab49a7acafbccab62f5}} 
+\index{Film@{Film}!setChapitres@{setChapitres}}
+\index{setChapitres@{setChapitres}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{setChapitres()}{setChapitres()}}
+{\footnotesize\ttfamily void Film\+::set\+Chapitres (\begin{DoxyParamCaption}\item[{int $\ast$}]{chapitres,  }\item[{int}]{taille }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Définit les chapitres du film. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chapitres} & Le tableau des chapitres du film. \\
+\hline
+{\em taille} & La taille du tableau des chapitres. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFilm_ac9a4ee2cfedb9d894dd72a390bcc716f}\label{classFilm_ac9a4ee2cfedb9d894dd72a390bcc716f}} 
+\index{Film@{Film}!write@{write}}
+\index{write@{write}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void Film\+::write (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Écrit les attributs du film dans un flux de sortie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Le flux de sortie. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classBase_a53835c9ef1720f9aac00ad715cebb19f}{Base}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/\+Users/\+Usuario/\+Desktop/\+P2/\+INF224/\+TP\+\_\+scratch/\+DA\+\_\+\+SILVA\+\_\+\+BUENO\+\_\+\+Tarcisio/cpp/\mbox{\hyperlink{Film_8h}{Film.\+h}}\end{DoxyCompactItemize}

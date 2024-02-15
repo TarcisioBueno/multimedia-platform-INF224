@@ -1,0 +1,5 @@
+<map id="Film" name="Film">
+<area shape="rect" id="node1" title="Classe représentant un film héritant de la classe Video." alt="" coords="9,155,60,181"/>
+<area shape="rect" id="node2" href="$classVideo.html" title="La classe Video représente un objet vidéo." alt="" coords="5,80,64,107"/>
+<area shape="rect" id="node3" href="$classBase.html" title="Classe de base abstraite pour représenter une entité de base." alt="" coords="7,5,62,32"/>
+</map>

@@ -1,0 +1,275 @@
+\hypertarget{classDataBase}{}\doxysection{Data\+Base Class Reference}
+\label{classDataBase}\index{DataBase@{DataBase}}
+
+
+Classe pour gérer une base de données multimédia.  
+
+
+
+
+{\ttfamily \#include $<$Data\+Base.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Base\+Pointer \mbox{\hyperlink{classDataBase_af8fff1fc1c07dd2e11ceb7a1b554a6da}{creer\+Photo}} (std\+::string nom, std\+::string nom\+Du\+Fichier, double latitude, double longitude)
+\begin{DoxyCompactList}\small\item\em Crée une nouvelle photo. \end{DoxyCompactList}\item 
+Base\+Pointer \mbox{\hyperlink{classDataBase_ab8821dc14ab20566ca159ba05cfba9ec}{creer\+Video}} (std\+::string nom, std\+::string nom\+Du\+Fichier, int duree)
+\begin{DoxyCompactList}\small\item\em Crée une nouvelle vidéo. \end{DoxyCompactList}\item 
+Base\+Pointer \mbox{\hyperlink{classDataBase_a4df7fdb6050cea35922954ee5e1f6b36}{creer\+Film}} (std\+::string nom, std\+::string nom\+Du\+Fichier, int duree, int $\ast$chapitres, int taille)
+\begin{DoxyCompactList}\small\item\em Crée un nouveau film. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classGroupe}{Groupe}} $>$ \mbox{\hyperlink{classDataBase_a11c9bebcf09e34195c5efb1756faca24}{creer\+Groupe}} (const std\+::string \&nom)
+\begin{DoxyCompactList}\small\item\em Crée un nouveau groupe. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classDataBase_a853a42b23c168b0a0b562ef6bcdc5572}{rechercher\+Multimedia}} (const std\+::string \&nom)
+\begin{DoxyCompactList}\small\item\em Recherche un objet multimédia par son nom. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classDataBase_afad048696c0d8fdf5e33d14d462b0d21}{rechercher\+Groupe}} (const std\+::string \&nom)
+\begin{DoxyCompactList}\small\item\em Recherche un groupe par son nom. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classDataBase_a772ca87985bec633e72b1ef52ad3e4f7}{jouer}} (const std\+::string \&nom)
+\begin{DoxyCompactList}\small\item\em Joue un objet multimédia par son nom. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDataBase_a0328b3ad10aafce0786267441ca847c4}{supprimer}} (const std\+::string \&nom)
+\begin{DoxyCompactList}\small\item\em Supprime un objet multimédia ou un groupe par son nom. \end{DoxyCompactList}\item 
+Base\+Pointer \mbox{\hyperlink{classDataBase_a85e2fa667029c7a02ebf3e498d019948}{creer\+Multimedia}} (std\+::string classname)
+\begin{DoxyCompactList}\small\item\em Crée un nouvel objet multimédia de la classe spécifiée. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDataBase_a4b82764e781f5c6d348ad14dc794570a}{save\+All}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Sauvegarde tous les objets multimédia dans un fichier. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDataBase_a0c5a04404f01a5c5e4ebe735be75a0de}{read\+All}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Lit tous les objets multimédia à partir d\textquotesingle{}un fichier. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classDataBase_a8852d6f52808e3bd462d0cc8955a8a97}{lister\+Multimedia}} ()
+\begin{DoxyCompactList}\small\item\em Liste tous les objets multimédia. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe pour gérer une base de données multimédia. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDataBase_a4df7fdb6050cea35922954ee5e1f6b36}\label{classDataBase_a4df7fdb6050cea35922954ee5e1f6b36}} 
+\index{DataBase@{DataBase}!creerFilm@{creerFilm}}
+\index{creerFilm@{creerFilm}!DataBase@{DataBase}}
+\doxysubsubsection{\texorpdfstring{creerFilm()}{creerFilm()}}
+{\footnotesize\ttfamily Base\+Pointer Data\+Base\+::creer\+Film (\begin{DoxyParamCaption}\item[{std\+::string}]{nom,  }\item[{std\+::string}]{nom\+Du\+Fichier,  }\item[{int}]{duree,  }\item[{int $\ast$}]{chapitres,  }\item[{int}]{taille }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Crée un nouveau film. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom} & Le nom du film. \\
+\hline
+{\em nom\+Du\+Fichier} & Le nom du fichier du film. \\
+\hline
+{\em duree} & La durée du film. \\
+\hline
+{\em chapitres} & Un tableau contenant la durée de chaque chapitre. \\
+\hline
+{\em taille} & La taille du tableau des chapitres. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un pointeur vers le film créé. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDataBase_a11c9bebcf09e34195c5efb1756faca24}\label{classDataBase_a11c9bebcf09e34195c5efb1756faca24}} 
+\index{DataBase@{DataBase}!creerGroupe@{creerGroupe}}
+\index{creerGroupe@{creerGroupe}!DataBase@{DataBase}}
+\doxysubsubsection{\texorpdfstring{creerGroupe()}{creerGroupe()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classGroupe}{Groupe}}$>$ Data\+Base\+::creer\+Groupe (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{nom }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Crée un nouveau groupe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom} & Le nom du groupe. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un pointeur partagé vers le groupe créé. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDataBase_a85e2fa667029c7a02ebf3e498d019948}\label{classDataBase_a85e2fa667029c7a02ebf3e498d019948}} 
+\index{DataBase@{DataBase}!creerMultimedia@{creerMultimedia}}
+\index{creerMultimedia@{creerMultimedia}!DataBase@{DataBase}}
+\doxysubsubsection{\texorpdfstring{creerMultimedia()}{creerMultimedia()}}
+{\footnotesize\ttfamily Base\+Pointer Data\+Base\+::creer\+Multimedia (\begin{DoxyParamCaption}\item[{std\+::string}]{classname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Crée un nouvel objet multimédia de la classe spécifiée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em classname} & Le nom de la classe de l\textquotesingle{}objet multimédia à créer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un pointeur vers le nouvel objet multimédia créé, ou nullptr si la classe est inconnue. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDataBase_af8fff1fc1c07dd2e11ceb7a1b554a6da}\label{classDataBase_af8fff1fc1c07dd2e11ceb7a1b554a6da}} 
+\index{DataBase@{DataBase}!creerPhoto@{creerPhoto}}
+\index{creerPhoto@{creerPhoto}!DataBase@{DataBase}}
+\doxysubsubsection{\texorpdfstring{creerPhoto()}{creerPhoto()}}
+{\footnotesize\ttfamily Base\+Pointer Data\+Base\+::creer\+Photo (\begin{DoxyParamCaption}\item[{std\+::string}]{nom,  }\item[{std\+::string}]{nom\+Du\+Fichier,  }\item[{double}]{latitude,  }\item[{double}]{longitude }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Crée une nouvelle photo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom} & Le nom de la photo. \\
+\hline
+{\em nom\+Du\+Fichier} & Le nom du fichier de la photo. \\
+\hline
+{\em latitude} & La latitude où la photo a été prise. \\
+\hline
+{\em longitude} & La longitude où la photo a été prise. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un pointeur vers la photo créée. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDataBase_ab8821dc14ab20566ca159ba05cfba9ec}\label{classDataBase_ab8821dc14ab20566ca159ba05cfba9ec}} 
+\index{DataBase@{DataBase}!creerVideo@{creerVideo}}
+\index{creerVideo@{creerVideo}!DataBase@{DataBase}}
+\doxysubsubsection{\texorpdfstring{creerVideo()}{creerVideo()}}
+{\footnotesize\ttfamily Base\+Pointer Data\+Base\+::creer\+Video (\begin{DoxyParamCaption}\item[{std\+::string}]{nom,  }\item[{std\+::string}]{nom\+Du\+Fichier,  }\item[{int}]{duree }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Crée une nouvelle vidéo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom} & Le nom de la vidéo. \\
+\hline
+{\em nom\+Du\+Fichier} & Le nom du fichier de la vidéo. \\
+\hline
+{\em duree} & La durée de la vidéo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un pointeur vers la vidéo créée. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDataBase_a772ca87985bec633e72b1ef52ad3e4f7}\label{classDataBase_a772ca87985bec633e72b1ef52ad3e4f7}} 
+\index{DataBase@{DataBase}!jouer@{jouer}}
+\index{jouer@{jouer}!DataBase@{DataBase}}
+\doxysubsubsection{\texorpdfstring{jouer()}{jouer()}}
+{\footnotesize\ttfamily std\+::string Data\+Base\+::jouer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{nom }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Joue un objet multimédia par son nom. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom} & Le nom de l\textquotesingle{}objet multimédia à jouer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Une chaîne de caractères indiquant que l\textquotesingle{}objet multimédia est en cours de lecture si trouvé, sinon un message d\textquotesingle{}erreur. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDataBase_a8852d6f52808e3bd462d0cc8955a8a97}\label{classDataBase_a8852d6f52808e3bd462d0cc8955a8a97}} 
+\index{DataBase@{DataBase}!listerMultimedia@{listerMultimedia}}
+\index{listerMultimedia@{listerMultimedia}!DataBase@{DataBase}}
+\doxysubsubsection{\texorpdfstring{listerMultimedia()}{listerMultimedia()}}
+{\footnotesize\ttfamily std\+::string Data\+Base\+::lister\+Multimedia (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Liste tous les objets multimédia. 
+
+\begin{DoxyReturn}{Returns}
+Une chaîne de caractères contenant les noms de tous les objets multimédia. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDataBase_a0c5a04404f01a5c5e4ebe735be75a0de}\label{classDataBase_a0c5a04404f01a5c5e4ebe735be75a0de}} 
+\index{DataBase@{DataBase}!readAll@{readAll}}
+\index{readAll@{readAll}!DataBase@{DataBase}}
+\doxysubsubsection{\texorpdfstring{readAll()}{readAll()}}
+{\footnotesize\ttfamily bool Data\+Base\+::read\+All (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Lit tous les objets multimédia à partir d\textquotesingle{}un fichier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Le nom du fichier à partir duquel lire les objets multimédia. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si la lecture a réussi, false sinon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDataBase_afad048696c0d8fdf5e33d14d462b0d21}\label{classDataBase_afad048696c0d8fdf5e33d14d462b0d21}} 
+\index{DataBase@{DataBase}!rechercherGroupe@{rechercherGroupe}}
+\index{rechercherGroupe@{rechercherGroupe}!DataBase@{DataBase}}
+\doxysubsubsection{\texorpdfstring{rechercherGroupe()}{rechercherGroupe()}}
+{\footnotesize\ttfamily std\+::string Data\+Base\+::rechercher\+Groupe (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{nom }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Recherche un groupe par son nom. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom} & Le nom du groupe à rechercher. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Une chaîne de caractères contenant les détails du groupe si trouvé, sinon un message d\textquotesingle{}erreur. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDataBase_a853a42b23c168b0a0b562ef6bcdc5572}\label{classDataBase_a853a42b23c168b0a0b562ef6bcdc5572}} 
+\index{DataBase@{DataBase}!rechercherMultimedia@{rechercherMultimedia}}
+\index{rechercherMultimedia@{rechercherMultimedia}!DataBase@{DataBase}}
+\doxysubsubsection{\texorpdfstring{rechercherMultimedia()}{rechercherMultimedia()}}
+{\footnotesize\ttfamily std\+::string Data\+Base\+::rechercher\+Multimedia (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{nom }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Recherche un objet multimédia par son nom. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom} & Le nom de l\textquotesingle{}objet multimédia à rechercher. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Une chaîne de caractères contenant les détails de l\textquotesingle{}objet multimédia si trouvé, sinon un message d\textquotesingle{}erreur. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDataBase_a4b82764e781f5c6d348ad14dc794570a}\label{classDataBase_a4b82764e781f5c6d348ad14dc794570a}} 
+\index{DataBase@{DataBase}!saveAll@{saveAll}}
+\index{saveAll@{saveAll}!DataBase@{DataBase}}
+\doxysubsubsection{\texorpdfstring{saveAll()}{saveAll()}}
+{\footnotesize\ttfamily bool Data\+Base\+::save\+All (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sauvegarde tous les objets multimédia dans un fichier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Le nom du fichier dans lequel sauvegarder les objets multimédia. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si la sauvegarde a réussi, false sinon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDataBase_a0328b3ad10aafce0786267441ca847c4}\label{classDataBase_a0328b3ad10aafce0786267441ca847c4}} 
+\index{DataBase@{DataBase}!supprimer@{supprimer}}
+\index{supprimer@{supprimer}!DataBase@{DataBase}}
+\doxysubsubsection{\texorpdfstring{supprimer()}{supprimer()}}
+{\footnotesize\ttfamily void Data\+Base\+::supprimer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{nom }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Supprime un objet multimédia ou un groupe par son nom. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom} & Le nom de l\textquotesingle{}objet multimédia ou du groupe à supprimer. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/\+Users/\+Usuario/\+Desktop/\+P2/\+INF224/\+TP\+\_\+scratch/\+DA\+\_\+\+SILVA\+\_\+\+BUENO\+\_\+\+Tarcisio/cpp/\mbox{\hyperlink{DataBase_8h}{Data\+Base.\+h}}\end{DoxyCompactItemize}

@@ -1,3 +1,8 @@
+/**
+ * \mainpage Écrit par Tarcisio da Silva Bueno
+ * Ce fichier README contient des instructions et des informations importantes concernant ce projet.
+
+ 
 # 4e Etape: Photos et videos
 
 **Comment appelle-t'on ce type de méthode et comment faut-il les déclarer ?**

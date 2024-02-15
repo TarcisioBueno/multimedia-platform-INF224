@@ -8,3 +8,5 @@ myprog
 depend-myprog
 
 .vscode
+
+*.class
