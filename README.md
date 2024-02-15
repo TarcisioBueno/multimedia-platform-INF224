@@ -1,6 +1,3 @@
-/**
- * \mainpage 
-
 # Projet de développement logiciel
 
 **Nom du projet :** INF224 - Travaux Pratiques C++/Objet et Java/Swing
@@ -11,7 +8,9 @@
 
 **À propos de ce fichier README :** Ce fichier README contient des instructions et des informations importantes concernant ce projet. Il comprend des questions et des réponses sur les différentes étapes du projet.
 
-# 4e Etape: Photos et videos
+# Travaux Pratiques C++/Objet
+
+## 4e Etape: Photos et videos
 
 **Comment appelle-t'on ce type de méthode et comment faut-il les déclarer ?**
 
@@ -27,7 +26,7 @@ virtual void maMethode() const = 0;
 
 Lorsqu'une classe contient au moins une méthode purement virtuelle, cette classe est considérée comme une classe abstraite. Les classes abstraites ne peuvent pas être instanciées directement, elles sont destinées à être héritées par d'autres classes.
 
-# 5e Etape: Traitement uniforme (en utilisant le polymorphisme)
+## 5e Etape: Traitement uniforme (en utilisant le polymorphisme)
 
 **Quelle est la propriété caractéristique de l'orienté objet qui permet de faire cela ?**
 
@@ -43,10 +42,10 @@ le tableau doit contenir des pointeurs vers des objets de ses classes dérivées
 
 En Java, tous les objets sont manipulés par référence, ce qui signifie que lorsque vous créez un objet et l'assignez à une variable ou le placez dans un tableau, vous travaillez avec une référence à l'objet, pas l'objet lui-même.
 
-# 6e étape. Films et tableaux
+## 6e étape. Films et tableaux
 
 
-# 7e étape. Destruction et copie des objets
+## 7e étape. Destruction et copie des objets
 
 Ci-dessous est le résultat de la commande valgrind --leak-check=full ./myprog.
 
@@ -86,7 +85,7 @@ Pour implémenter une copie profonde, il faut écrire un construteur de copie:
         }
     }
 ```
-# 8e étape. Créer des groupes
+## 8e étape. Créer des groupes
 
 **On rappelle aussi que la liste d'objets doit en fait être une liste de pointeurs d'objets. Pourquoi ? Comparer à Java.**
 
@@ -98,18 +97,18 @@ En C++, lorsque vous créez une liste d'objets (comme std::list<Base>), les obje
 
 Lorsque l'on utilise une liste de pointeurs, la liste contient des pointeurs vers les objets, et non les objets eux-mêmes. Lorsqu'un pointeur est retiré de la liste ou que la liste est détruite, seul le pointeur est détruit, pas l'objet auquel il pointe.
 
-# 10e étape. Gestion cohérente des données
+## 10e étape. Gestion cohérente des données
 
 Pour garantir que seules certaines classes peuvent créer des instances d'une autre classe, il faut rendre les constructeurs protected, puis déclarer la classes DataBase comme friend.
 
-# 11e étape. Client / serveur
+## 11e étape. Client / serveur
 
 **SEARCH command:** The client sends a command in the format SEARCH type name, where type can be either multimedia or group, and name is the name of the multimedia or group to be searched. 
 The server then searches for the multimedia or group with the given name and sends back its attributes. For example, SEARCH multimedia song1 or SEARCH group group1.
 
 **PLAY command:**The client sends a command in the format PLAY name, where name is the name of the multimedia to be played. The server then plays the multimedia with the given name. For example, PLAY song1.
 
-# 13
+## 13
 
 To change later
 
