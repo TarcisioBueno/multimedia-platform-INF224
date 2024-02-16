@@ -16,7 +16,7 @@ typedef std::shared_ptr<Base> BasePointer;
 /**
  * @class Groupe
  * @brief Représente un groupe d'objets de type Base.
- * 
+ *
  * Cette classe hérite de la classe std::list<BasePointer> et permet de stocker
  * un ensemble d'objets de type Base dans une liste.
  */
@@ -54,10 +54,20 @@ public:
      */
     void afficher(std::ostream &os) const
     {
-        for (const BasePointer &base : *this)
+        os << "Nom : " << nom << "::";
+        if (!this->empty())
         {
-            base->afficher(os);
+            os << "membres: ";
+            for (const BasePointer &base : *this)
+            {
+                base->afficher(os);
+            }
         }
+        else
+        {
+            os << "Cette groupe n'a pas de membres";
+        }
+        os << "::";
     }
 
     /**
@@ -73,7 +83,8 @@ public:
      * @brief Obtient le nom de la classe.
      * @return Le nom de la classe.
      */
-    std::string className() const {
+    std::string className() const
+    {
         return "Groupe";
     }
 };

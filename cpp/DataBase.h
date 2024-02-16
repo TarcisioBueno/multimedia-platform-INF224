@@ -38,6 +38,7 @@ public:
      */
     BasePointer creerPhoto(std::string nom, std::string nomDuFichier, double latitude, double longitude)
     {
+        nom = replaceSpacesWithUnderscores(nom);
         // Check if a multimedia object with the same name already exists
         if (Multimedia.find(nom) != Multimedia.end())
         {
@@ -60,6 +61,7 @@ public:
      */
     BasePointer creerVideo(std::string nom, std::string nomDuFichier, int duree)
     {
+        nom = replaceSpacesWithUnderscores(nom);
         // Check if a multimedia object with the same name already exists
         if (Multimedia.find(nom) != Multimedia.end())
         {
@@ -84,20 +86,20 @@ public:
      */
     BasePointer creerFilm(std::string nom, std::string nomDuFichier, int duree, int *chapitres, int taille)
     {
-        
+        nom = replaceSpacesWithUnderscores(nom);
+
         if (Multimedia.find(nom) != Multimedia.end())
         {
             std::cout << "Un objet multimédia avec le nom " << nom << " existe déjà.\n";
-         
+
             return BasePointer();
         }
         else if (taille <= 0)
         {
             std::cout << "Le paramètre taille doit être supérieur à 0.\n";
-           
+
             return BasePointer();
         }
-
 
         BasePointer film(new Film(nom, nomDuFichier, duree, chapitres, taille));
         Multimedia.insert(std::pair<std::string, BasePointer>(nom, film));
@@ -111,16 +113,17 @@ public:
      */
     std::shared_ptr<Groupe> creerGroupe(const std::string &nom)
     {
+        std::string nom_modifie = replaceSpacesWithUnderscores(nom);
         // Check if a group with the same name already exists
-        if (Groupes.find(nom) != Groupes.end())
+        if (Groupes.find(nom_modifie) != Groupes.end())
         {
             // Return a null shared_ptr<Groupe>
             return std::shared_ptr<Groupe>();
         }
 
         // Create the new group
-        std::shared_ptr<Groupe> groupe(new Groupe(nom));
-        Groupes.insert(std::pair<std::string, std::shared_ptr<Groupe>>(nom, groupe));
+        std::shared_ptr<Groupe> groupe(new Groupe(nom_modifie));
+        Groupes.insert(std::pair<std::string, std::shared_ptr<Groupe>>(nom_modifie, groupe));
         return groupe;
     }
 
@@ -131,6 +134,7 @@ public:
      */
     std::string rechercherMultimedia(const std::string &nom)
     {
+
         std::stringstream ss;
         auto it = Multimedia.find(nom);
         if (it != Multimedia.end())
@@ -151,6 +155,7 @@ public:
      */
     std::string rechercherGroupe(const std::string &nom)
     {
+
         std::stringstream ss;
         auto it = Groupes.find(nom);
         if (it != Groupes.end())
@@ -171,6 +176,7 @@ public:
      */
     std::string jouer(const std::string &nom)
     {
+
         std::stringstream ss;
         auto it = Multimedia.find(nom);
         if (it != Multimedia.end())
@@ -195,13 +201,12 @@ public:
         auto multimedia_it = Multimedia.find(nom);
         if (multimedia_it != Multimedia.end())
         {
-           
+
             for (auto &pair : Groupes)
             {
                 pair.second->enleverMultimedia(multimedia_it->second);
             }
 
-           
             Multimedia.erase(multimedia_it);
         }
         else
@@ -209,7 +214,7 @@ public:
             auto group_it = Groupes.find(nom);
             if (group_it != Groupes.end())
             {
-               
+
                 Groupes.erase(group_it);
             }
             else
@@ -311,7 +316,6 @@ public:
                 else
                 {
                     Multimedia.insert(std::pair<std::string, BasePointer>(obj->getNom(), obj));
-                    std::cout << "Successfully created and added " << obj->getNom() << std::endl;
                 }
             }
         }
@@ -320,17 +324,29 @@ public:
     }
 
     /**
-     * @brief Liste tous les objets multimédia.
-     * @return Une chaîne de caractères contenant les noms de tous les objets multimédia.
+     * @brief Liste tous les objets multimédia et groupes.
+     * @return Une chaîne de caractères contenant les noms de tous les objets multimédia et groupes.
      */
-    std::string listerMultimedia()
+    std::string lister()
     {
         std::stringstream ss;
         for (const auto &pair : Multimedia)
         {
             ss << pair.first << " ";
         }
+    
+        for (const auto &pair : Groupes)
+        {
+            ss << pair.first << " ";
+        }
         return ss.str();
+    }
+
+    std::string replaceSpacesWithUnderscores(const std::string &str)
+    {
+        std::string modified_str = str;
+        std::replace(modified_str.begin(), modified_str.end(), ' ', '_');
+        return modified_str;
     }
 };
 

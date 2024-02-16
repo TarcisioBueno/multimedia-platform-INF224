@@ -51,11 +51,11 @@ int main(int argc, const char *argv[]) {
     BasePointer film3;
 
     // Création des objets multimédias et ajout à la base de données
-    group1 = db.creerGroupe("group1");
+    group1 = db.creerGroupe("group 1");
     group2 = db.creerGroupe("group2");
-    photo1 = db.creerPhoto("photo1", "./media/photo1.jpg", 40.748817, -73.985428);
-    photo1 = db.creerPhoto("photo2", "./media/photo2.jpg", 40.748817, -73.985428);
-    photo1 = db.creerPhoto("photo3", "./media/photo3.jpg", 40.748817, -73.985428);
+    photo1 = db.creerPhoto("photo 1", "./media/photo1.jpg", 40.748817, -73.985428);
+    photo1 = db.creerPhoto("photo 2", "./media/photo2.jpg", 40.748817, -73.985428);
+    photo1 = db.creerPhoto("photo3 ", "./media/photo3.jpg", 40.748817, -73.985428);
     video1 = db.creerVideo("video1", "./media/video1.mp4", 120);
     video2 = db.creerVideo("video2", "./media/video2.mp4", 120);
     video3 = db.creerVideo("video3", "./media/video3.mp4", 120);

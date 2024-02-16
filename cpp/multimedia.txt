@@ -17,18 +17,18 @@ film3
 3
 30 30 40 
 Photo
-photo1
+photo3_
+./media/photo3.jpg
+40.7488
+-73.9854
+Photo
+photo_1
 ./media/photo1.jpg
 40.7488
 -73.9854
 Photo
-photo2
+photo_2
 ./media/photo2.jpg
-40.7488
--73.9854
-Photo
-photo3
-./media/photo3.jpg
 40.7488
 -73.9854
 Video

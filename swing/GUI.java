@@ -38,14 +38,13 @@ public class GUI extends JFrame {
     "Pour consulter la liste des éléments présents dans la base de données, appuyez sur le bouton \"Lister\".\n\n" +
     "Pour finaliser, appuyez sur le bouton \"Finaliser\".";
 
-    // Define actions as subclasses of AbstractAction
-
+  
     /**
-     * Cette classe représente l'action du bouton "Rechercher".
+     * Cette classe représente l'action du bouton "Rechercher média".
      */
     class Button1Action extends AbstractAction {
         public Button1Action() {
-            super("Rechercher");
+            super("Rechercher média");
         }
 
         @Override
@@ -90,6 +89,8 @@ public class GUI extends JFrame {
         }
     }
 
+    
+
     /**
      * Cette classe représente l'action du bouton "Finaliser".
      */
@@ -126,6 +127,33 @@ public class GUI extends JFrame {
 
         }
     }
+
+       /**
+     * Cette classe représente l'action du bouton "Rechercher groupe".
+     */
+    class Button5Action extends AbstractAction {
+        public Button5Action() {
+            super("Rechercher groupe");
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (textField.getText().trim().isEmpty()) {
+                JOptionPane.showMessageDialog(null, emptyMessage, "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                message = "search group " + textField.getText(); // get the text from the JTextField
+                textField.setText(""); // clear the JTextField
+                try {
+                    String response = client.send(message);
+                    textArea.append(formatResponse(response) + "\n");
+                } catch (IOException ex) {
+                    textArea.append("Error: " + ex.getMessage() + "\n");
+                }
+            }
+        }
+    }
+
+    
 
     /**
      * Cette classe représente l'action du bouton "Instructions".
@@ -198,16 +226,19 @@ public class GUI extends JFrame {
         Action action2 = new Button2Action();
         Action action3 = new Button3Action();
         Action action4 = new Button4Action();
+        Action action5 = new Button5Action();
         Action actionInstructions = new ButtonInstructionsAction();
 
         // Add the actions to the menu and the tool bar
         menu.add(new JMenuItem(action1));
+        menu.add(new JMenuItem(action5));
         menu.add(new JMenuItem(action2));
         menu.add(new JMenuItem(action4));
         menu.add(new JMenuItem(action3));
         menu.add(new JMenuItem(actionInstructions));
 
         toolBar.add(new JButton(action1));
+        toolBar.add(new JButton(action5));
         toolBar.add(new JButton(action2));
         toolBar.add(new JButton(action4));
         toolBar.add(new JButton(action3));

@@ -56,7 +56,7 @@ inline void handleServerRequest(const std::string& request, std::string& respons
         name =  type;        
         response = db.jouer(name);;
     } else if (command == LIST) {
-        response = db.listerMultimedia();
+        response = db.lister();
     } else {
         response = "UNKNOWN COMMAND";
     }
