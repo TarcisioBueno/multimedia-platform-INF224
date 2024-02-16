@@ -7,5 +7,6 @@ var searchData=
   ['receivefrom_61',['receiveFrom',['../classSocket.html#aa19f1c03af97458c042880c6be638151',1,'Socket']]],
   ['recherchergroupe_62',['rechercherGroupe',['../classDataBase.html#afad048696c0d8fdf5e33d14d462b0d21',1,'DataBase']]],
   ['recherchermultimedia_63',['rechercherMultimedia',['../classDataBase.html#a853a42b23c168b0a0b562ef6bcdc5572',1,'DataBase']]],
-  ['run_64',['run',['../classTCPServer.html#a1409041961e91f1dbc4933483b4c3b23',1,'TCPServer']]]
+  ['requesthandler_2eh_64',['RequestHandler.h',['../RequestHandler_8h.html',1,'']]],
+  ['run_65',['run',['../classTCPServer.html#a1409041961e91f1dbc4933483b4c3b23',1,'TCPServer']]]
 ];

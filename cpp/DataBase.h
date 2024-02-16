@@ -84,21 +84,21 @@ public:
      */
     BasePointer creerFilm(std::string nom, std::string nomDuFichier, int duree, int *chapitres, int taille)
     {
-        // Check if a multimedia object with the same name already exists
+        
         if (Multimedia.find(nom) != Multimedia.end())
         {
             std::cout << "Un objet multimédia avec le nom " << nom << " existe déjà.\n";
-            // Return a null BasePointer
+         
             return BasePointer();
         }
         else if (taille <= 0)
         {
             std::cout << "Le paramètre taille doit être supérieur à 0.\n";
-            // Return a null BasePointer
+           
             return BasePointer();
         }
 
-        // Create the new Film
+
         BasePointer film(new Film(nom, nomDuFichier, duree, chapitres, taille));
         Multimedia.insert(std::pair<std::string, BasePointer>(nom, film));
         return film;
@@ -195,13 +195,13 @@ public:
         auto multimedia_it = Multimedia.find(nom);
         if (multimedia_it != Multimedia.end())
         {
-            // Remove the multimedia object from all groups
+           
             for (auto &pair : Groupes)
             {
                 pair.second->enleverMultimedia(multimedia_it->second);
             }
 
-            // Delete the multimedia object
+           
             Multimedia.erase(multimedia_it);
         }
         else
@@ -209,7 +209,7 @@ public:
             auto group_it = Groupes.find(nom);
             if (group_it != Groupes.end())
             {
-                // Delete the group
+               
                 Groupes.erase(group_it);
             }
             else

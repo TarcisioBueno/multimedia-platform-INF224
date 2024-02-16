@@ -6,13 +6,18 @@
 
 {\bfseries{Objectif du projet \+:}} Créer l\textquotesingle{}ébauche du logiciel d\textquotesingle{}une set-\/top box multimédia permettant de jouer des vidéos, des films, d\textquotesingle{}afficher des photos, etc.
 
-{\bfseries{À propos de ce fichier README \+:}} Ce fichier README contient des instructions et des informations importantes concernant ce projet. Il comprend des questions et des réponses sur les différentes étapes du projet.\hypertarget{index_autotoc_md1}{}\doxysection{Travaux Pratiques C++/\+Objet}\label{index_autotoc_md1}
-\hypertarget{index_autotoc_md2}{}\doxysubsection{4e Etape\+: Photos et videos}\label{index_autotoc_md2}
+{\bfseries{À propos de ce fichier README \+:}} Ce fichier README a été créé dans le cadre du projet inf224. Il vise à fournir des informations essentielles sur le contenu du projet, y compris {\bfseries{les excercises traitées}}, {\bfseries{les réponses correspondantes}}, ainsi que tout commentaire jugé utile. Les sections suivantes détaillent les aspects traités dans ce document.\hypertarget{index_autotoc_md1}{}\doxysection{Travaux Pratiques C++/\+Objet}\label{index_autotoc_md1}
+\hypertarget{index_autotoc_md2}{}\doxysubsection{1e Etape\+: Démarrage}\label{index_autotoc_md2}
+\hypertarget{index_autotoc_md3}{}\doxysubsection{2e Etape\+: Classe de base}\label{index_autotoc_md3}
+Le symbole \&\+: Dans std\+::ostream \& indique que le paramètre est une référence à un objet std\+::ostream.
+
+Le mot-\/clé const\+: En C++ est utilisé pour indiquer qu\textquotesingle{}une variable ne peut pas être modifiée après sa déclaration, ce qui signifie que sa valeur est constante et ne peut pas être changée. Lorsqu\textquotesingle{}il est utilisé dans une déclaration de fonction (après la liste des paramètres et avant le corps de la fonction), const signifie que la fonction ne modifie pas l\textquotesingle{}état de l\textquotesingle{}objet sur lequel elle est appelée.\hypertarget{index_autotoc_md4}{}\doxysubsection{3e Etape\+: Programme de test}\label{index_autotoc_md4}
+\hypertarget{index_autotoc_md5}{}\doxysubsection{4e Etape\+: Photos et videos}\label{index_autotoc_md5}
 {\bfseries{Comment appelle-\/t\textquotesingle{}on ce type de méthode et comment faut-\/il les déclarer ?}}
 
-Le type de méthode que vous décrivez est appelé une \char`\"{}méthode purement virtuelle\char`\"{} en C++.
+Le type de méthode est appelé une \char`\"{}méthode purement virtuelle\char`\"{} en C++.
 
-Pour déclarer une méthode comme purement virtuelle, vous utilisez le mot-\/clé virtual suivi de = 0 à la fin de la déclaration de la méthode. Par exemple \+:
+Pour déclarer une méthode comme purement virtuelle, il faut utiliser le mot-\/clé virtual suivi de = 0 à la fin de la déclaration de la méthode. Par exemple \+:
 
 
 \begin{DoxyCode}{0}
@@ -23,7 +28,7 @@ Pour déclarer une méthode comme purement virtuelle, vous utilisez le mot-\/cl�
 
 {\bfseries{Si vous avez fait ce qui précède comme demandé, il ne sera plus possible d\textquotesingle{}instancer des objets de la classe de base. Pourquoi ?}}
 
-Lorsqu\textquotesingle{}une classe contient au moins une méthode purement virtuelle, cette classe est considérée comme une classe abstraite. Les classes abstraites ne peuvent pas être instanciées directement, elles sont destinées à être héritées par d\textquotesingle{}autres classes.\hypertarget{index_autotoc_md3}{}\doxysubsection{5e Etape\+: Traitement uniforme (en utilisant le polymorphisme)}\label{index_autotoc_md3}
+Lorsqu\textquotesingle{}une classe contient au moins une méthode purement virtuelle, cette classe est considérée comme une classe abstraite. Les classes abstraites ne peuvent pas être instanciées directement, elles sont destinées à être héritées par d\textquotesingle{}autres classes.\hypertarget{index_autotoc_md6}{}\doxysubsection{5e Etape\+: Traitement uniforme (en utilisant le polymorphisme)}\label{index_autotoc_md6}
 {\bfseries{Quelle est la propriété caractéristique de l\textquotesingle{}orienté objet qui permet de faire cela ?}}
 
 La propriété caractéristique de l\textquotesingle{}orienté objet qui permet de traiter de manière uniforme une liste comprenant à la fois des photos et des vidéos sans avoir à se préoccuper de leur type est le polymorphisme. Le polymorphisme permet à une classe dérivée d\textquotesingle{}hériter des méthodes et des attributs d\textquotesingle{}une classe de base, et de les redéfinir si nécessaire.
@@ -34,11 +39,20 @@ En C++, pour utiliser le polymorphisme, il est nécessaire de déclarer les mét
 
 {\bfseries{Quel est le type des éléments du tableau \+: le tableau doit-\/il contenir des objets ou des pointeurs vers ces objets ? Pourquoi ? Comparer à Java.}}
 
-le tableau doit contenir des pointeurs vers des objets de ses classes dérivées. Cela permet de traiter de manière uniforme les objets de différentes classes dérivées.
+le tableau doit contenir des pointeurs vers des objets. Cela permet de traiter de manière uniforme les objets de différentes classes dérivées.
 
-En Java, tous les objets sont manipulés par référence, ce qui signifie que lorsque vous créez un objet et l\textquotesingle{}assignez à une variable ou le placez dans un tableau, vous travaillez avec une référence à l\textquotesingle{}objet, pas l\textquotesingle{}objet lui-\/même.\hypertarget{index_autotoc_md4}{}\doxysubsection{6e étape. Films et tableaux}\label{index_autotoc_md4}
-\hypertarget{index_autotoc_md5}{}\doxysubsection{7e étape. Destruction et copie des objets}\label{index_autotoc_md5}
-Ci-\/dessous est le résultat de la commande valgrind --leak-\/check=full ./myprog.
+En Java, tous les objets sont manipulés par référence, ce qui signifie que lorsque vous créez un objet et l\textquotesingle{}assignez à une variable ou le placez dans un tableau, vous travaillez avec une référence à l\textquotesingle{}objet, pas l\textquotesingle{}objet lui-\/même. Donc, le polymorphisme fonctionne automatiquement.\hypertarget{index_autotoc_md7}{}\doxysubsection{6e étape. Films et tableaux}\label{index_autotoc_md7}
+\hypertarget{index_autotoc_md8}{}\doxysubsection{7e étape. Destruction et copie des objets}\label{index_autotoc_md8}
+Ci-\/dessous est le résultat de la commande\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{valgrind -\/-\/leak-\/check=full ./myprog}
+
+\end{DoxyCode}
+
+
+Resultat\+:
 
 
 \begin{DoxyCode}{0}
@@ -83,7 +97,7 @@ Pour implémenter une copie profonde, il faut écrire un construteur de copie\+:
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
- \hypertarget{index_autotoc_md6}{}\doxysubsection{8e étape. Créer des groupes}\label{index_autotoc_md6}
+ \hypertarget{index_autotoc_md9}{}\doxysubsection{8e étape. Créer des groupes}\label{index_autotoc_md9}
 {\bfseries{On rappelle aussi que la liste d\textquotesingle{}objets doit en fait être une liste de pointeurs d\textquotesingle{}objets. Pourquoi ? Comparer à Java.}}
 
 La première raison pour laquelle la liste d\textquotesingle{}objets doit être une liste de pointeurs est de permettre le polymorphisme.
@@ -92,79 +106,71 @@ La deuxième raison est la suivante \+:
 
 En C++, lorsque vous créez une liste d\textquotesingle{}objets (comme std\+::list$<$\+Base$>$), les objets sont stockés directement dans la liste. Si vous retirez un objet de la liste ou si la liste est détruite, l\textquotesingle{}objet est également détruit. C\textquotesingle{}est différent de Java, où tous les objets non primitifs sont en fait des références (similaires aux pointeurs en C++). Donc, lorsque vous avez une liste d\textquotesingle{}objets en Java, vous avez en fait une liste de références. Lorsque la liste est détruite, les références sont détruites, mais pas les objets auxquels elles font référence.
 
-Lorsque l\textquotesingle{}on utilise une liste de pointeurs, la liste contient des pointeurs vers les objets, et non les objets eux-\/mêmes. Lorsqu\textquotesingle{}un pointeur est retiré de la liste ou que la liste est détruite, seul le pointeur est détruit, pas l\textquotesingle{}objet auquel il pointe.\hypertarget{index_autotoc_md7}{}\doxysubsection{10e étape. Gestion cohérente des données}\label{index_autotoc_md7}
-Pour garantir que seules certaines classes peuvent créer des instances d\textquotesingle{}une autre classe, il faut rendre les constructeurs protected, puis déclarer la classes \mbox{\hyperlink{classDataBase}{Data\+Base}} comme friend.\hypertarget{index_autotoc_md8}{}\doxysubsection{11e étape. Client / serveur}\label{index_autotoc_md8}
-{\bfseries{SEARCH command\+:}} The client sends a command in the format SEARCH type name, where type can be either multimedia or group, and name is the name of the multimedia or group to be searched. The server then searches for the multimedia or group with the given name and sends back its attributes. For example, SEARCH multimedia song1 or SEARCH group group1.
+Lorsque l\textquotesingle{}on utilise une liste de pointeurs, la liste contient des pointeurs vers les objets, et non les objets eux-\/mêmes. Lorsqu\textquotesingle{}un pointeur est retiré de la liste ou que la liste est détruite, seul le pointeur est détruit, pas l\textquotesingle{}objet auquel il pointe.\hypertarget{index_autotoc_md10}{}\doxysubsection{10e étape. Gestion cohérente des données}\label{index_autotoc_md10}
+Pour garantir que seules certaines classes peuvent créer des instances d\textquotesingle{}une autre classe, il faut rendre les constructeurs protected, puis déclarer la classes \mbox{\hyperlink{classDataBase}{Data\+Base}} comme friend.
 
-$\ast$$\ast$\+PLAY command\+:$\ast$$\ast$\+The client sends a command in the format PLAY name, where name is the name of the multimedia to be played. The server then plays the multimedia with the given name. For example, PLAY song1.\hypertarget{index_autotoc_md9}{}\doxysubsection{13}\label{index_autotoc_md9}
-To change later
+{\bfseries{Question additionnelle}}
 
-The best approach depends on your specific needs and the context of your application. Here are some considerations\+:
-
-Using try-\/catch for each creation\+: This approach allows you to handle exceptions right where they occur. It provides a clear separation between normal code and error-\/handling code. However, it can make your code more verbose if you have many calls that can throw exceptions.
-
-Returning a bool or a null pointer\+: This approach can make your code simpler and easier to read, especially if you have many calls that can fail. However, it can make it harder to provide detailed information about what went wrong, and it requires you to check the return value of each call.
-
-In your case, if the creation of one item is independent of the creation of the others (i.\+e., if one creation fails, it doesn\textquotesingle{}t affect the others), and if you want to attempt all creations even if some of them fail, it might be simpler and cleaner to use the second approach (returning a bool or a null pointer).
-
-However, if the creations are dependent on each other (i.\+e., if one creation fails, the others shouldn\textquotesingle{}t be attempted), or if you want to provide detailed error information when a creation fails, it might be better to use the first approach (using try-\/catch for each creation).
-
-si le tableau de durées d\textquotesingle{}un \mbox{\hyperlink{classFilm}{Film}} a une taille nulle ou inférieure à zéro si on crée plusieurs groupes ou objets ayant le même nom
+La méthode \char`\"{}\+Supprimer\char`\"{} a été ajoutée.\hypertarget{index_autotoc_md11}{}\doxysubsection{11e étape. Client / serveur}\label{index_autotoc_md11}
+Le serveur accepte les commandes suivantes \+:
 
 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{ \{c++\}}
-\DoxyCodeLine{BasePointer creerFilm(std::string nom, std::string nomDuFichier, int duree, int *chapitres, int taille)}
-\DoxyCodeLine{    \{}
-\DoxyCodeLine{        // Check if a multimedia object with the same name already exists}
-\DoxyCodeLine{        if (Multimedia.find(nom) != Multimedia.end() || taille <= 0)}
-\DoxyCodeLine{        \{}
-\DoxyCodeLine{            // Return a null BasePointer}
-\DoxyCodeLine{            return BasePointer();}
-\DoxyCodeLine{        \}}
-\DoxyCodeLine{}
-\DoxyCodeLine{        // Create the new Film}
-\DoxyCodeLine{        BasePointer film(new Film(nom, nomDuFichier, duree, chapitres, taille));}
-\DoxyCodeLine{        Multimedia.insert(std::pair<std::string, BasePointer>(nom, film));}
-\DoxyCodeLine{        return film;}
-\DoxyCodeLine{    \}}
+\begin{DoxyItemize}
+\item {\ttfamily search multimedia $<$nom$>$} \+: Recherche un objet multimédia par son nom.
+\item {\ttfamily search group $<$nom$>$} \+: Recherche un groupe par son nom.
+\item {\ttfamily play $<$nom$>$} \+: Joue un objet multimédia par son nom.
+\item {\ttfamily list} \+: Liste tous les objets multimédias.
+\end{DoxyItemize}
 
-\end{DoxyCode}
+Chaque commande doit être envoyée au serveur via TCP sur le port 3331.
 
+{\bfseries{Questions additionnelles}}
 
-si on supprime un groupe ou un objet qui n\textquotesingle{}existe pas
+La command \textquotesingle{}list\textquotesingle{} a été ajouté.\hypertarget{index_autotoc_md12}{}\doxysubsection{12e étape. Sérialisation / désérialisation}\label{index_autotoc_md12}
+La sérialisation et la désérialisation ont été implémentées. Pour les tester, le code suivant a été ajouté dans le fichier \char`\"{}main.\+cpp\char`\"{}\+:
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\{c++\}}
-\DoxyCodeLine{   void supprimer(const std::string \&nom)}
-\DoxyCodeLine{   \{}
-\DoxyCodeLine{       auto multimedia\_it = Multimedia.find(nom);}
-\DoxyCodeLine{       if (multimedia\_it != Multimedia.end())}
-\DoxyCodeLine{       \{}
-\DoxyCodeLine{           // Remove the multimedia object from all groups}
-\DoxyCodeLine{           for (auto \&pair : Groupes)}
-\DoxyCodeLine{           \{}
-\DoxyCodeLine{               pair.second-\/>enleverMultimedia(multimedia\_it-\/>second);}
-\DoxyCodeLine{           \}}
+\DoxyCodeLine{   // Sauvegarde des objets multimédias dans un fichier}
+\DoxyCodeLine{   if (!db.saveAll("{}multimedia.txt"{})) \{}
+\DoxyCodeLine{       std::cerr << "{}Échec de l'enregistrement"{} << std::endl;}
+\DoxyCodeLine{       return 1;}
+\DoxyCodeLine{   \}}
 \DoxyCodeLine{}
-\DoxyCodeLine{           // Delete the multimedia object}
-\DoxyCodeLine{           Multimedia.erase(multimedia\_it);}
-\DoxyCodeLine{       \}}
-\DoxyCodeLine{       else}
-\DoxyCodeLine{       \{}
-\DoxyCodeLine{           auto group\_it = Groupes.find(nom);}
-\DoxyCodeLine{           if (group\_it != Groupes.end())}
-\DoxyCodeLine{           \{}
-\DoxyCodeLine{               // Delete the group}
-\DoxyCodeLine{               Groupes.erase(group\_it);}
-\DoxyCodeLine{           \}}
-\DoxyCodeLine{           else}
-\DoxyCodeLine{           \{}
-\DoxyCodeLine{               std::cout << "{}Object not found: "{} << nom << "{} "{};}
-\DoxyCodeLine{           \}}
-\DoxyCodeLine{       \}}
+\DoxyCodeLine{   // Lecture des objets multimédias à partir du fichier}
+\DoxyCodeLine{   if (!db.readAll("{}multimedia.txt"{})) \{}
+\DoxyCodeLine{       std::cerr << "{}Échec de la lecture"{} << std::endl;}
+\DoxyCodeLine{       return 1;}
 \DoxyCodeLine{   \}}
 
 \end{DoxyCode}
- 
+\hypertarget{index_autotoc_md13}{}\doxysubsection{13e étape. Traitement des erreurs}\label{index_autotoc_md13}
+Voici les erreurs qui ont été traité\+:
+
+
+\begin{DoxyItemize}
+\item si le tableau de durées d\textquotesingle{}un \mbox{\hyperlink{classFilm}{Film}} a une taille nulle ou inférieure à zéro
+\item si on crée plusieurs groupes ou objets ayant le même nom
+\end{DoxyItemize}
+
+La fonction vérifie si un objet multimédia avec le même nom existe déjà dans la base de données (Multimedia) ou si la taille du tableau de chapitres est nulle ou négative. Si l\textquotesingle{}une de ces conditions est vraie, la fonction retourne un Base\+Pointer nul, indiquant que la création du film a échoué. La décision de retourner un Base\+Pointer nul simplifie la gestion des erreurs lors de la création d\textquotesingle{}un film, tout en facilitant la création de messages à envoyer au client en cas d\textquotesingle{}échec de la création.
+
+
+\begin{DoxyItemize}
+\item si on supprime un groupe ou un objet qui n\textquotesingle{}existe pas
+\end{DoxyItemize}
+
+La fonction vérifie d\textquotesingle{}abord si l\textquotesingle{}objet multimédia ou le groupe portant le nom spécifié existe dans la base de données (Multimedia ou Groupes). Si c\textquotesingle{}est le cas, elle le supprime. Sinon, elle affiche un message indiquant que l\textquotesingle{}objet n\textquotesingle{}a pas été trouvé. Cela assure que l\textquotesingle{}utilisateur est informé lorsque la suppression d\textquotesingle{}un objet ou d\textquotesingle{}un groupe inexistant est tentée.\hypertarget{index_autotoc_md14}{}\doxysection{Java/\+Swing}\label{index_autotoc_md14}
+Dans cette étape, une interface graphique Java/\+Swing a été développée pour interagir avec le logiciel créé lors du TP C++/\+Objet. Elle comprend une fenêtre principale avec des interacteurs, des menus, une barre d\textquotesingle{}outils, et des actions. De plus, l\textquotesingle{}interaction client/serveur a été mise en place pour rechercher et jouer des objets multimédias sur le serveur C++ depuis l\textquotesingle{}interface graphique Java. Une bouton pour retourner la liste des objets présents dans la base de données a également été ajouté.\hypertarget{index_autotoc_md15}{}\doxysubsection{1ere Etape\+: Fenêtre principale et quelques interacteurs}\label{index_autotoc_md15}
+\hypertarget{index_autotoc_md16}{}\doxysubsection{2eme Etape\+: Menus, barre d\textquotesingle{}outils et actions}\label{index_autotoc_md16}
+\hypertarget{index_autotoc_md17}{}\doxysubsection{3eme Etape\+: Interaction client/serveur}\label{index_autotoc_md17}
+{\bfseries{Instructions \+:}}
+
+Fonctionnalités disponibles \+: \char`\"{}\+Rechercher\char`\"{}, \char`\"{}\+Jouer\char`\"{}, \char`\"{}\+Finaliser\char`\"{} et \char`\"{}\+Lister\char`\"{}.
+
+Pour utiliser ces fonctionnalités, saisissez le média que vous souhaitez rechercher ou jouer. Ensuite, appuyez sur le bouton correspondant à l\textquotesingle{}action que vous souhaitez effectuer \+: \char`\"{}\+Rechercher\char`\"{} ou \char`\"{}\+Jouer\char`\"{}.
+
+Pour consulter la liste des éléments présents dans la base de données, appuyez sur le bouton \char`\"{}\+Lister\char`\"{}.
+
+Pour finaliser, appuyez sur le bouton \char`\"{}\+Finaliser\char`\"{}.\hypertarget{index_autotoc_md18}{}\doxysubsection{4eme Etape (obligatoire)\+: Créer un Makefile}\label{index_autotoc_md18}

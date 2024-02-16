@@ -1,6 +1,7 @@
 <map id="Video.h" name="Video.h">
-<area shape="rect" id="node1" title="Ce fichier contient la classe Video, qui représente un objet vidéo avec une durée spécifique." alt="" coords="20,5,90,32"/>
-<area shape="rect" id="node2" href="$DataBase_8h.html" title="Ce fichier contient la classe DataBase, qui représente une base de données multimédia." alt="" coords="25,155,122,181"/>
-<area shape="rect" id="node3" href="$main_8cpp.html" title="Fichier principal du programme." alt="" coords="32,229,115,256"/>
-<area shape="rect" id="node4" href="$Film_8h.html" title="Ce fichier contient la classe Film, qui représente un film héritant de la classe Video." alt="" coords="93,80,156,107"/>
+<area shape="rect" id="node1" title="Ce fichier contient la classe Video, qui représente un objet vidéo avec une durée spécifique." alt="" coords="5,5,76,32"/>
+<area shape="rect" id="node2" href="$DataBase_8h.html" title="Ce fichier contient la classe DataBase, qui représente une base de données multimédia." alt="" coords="36,155,133,181"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title="Fichier principal du programme." alt="" coords="34,304,117,331"/>
+<area shape="rect" id="node5" href="$Film_8h.html" title="Ce fichier contient la classe Film, qui représente un film héritant de la classe Video." alt="" coords="79,80,141,107"/>
+<area shape="rect" id="node4" href="$RequestHandler_8h.html" title="Fichier d&#39;en&#45;tête pour la gestion des requêtes du serveur." alt="" coords="60,229,197,256"/>
 </map>

@@ -1,3 +1,4 @@
+
 /**
  * @file GUI.java
  * @brief Ce fichier contient la classe GUI, qui représente une interface graphique pour une application Swing.
@@ -12,9 +13,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * Cette classe représente une interface graphique pour une application de recherche et de lecture de médias.
+ * Cette classe représente une interface graphique pour une application de
+ * recherche et de lecture de médias.
  */
-
 
 public class GUI extends JFrame {
 
@@ -31,6 +32,11 @@ public class GUI extends JFrame {
     String message;
     JTextField textField;
     String emptyMessage = "Le champ de texte ne peut pas être vide";
+    String instructions = "Fonctionnalités disponibles : \"Rechercher\", \"Jouer\", \"Finaliser\" et \"Lister\".\n\n" +
+    "Pour utiliser ces fonctionnalités, saisissez le média que vous souhaitez rechercher ou jouer. \n\n" + 
+    "Ensuite, appuyez sur le bouton correspondant à l'action que vous souhaitez effectuer : \"Rechercher\" ou \"Jouer\".\n\n" +
+    "Pour consulter la liste des éléments présents dans la base de données, appuyez sur le bouton \"Lister\".\n\n" +
+    "Pour finaliser, appuyez sur le bouton \"Finaliser\".";
 
     // Define actions as subclasses of AbstractAction
 
@@ -122,6 +128,21 @@ public class GUI extends JFrame {
     }
 
     /**
+     * Cette classe représente l'action du bouton "Instructions".
+     */
+    class ButtonInstructionsAction extends AbstractAction {
+        public ButtonInstructionsAction() {
+            super("Instructions");
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+             // Replace with your instructions
+            JOptionPane.showMessageDialog(null, instructions, "Instructions", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
+    /**
      * Réinitialise le champ de texte.
      */
     void resetTextField() {
@@ -136,7 +157,7 @@ public class GUI extends JFrame {
      */
     String formatResponse(String response) {
         String[] responseParts = response.split("::");
-        return String.join("\n", responseParts) + "\n------------------------------------------------------------";
+        return String.join("\n", responseParts) + "\n-----------------------------------------------------------------------------";
     }
 
     /**
@@ -154,7 +175,7 @@ public class GUI extends JFrame {
         setLayout(new BorderLayout());
 
         // Create the menu bar
-        textField = new JTextField(20); // initialize the JTextField instance
+        textField = new JTextField(50); // initialize the JTextField instance
 
         menuBar = new JMenuBar();
         menu = new JMenu("Menu");
@@ -166,7 +187,7 @@ public class GUI extends JFrame {
         toolBar = new JToolBar();
         add(toolBar, BorderLayout.NORTH); // Add the tool bar to the top (north) of the JFrame
 
-        textArea = new JTextArea("", 10, 30);
+        textArea = new JTextArea("", 30, 30);
         scrollPane = new JScrollPane(textArea);
         add(scrollPane, BorderLayout.CENTER);
 
@@ -177,21 +198,25 @@ public class GUI extends JFrame {
         Action action2 = new Button2Action();
         Action action3 = new Button3Action();
         Action action4 = new Button4Action();
+        Action actionInstructions = new ButtonInstructionsAction();
 
         // Add the actions to the menu and the tool bar
         menu.add(new JMenuItem(action1));
         menu.add(new JMenuItem(action2));
-        menu.add(new JMenuItem(action3));
         menu.add(new JMenuItem(action4));
+        menu.add(new JMenuItem(action3));
+        menu.add(new JMenuItem(actionInstructions));
 
         toolBar.add(new JButton(action1));
         toolBar.add(new JButton(action2));
-        toolBar.add(new JButton(action3));
         toolBar.add(new JButton(action4));
+        toolBar.add(new JButton(action3));
+        toolBar.add(new JButton(actionInstructions));
+        ;
 
         add(panel, BorderLayout.SOUTH);
 
-        setSize(300, 300);
+        setSize(500, 500);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         pack();
         setVisible(true);

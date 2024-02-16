@@ -13,7 +13,7 @@ var searchData=
   ['getsolinger_35',['getSoLinger',['../classSocket.html#ae3545855771edf076843e2e07fa7d3cd',1,'Socket']]],
   ['getsotimeout_36',['getSoTimeout',['../classSocket.html#a38b17de459b22ab45db16e538b963c49',1,'Socket']]],
   ['gettcpnodelay_37',['getTcpNoDelay',['../classSocket.html#a2539928ed0829df5070384f907ea48f7',1,'Socket']]],
-  ['group_38',['GROUP',['../main_8cpp.html#a892b6dd5a49224f3e7646b914c4462fb',1,'main.cpp']]],
+  ['group_38',['GROUP',['../RequestHandler_8h.html#a892b6dd5a49224f3e7646b914c4462fb',1,'RequestHandler.h']]],
   ['groupe_39',['Groupe',['../classGroupe.html',1,'']]],
   ['groupe_2eh_40',['Groupe.h',['../Groupe_8h.html',1,'']]],
   ['gui_41',['GUI',['../classGUI.html',1,'GUI'],['../classGUI.html#a35a15f9dcfca9111335e4401a46567ed',1,'GUI.GUI()']]],

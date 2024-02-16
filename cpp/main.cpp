@@ -20,53 +20,9 @@
 #include <string>
 #include <sstream>
 #include "tcpserver.h"
+#include "RequestHandler.h"
 
 const int PORT = 3331; /**< Le numéro de port utilisé par le serveur. */
-const std::string MULTIMEDIA = "multimedia"; /**< Le type de recherche pour les objets multimédias. */
-const std::string GROUP = "group"; /**< Le type de recherche pour les groupes. */
-const std::string SEARCH = "search"; /**< La commande de recherche. */
-const std::string PLAY = "play"; /**< La commande de lecture. */
-const std::string CREATE = "create"; /**< La commande de création. */
-const std::string DELETE_ = "delete"; /**< La commande de suppression. */
-const std::string LIST = "list"; /**< La commande de listage. */
-
-/**
- * @brief Traite une requête du serveur.
- *
- * Cette fonction prend en paramètre une requête du serveur, une référence à une chaîne de caractères
- * pour stocker la réponse, et une référence à la base de données.
- * Elle analyse la requête, exécute la commande correspondante et met à jour la réponse.
- *
- * @param request La requête du serveur.
- * @param response La réponse à renvoyer au serveur.
- * @param db La base de données.
- */
-void handleServerRequest(const std::string& request, std::string& response, DataBase& db) {
-    // Analyse de la requête
-    std::istringstream iss(request);
-    std::string command, type, name;
-    iss >> command >> type >> name;
-
-    // Traitement de la requête
-    if (command == SEARCH) {
-        if (type == MULTIMEDIA) {
-            std::string message = db.rechercherMultimedia(name);
-            response = message;
-        } else if (type == GROUP) {
-            std::string message = db.rechercherGroupe(name);
-            response = message;
-        } else {
-            response = "UNKNOWN TYPE";
-        }
-    } else if (command == PLAY) {
-        name =  type;        
-        response = db.jouer(name);;
-    } else if (command == LIST) {
-        response = db.listerMultimedia();
-    } else {
-        response = "UNKNOWN COMMAND";
-    }
-}
 
 /**
  * @brief Fonction principale du programme.
@@ -80,6 +36,7 @@ void handleServerRequest(const std::string& request, std::string& response, Data
  * @return Le code de sortie du programme.
  */
 int main(int argc, const char *argv[]) {
+
     DataBase db;
     std::shared_ptr<Groupe> group1;
     std::shared_ptr<Groupe> group2;
@@ -109,13 +66,13 @@ int main(int argc, const char *argv[]) {
 
     // Sauvegarde des objets multimédias dans un fichier
     if (!db.saveAll("multimedia.txt")) {
-        std::cerr << "Failed to save multimedia objects" << std::endl;
+        std::cerr << "Échec de l'enregistrement" << std::endl;
         return 1;
     }
 
     // Lecture des objets multimédias à partir du fichier
     if (!db.readAll("multimedia.txt")) {
-        std::cerr << "Failed to read multimedia objects" << std::endl;
+        std::cerr << "Échec de la lecture" << std::endl;
         return 1;
     }
 
@@ -130,10 +87,10 @@ int main(int argc, const char *argv[]) {
         return true;
     });
 
-    std::cout << "Starting Server on port " << PORT << std::endl;
+    std::cout << "Démarrage du serveur sur le port " << PORT << std::endl;
     int status = server->run(PORT);
     if (status < 0) {
-        std::cerr << "Could not start Server on port " << PORT << std::endl;
+        std::cerr << "Impossible de démarrer le serveur sur le port " << PORT << std::endl;
         return 1;
     }
 

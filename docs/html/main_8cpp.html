@@ -86,40 +86,39 @@ $(function() {
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
 <code>#include &quot;tcpserver.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="RequestHandler_8h_source.html">RequestHandler.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#amain_8cpp" alt=""/></div>
 <map name="amain_8cpp" id="amain_8cpp">
-<area shape="rect" title="Fichier principal du programme." alt="" coords="528,5,611,32"/>
-<area shape="rect" title=" " alt="" coords="99,379,179,405"/>
-<area shape="rect" href="Base_8h.html" title="Ce fichier contient la classe Base, qui représente une entité de base abstraite." alt="" coords="237,304,304,331"/>
-<area shape="rect" href="Photo_8h.html" title="Ce fichier contient la classe Photo, qui représente une photo avec des coordonnées géographiques." alt="" coords="682,229,753,256"/>
-<area shape="rect" href="Video_8h.html" title="Ce fichier contient la classe Video, qui représente un objet vidéo avec une durée spécifique." alt="" coords="103,229,174,256"/>
-<area shape="rect" href="Film_8h.html" title="Ce fichier contient la classe Film, qui représente un film héritant de la classe Video." alt="" coords="43,155,106,181"/>
-<area shape="rect" href="Groupe_8h.html" title="Ce fichier contient la classe Groupe, qui représente un groupe d&#39;objets de type Base." alt="" coords="283,155,365,181"/>
-<area shape="rect" title=" " alt="" coords="987,229,1064,256"/>
-<area shape="rect" href="DataBase_8h.html" title="Ce fichier contient la classe DataBase, qui représente une base de données multimédia." alt="" coords="521,80,618,107"/>
-<area shape="rect" title=" " alt="" coords="863,155,937,181"/>
-<area shape="rect" title=" " alt="" coords="1129,229,1188,256"/>
-<area shape="rect" href="tcpserver_8h_source.html" title=" " alt="" coords="1130,80,1225,107"/>
-<area shape="rect" title=" " alt="" coords="249,229,292,256"/>
-<area shape="rect" title=" " alt="" coords="788,155,839,181"/>
-<area shape="rect" title=" " alt="" coords="389,155,462,181"/>
-<area shape="rect" title=" " alt="" coords="487,155,572,181"/>
-<area shape="rect" title=" " alt="" coords="647,155,713,181"/>
-<area shape="rect" title=" " alt="" coords="1330,155,1417,181"/>
-<area shape="rect" href="ccsocket_8h_source.html" title=" " alt="" coords="1215,155,1305,181"/>
-<area shape="rect" title=" " alt="" coords="1212,229,1308,256"/>
-<area shape="rect" title=" " alt="" coords="1333,229,1435,256"/>
+<area shape="rect" title="Fichier principal du programme." alt="" coords="500,5,583,32"/>
+<area shape="rect" title=" " alt="" coords="125,453,205,480"/>
+<area shape="rect" href="Base_8h.html" title="Ce fichier contient la classe Base, qui représente une entité de base abstraite." alt="" coords="271,379,337,405"/>
+<area shape="rect" href="Photo_8h.html" title="Ce fichier contient la classe Photo, qui représente une photo avec des coordonnées géographiques." alt="" coords="865,304,935,331"/>
+<area shape="rect" href="Video_8h.html" title="Ce fichier contient la classe Video, qui représente un objet vidéo avec une durée spécifique." alt="" coords="130,304,201,331"/>
+<area shape="rect" href="Film_8h.html" title="Ce fichier contient la classe Film, qui représente un film héritant de la classe Video." alt="" coords="43,229,106,256"/>
+<area shape="rect" href="Groupe_8h.html" title="Ce fichier contient la classe Groupe, qui représente un groupe d&#39;objets de type Base." alt="" coords="283,229,365,256"/>
+<area shape="rect" title=" " alt="" coords="400,304,477,331"/>
+<area shape="rect" href="DataBase_8h.html" title="Ce fichier contient la classe DataBase, qui représente une base de données multimédia." alt="" coords="598,155,695,181"/>
+<area shape="rect" title=" " alt="" coords="915,229,989,256"/>
+<area shape="rect" title=" " alt="" coords="1013,229,1072,256"/>
+<area shape="rect" href="tcpserver_8h_source.html" title=" " alt="" coords="1062,80,1157,107"/>
+<area shape="rect" href="RequestHandler_8h.html" title="Fichier d&#39;en&#45;tête pour la gestion des requêtes du serveur." alt="" coords="815,80,953,107"/>
+<area shape="rect" title=" " alt="" coords="283,304,325,331"/>
+<area shape="rect" title=" " alt="" coords="739,229,789,256"/>
+<area shape="rect" title=" " alt="" coords="441,229,514,256"/>
+<area shape="rect" title=" " alt="" coords="539,229,624,256"/>
+<area shape="rect" title=" " alt="" coords="649,229,714,256"/>
+<area shape="rect" title=" " alt="" coords="1147,155,1234,181"/>
+<area shape="rect" href="ccsocket_8h_source.html" title=" " alt="" coords="1259,155,1349,181"/>
+<area shape="rect" title=" " alt="" coords="1147,229,1243,256"/>
+<area shape="rect" title=" " alt="" coords="1267,229,1370,256"/>
 </map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3e1a22c0025191c28af267d560f0bdc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a3e1a22c0025191c28af267d560f0bdc8">handleServerRequest</a> (const std::string &amp;request, std::string &amp;response, <a class="el" href="classDataBase.html">DataBase</a> &amp;db)</td></tr>
-<tr class="memdesc:a3e1a22c0025191c28af267d560f0bdc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traite une requête du serveur.  <a href="main_8cpp.html#a3e1a22c0025191c28af267d560f0bdc8">More...</a><br /></td></tr>
-<tr class="separator:a3e1a22c0025191c28af267d560f0bdc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0f2228420376f4db7e1274f2b41667c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c">main</a> (int argc, const char *argv[])</td></tr>
 <tr class="memdesc:ac0f2228420376f4db7e1274f2b41667c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction principale du programme.  <a href="main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c">More...</a><br /></td></tr>
 <tr class="separator:ac0f2228420376f4db7e1274f2b41667c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,70 +127,11 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:a11717c934f77ad5167dac5d28562d85a"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a11717c934f77ad5167dac5d28562d85a">PORT</a> = 3331</td></tr>
 <tr class="separator:a11717c934f77ad5167dac5d28562d85a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca24577c03c1867115b00c48535bb8ad"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aca24577c03c1867115b00c48535bb8ad">MULTIMEDIA</a> = &quot;multimedia&quot;</td></tr>
-<tr class="separator:aca24577c03c1867115b00c48535bb8ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a892b6dd5a49224f3e7646b914c4462fb"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a892b6dd5a49224f3e7646b914c4462fb">GROUP</a> = &quot;group&quot;</td></tr>
-<tr class="separator:a892b6dd5a49224f3e7646b914c4462fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95e89210c73001b90d23631c5611fd7a"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a95e89210c73001b90d23631c5611fd7a">SEARCH</a> = &quot;search&quot;</td></tr>
-<tr class="separator:a95e89210c73001b90d23631c5611fd7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7aaa554cb6286696d5fedd436cfd2434"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a7aaa554cb6286696d5fedd436cfd2434">PLAY</a> = &quot;play&quot;</td></tr>
-<tr class="separator:a7aaa554cb6286696d5fedd436cfd2434"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacd738bad4810676e38f703f7dac4835"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aacd738bad4810676e38f703f7dac4835">CREATE</a> = &quot;create&quot;</td></tr>
-<tr class="separator:aacd738bad4810676e38f703f7dac4835"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade21ee340db9166f0709e2e3148382cb"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ade21ee340db9166f0709e2e3148382cb">DELETE_</a> = &quot;delete&quot;</td></tr>
-<tr class="separator:ade21ee340db9166f0709e2e3148382cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a118b9e357367d4d085f41a0f68486b2b"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a118b9e357367d4d085f41a0f68486b2b">LIST</a> = &quot;list&quot;</td></tr>
-<tr class="separator:a118b9e357367d4d085f41a0f68486b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Fichier principal du programme. </p>
 <p>Ce fichier contient la fonction principale <code>main</code> qui lance le serveur et gère les requêtes. Il inclut les en-têtes nécessaires, définit les constantes et les variables globales, et crée les objets multimédias et les ajoute à la base de données. Il contient également la fonction <code>handleServerRequest</code> qui traite les requêtes du serveur. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a3e1a22c0025191c28af267d560f0bdc8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e1a22c0025191c28af267d560f0bdc8">&#9670;&nbsp;</a></span>handleServerRequest()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void handleServerRequest </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>request</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string &amp;&#160;</td>
-          <td class="paramname"><em>response</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classDataBase.html">DataBase</a> &amp;&#160;</td>
-          <td class="paramname"><em>db</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Traite une requête du serveur. </p>
-<p>Cette fonction prend en paramètre une requête du serveur, une référence à une chaîne de caractères pour stocker la réponse, et une référence à la base de données. Elle analyse la requête, exécute la commande correspondante et met à jour la réponse.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">request</td><td>La requête du serveur. </td></tr>
-    <tr><td class="paramname">response</td><td>La réponse à renvoyer au serveur. </td></tr>
-    <tr><td class="paramname">db</td><td>La base de données. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="ac0f2228420376f4db7e1274f2b41667c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac0f2228420376f4db7e1274f2b41667c">&#9670;&nbsp;</a></span>main()</h2>
 
@@ -232,96 +172,6 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="aacd738bad4810676e38f703f7dac4835"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aacd738bad4810676e38f703f7dac4835">&#9670;&nbsp;</a></span>CREATE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string CREATE = &quot;create&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>La commande de création. </p>
-
-</div>
-</div>
-<a id="ade21ee340db9166f0709e2e3148382cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade21ee340db9166f0709e2e3148382cb">&#9670;&nbsp;</a></span>DELETE_</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string DELETE_ = &quot;delete&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>La commande de suppression. </p>
-
-</div>
-</div>
-<a id="a892b6dd5a49224f3e7646b914c4462fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a892b6dd5a49224f3e7646b914c4462fb">&#9670;&nbsp;</a></span>GROUP</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string GROUP = &quot;group&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Le type de recherche pour les groupes. </p>
-
-</div>
-</div>
-<a id="a118b9e357367d4d085f41a0f68486b2b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a118b9e357367d4d085f41a0f68486b2b">&#9670;&nbsp;</a></span>LIST</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string LIST = &quot;list&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>La commande de listage. </p>
-
-</div>
-</div>
-<a id="aca24577c03c1867115b00c48535bb8ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca24577c03c1867115b00c48535bb8ad">&#9670;&nbsp;</a></span>MULTIMEDIA</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string MULTIMEDIA = &quot;multimedia&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Le type de recherche pour les objets multimédias. </p>
-
-</div>
-</div>
-<a id="a7aaa554cb6286696d5fedd436cfd2434"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7aaa554cb6286696d5fedd436cfd2434">&#9670;&nbsp;</a></span>PLAY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string PLAY = &quot;play&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>La commande de lecture. </p>
-
-</div>
-</div>
 <a id="a11717c934f77ad5167dac5d28562d85a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a11717c934f77ad5167dac5d28562d85a">&#9670;&nbsp;</a></span>PORT</h2>
 
@@ -334,21 +184,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Le numéro de port utilisé par le serveur. </p>
-
-</div>
-</div>
-<a id="a95e89210c73001b90d23631c5611fd7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95e89210c73001b90d23631c5611fd7a">&#9670;&nbsp;</a></span>SEARCH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string SEARCH = &quot;search&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>La commande de recherche. </p>
 
 </div>
 </div>

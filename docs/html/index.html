@@ -68,31 +68,41 @@ $(function() {
 <div class="textblock"><p><a class="anchor" id="md__mnt_c_Users_Usuario_Desktop_P2_INF224_TP_scratch_DA_SILVA_BUENO_Tarcisio_README"></a> <b>Nom du projet :</b> INF224 - Travaux Pratiques C++/Objet et Java/Swing</p>
 <p><b>Auteur :</b> Tarcisio DA SILVA BUENO</p>
 <p><b>Objectif du projet :</b> Créer l'ébauche du logiciel d'une set-top box multimédia permettant de jouer des vidéos, des films, d'afficher des photos, etc.</p>
-<p><b>À propos de ce fichier README :</b> Ce fichier README contient des instructions et des informations importantes concernant ce projet. Il comprend des questions et des réponses sur les différentes étapes du projet.</p>
+<p><b>À propos de ce fichier README :</b> Ce fichier README a été créé dans le cadre du projet inf224. Il vise à fournir des informations essentielles sur le contenu du projet, y compris <b>les excercises traitées</b>, <b>les réponses correspondantes</b>, ainsi que tout commentaire jugé utile. Les sections suivantes détaillent les aspects traités dans ce document.</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Travaux Pratiques C++/Objet</h1>
 <h2><a class="anchor" id="autotoc_md2"></a>
+1e Etape: Démarrage</h2>
+<h2><a class="anchor" id="autotoc_md3"></a>
+2e Etape: Classe de base</h2>
+<p>Le symbole &amp;: Dans std::ostream &amp; indique que le paramètre est une référence à un objet std::ostream.</p>
+<p>Le mot-clé const: En C++ est utilisé pour indiquer qu'une variable ne peut pas être modifiée après sa déclaration, ce qui signifie que sa valeur est constante et ne peut pas être changée. Lorsqu'il est utilisé dans une déclaration de fonction (après la liste des paramètres et avant le corps de la fonction), const signifie que la fonction ne modifie pas l'état de l'objet sur lequel elle est appelée.</p>
+<h2><a class="anchor" id="autotoc_md4"></a>
+3e Etape: Programme de test</h2>
+<h2><a class="anchor" id="autotoc_md5"></a>
 4e Etape: Photos et videos</h2>
 <p><b>Comment appelle-t'on ce type de méthode et comment faut-il les déclarer ?</b></p>
-<p>Le type de méthode que vous décrivez est appelé une "méthode purement virtuelle" en C++.</p>
-<p>Pour déclarer une méthode comme purement virtuelle, vous utilisez le mot-clé virtual suivi de = 0 à la fin de la déclaration de la méthode. Par exemple :</p>
+<p>Le type de méthode est appelé une "méthode purement virtuelle" en C++.</p>
+<p>Pour déclarer une méthode comme purement virtuelle, il faut utiliser le mot-clé virtual suivi de = 0 à la fin de la déclaration de la méthode. Par exemple :</p>
 <div class="fragment"><div class="line">virtual void maMethode() const = 0;</div>
 </div><!-- fragment --><p><b>Si vous avez fait ce qui précède comme demandé, il ne sera plus possible d'instancer des objets de la classe de base. Pourquoi ?</b></p>
 <p>Lorsqu'une classe contient au moins une méthode purement virtuelle, cette classe est considérée comme une classe abstraite. Les classes abstraites ne peuvent pas être instanciées directement, elles sont destinées à être héritées par d'autres classes.</p>
-<h2><a class="anchor" id="autotoc_md3"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 5e Etape: Traitement uniforme (en utilisant le polymorphisme)</h2>
 <p><b>Quelle est la propriété caractéristique de l'orienté objet qui permet de faire cela ?</b></p>
 <p>La propriété caractéristique de l'orienté objet qui permet de traiter de manière uniforme une liste comprenant à la fois des photos et des vidéos sans avoir à se préoccuper de leur type est le polymorphisme. Le polymorphisme permet à une classe dérivée d'hériter des méthodes et des attributs d'une classe de base, et de les redéfinir si nécessaire.</p>
 <p><b>Qu'est-il spécifiquement nécessaire de faire dans le cas du C++ ?</b></p>
 <p>En C++, pour utiliser le polymorphisme, il est nécessaire de déclarer les méthodes que vous souhaitez redéfinir dans les classes dérivées comme virtual dans la classe de base. Si vous voulez que la méthode soit purement virtuelle (c'est-à-dire qu'elle doit être redéfinie dans toutes les classes dérivées), vous pouvez utiliser virtual suivi de = 0.</p>
 <p><b>Quel est le type des éléments du tableau : le tableau doit-il contenir des objets ou des pointeurs vers ces objets ? Pourquoi ? Comparer à Java.</b></p>
-<p>le tableau doit contenir des pointeurs vers des objets de ses classes dérivées. Cela permet de traiter de manière uniforme les objets de différentes classes dérivées.</p>
-<p>En Java, tous les objets sont manipulés par référence, ce qui signifie que lorsque vous créez un objet et l'assignez à une variable ou le placez dans un tableau, vous travaillez avec une référence à l'objet, pas l'objet lui-même.</p>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<p>le tableau doit contenir des pointeurs vers des objets. Cela permet de traiter de manière uniforme les objets de différentes classes dérivées.</p>
+<p>En Java, tous les objets sont manipulés par référence, ce qui signifie que lorsque vous créez un objet et l'assignez à une variable ou le placez dans un tableau, vous travaillez avec une référence à l'objet, pas l'objet lui-même. Donc, le polymorphisme fonctionne automatiquement.</p>
+<h2><a class="anchor" id="autotoc_md7"></a>
 6e étape. Films et tableaux</h2>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 7e étape. Destruction et copie des objets</h2>
-<p>Ci-dessous est le résultat de la commande valgrind &ndash;leak-check=full ./myprog.</p>
+<p>Ci-dessous est le résultat de la commande:</p>
+<div class="fragment"><div class="line">valgrind --leak-check=full ./myprog</div>
+</div><!-- fragment --><p>Resultat:</p>
 <div class="fragment"><div class="line">==682== HEAP SUMMARY:</div>
 <div class="line">==682==     in use at exit: 0 bytes in 0 blocks</div>
 <div class="line">==682==   total heap usage: 26 allocs, 26 frees, 75,351 bytes allocated</div>
@@ -114,75 +124,74 @@ Travaux Pratiques C++/Objet</h1>
 <div class="line">        chapitres[i] = original.chapitres[i];</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md6"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md9"></a>
 8e étape. Créer des groupes</h2>
 <p><b>On rappelle aussi que la liste d'objets doit en fait être une liste de pointeurs d'objets. Pourquoi ? Comparer à Java.</b></p>
 <p>La première raison pour laquelle la liste d'objets doit être une liste de pointeurs est de permettre le polymorphisme.</p>
 <p>La deuxième raison est la suivante :</p>
 <p>En C++, lorsque vous créez une liste d'objets (comme std::list&lt;Base&gt;), les objets sont stockés directement dans la liste. Si vous retirez un objet de la liste ou si la liste est détruite, l'objet est également détruit. C'est différent de Java, où tous les objets non primitifs sont en fait des références (similaires aux pointeurs en C++). Donc, lorsque vous avez une liste d'objets en Java, vous avez en fait une liste de références. Lorsque la liste est détruite, les références sont détruites, mais pas les objets auxquels elles font référence.</p>
 <p>Lorsque l'on utilise une liste de pointeurs, la liste contient des pointeurs vers les objets, et non les objets eux-mêmes. Lorsqu'un pointeur est retiré de la liste ou que la liste est détruite, seul le pointeur est détruit, pas l'objet auquel il pointe.</p>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 10e étape. Gestion cohérente des données</h2>
 <p>Pour garantir que seules certaines classes peuvent créer des instances d'une autre classe, il faut rendre les constructeurs protected, puis déclarer la classes <a class="el" href="classDataBase.html" title="Classe pour gérer une base de données multimédia.">DataBase</a> comme friend.</p>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<p><b>Question additionnelle</b></p>
+<p>La méthode "Supprimer" a été ajoutée.</p>
+<h2><a class="anchor" id="autotoc_md11"></a>
 11e étape. Client / serveur</h2>
-<p><b>SEARCH command:</b> The client sends a command in the format SEARCH type name, where type can be either multimedia or group, and name is the name of the multimedia or group to be searched. The server then searches for the multimedia or group with the given name and sends back its attributes. For example, SEARCH multimedia song1 or SEARCH group group1.</p>
-<p>**PLAY command:**The client sends a command in the format PLAY name, where name is the name of the multimedia to be played. The server then plays the multimedia with the given name. For example, PLAY song1.</p>
-<h2><a class="anchor" id="autotoc_md9"></a>
-13</h2>
-<p>To change later</p>
-<p>The best approach depends on your specific needs and the context of your application. Here are some considerations:</p>
-<p>Using try-catch for each creation: This approach allows you to handle exceptions right where they occur. It provides a clear separation between normal code and error-handling code. However, it can make your code more verbose if you have many calls that can throw exceptions.</p>
-<p>Returning a bool or a null pointer: This approach can make your code simpler and easier to read, especially if you have many calls that can fail. However, it can make it harder to provide detailed information about what went wrong, and it requires you to check the return value of each call.</p>
-<p>In your case, if the creation of one item is independent of the creation of the others (i.e., if one creation fails, it doesn't affect the others), and if you want to attempt all creations even if some of them fail, it might be simpler and cleaner to use the second approach (returning a bool or a null pointer).</p>
-<p>However, if the creations are dependent on each other (i.e., if one creation fails, the others shouldn't be attempted), or if you want to provide detailed error information when a creation fails, it might be better to use the first approach (using try-catch for each creation).</p>
-<p>si le tableau de durées d'un <a class="el" href="classFilm.html" title="Classe représentant un film héritant de la classe Video.">Film</a> a une taille nulle ou inférieure à zéro si on crée plusieurs groupes ou objets ayant le même nom</p>
-<div class="fragment"><div class="line"> {c++}</div>
-<div class="line">BasePointer creerFilm(std::string nom, std::string nomDuFichier, int duree, int *chapitres, int taille)</div>
-<div class="line">    {</div>
-<div class="line">        // Check if a multimedia object with the same name already exists</div>
-<div class="line">        if (Multimedia.find(nom) != Multimedia.end() || taille &lt;= 0)</div>
-<div class="line">        {</div>
-<div class="line">            // Return a null BasePointer</div>
-<div class="line">            return BasePointer();</div>
-<div class="line">        }</div>
-<div class="line"> </div>
-<div class="line">        // Create the new Film</div>
-<div class="line">        BasePointer film(new Film(nom, nomDuFichier, duree, chapitres, taille));</div>
-<div class="line">        Multimedia.insert(std::pair&lt;std::string, BasePointer&gt;(nom, film));</div>
-<div class="line">        return film;</div>
-<div class="line">    }</div>
-</div><!-- fragment --><p>si on supprime un groupe ou un objet qui n'existe pas</p>
+<p>Le serveur accepte les commandes suivantes :</p>
+<ul>
+<li><code>search multimedia &lt;nom&gt;</code> : Recherche un objet multimédia par son nom.</li>
+<li><code>search group &lt;nom&gt;</code> : Recherche un groupe par son nom.</li>
+<li><code>play &lt;nom&gt;</code> : Joue un objet multimédia par son nom.</li>
+<li><code>list</code> : Liste tous les objets multimédias.</li>
+</ul>
+<p>Chaque commande doit être envoyée au serveur via TCP sur le port 3331.</p>
+<p><b>Questions additionnelles</b></p>
+<p>La command 'list' a été ajouté.</p>
+<h2><a class="anchor" id="autotoc_md12"></a>
+12e étape. Sérialisation / désérialisation</h2>
+<p>La sérialisation et la désérialisation ont été implémentées. Pour les tester, le code suivant a été ajouté dans le fichier "main.cpp":</p>
 <div class="fragment"><div class="line">{c++}</div>
-<div class="line">   void supprimer(const std::string &amp;nom)</div>
-<div class="line">   {</div>
-<div class="line">       auto multimedia_it = Multimedia.find(nom);</div>
-<div class="line">       if (multimedia_it != Multimedia.end())</div>
-<div class="line">       {</div>
-<div class="line">           // Remove the multimedia object from all groups</div>
-<div class="line">           for (auto &amp;pair : Groupes)</div>
-<div class="line">           {</div>
-<div class="line">               pair.second-&gt;enleverMultimedia(multimedia_it-&gt;second);</div>
-<div class="line">           }</div>
-<div class="line"> </div>
-<div class="line">           // Delete the multimedia object</div>
-<div class="line">           Multimedia.erase(multimedia_it);</div>
-<div class="line">       }</div>
-<div class="line">       else</div>
-<div class="line">       {</div>
-<div class="line">           auto group_it = Groupes.find(nom);</div>
-<div class="line">           if (group_it != Groupes.end())</div>
-<div class="line">           {</div>
-<div class="line">               // Delete the group</div>
-<div class="line">               Groupes.erase(group_it);</div>
-<div class="line">           }</div>
-<div class="line">           else</div>
-<div class="line">           {</div>
-<div class="line">               std::cout &lt;&lt; &quot;Object not found: &quot; &lt;&lt; nom &lt;&lt; &quot; &quot;;</div>
-<div class="line">           }</div>
-<div class="line">       }</div>
+<div class="line">   // Sauvegarde des objets multimédias dans un fichier</div>
+<div class="line">   if (!db.saveAll(&quot;multimedia.txt&quot;)) {</div>
+<div class="line">       std::cerr &lt;&lt; &quot;Échec de l&#39;enregistrement&quot; &lt;&lt; std::endl;</div>
+<div class="line">       return 1;</div>
 <div class="line">   }</div>
-</div><!-- fragment --> </div></div><!-- PageDoc -->
+<div class="line"> </div>
+<div class="line">   // Lecture des objets multimédias à partir du fichier</div>
+<div class="line">   if (!db.readAll(&quot;multimedia.txt&quot;)) {</div>
+<div class="line">       std::cerr &lt;&lt; &quot;Échec de la lecture&quot; &lt;&lt; std::endl;</div>
+<div class="line">       return 1;</div>
+<div class="line">   }</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md13"></a>
+13e étape. Traitement des erreurs</h2>
+<p>Voici les erreurs qui ont été traité:</p>
+<ul>
+<li>si le tableau de durées d'un <a class="el" href="classFilm.html" title="Classe représentant un film héritant de la classe Video.">Film</a> a une taille nulle ou inférieure à zéro</li>
+<li>si on crée plusieurs groupes ou objets ayant le même nom</li>
+</ul>
+<p>La fonction vérifie si un objet multimédia avec le même nom existe déjà dans la base de données (Multimedia) ou si la taille du tableau de chapitres est nulle ou négative. Si l'une de ces conditions est vraie, la fonction retourne un BasePointer nul, indiquant que la création du film a échoué. La décision de retourner un BasePointer nul simplifie la gestion des erreurs lors de la création d'un film, tout en facilitant la création de messages à envoyer au client en cas d'échec de la création.</p>
+<ul>
+<li>si on supprime un groupe ou un objet qui n'existe pas</li>
+</ul>
+<p>La fonction vérifie d'abord si l'objet multimédia ou le groupe portant le nom spécifié existe dans la base de données (Multimedia ou Groupes). Si c'est le cas, elle le supprime. Sinon, elle affiche un message indiquant que l'objet n'a pas été trouvé. Cela assure que l'utilisateur est informé lorsque la suppression d'un objet ou d'un groupe inexistant est tentée.</p>
+<h1><a class="anchor" id="autotoc_md14"></a>
+Java/Swing</h1>
+<p>Dans cette étape, une interface graphique Java/Swing a été développée pour interagir avec le logiciel créé lors du TP C++/Objet. Elle comprend une fenêtre principale avec des interacteurs, des menus, une barre d'outils, et des actions. De plus, l'interaction client/serveur a été mise en place pour rechercher et jouer des objets multimédias sur le serveur C++ depuis l'interface graphique Java. Une bouton pour retourner la liste des objets présents dans la base de données a également été ajouté.</p>
+<h2><a class="anchor" id="autotoc_md15"></a>
+1ere Etape: Fenêtre principale et quelques interacteurs</h2>
+<h2><a class="anchor" id="autotoc_md16"></a>
+2eme Etape: Menus, barre d'outils et actions</h2>
+<h2><a class="anchor" id="autotoc_md17"></a>
+3eme Etape: Interaction client/serveur</h2>
+<p><b>Instructions :</b></p>
+<p>Fonctionnalités disponibles : "Rechercher", "Jouer", "Finaliser" et "Lister".</p>
+<p>Pour utiliser ces fonctionnalités, saisissez le média que vous souhaitez rechercher ou jouer. Ensuite, appuyez sur le bouton correspondant à l'action que vous souhaitez effectuer : "Rechercher" ou "Jouer".</p>
+<p>Pour consulter la liste des éléments présents dans la base de données, appuyez sur le bouton "Lister".</p>
+<p>Pour finaliser, appuyez sur le bouton "Finaliser".</p>
+<h2><a class="anchor" id="autotoc_md18"></a>
+4eme Etape (obligatoire): Créer un Makefile</h2>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
