@@ -1,5 +1,5 @@
 <map id="GUI" name="GUI">
-<area shape="rect" id="node1" title=" " alt="" coords="59,95,106,121"/>
+<area shape="rect" id="node1" title="Cette classe représente une interface graphique pour une application de recherche et de lecture de mé..." alt="" coords="59,95,106,121"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,5,72,32"/>
 <area shape="rect" id="node3" href="$classClient.html" title="Cette classe représente un client qui se connecte à un serveur distant." alt="" coords="97,5,157,32"/>
 </map>

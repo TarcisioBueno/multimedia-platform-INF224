@@ -39,14 +39,14 @@ public:
     BasePointer creerPhoto(std::string nom, std::string nomDuFichier, double latitude, double longitude)
     {
         nom = replaceSpacesWithUnderscores(nom);
-        // Check if a multimedia object with the same name already exists
+        
         if (Multimedia.find(nom) != Multimedia.end())
         {
-            // Return a null BasePointer
+            
             return BasePointer();
         }
 
-        // Create the new Photo
+ 
         BasePointer photo(new Photo(nom, nomDuFichier, latitude, longitude));
         Multimedia.insert(std::pair<std::string, BasePointer>(nom, photo));
         return photo;
@@ -62,10 +62,10 @@ public:
     BasePointer creerVideo(std::string nom, std::string nomDuFichier, int duree)
     {
         nom = replaceSpacesWithUnderscores(nom);
-        // Check if a multimedia object with the same name already exists
+
         if (Multimedia.find(nom) != Multimedia.end())
         {
-            // Return a null BasePointer
+           
             return BasePointer();
         }
 
@@ -114,14 +114,14 @@ public:
     std::shared_ptr<Groupe> creerGroupe(const std::string &nom)
     {
         std::string nom_modifie = replaceSpacesWithUnderscores(nom);
-        // Check if a group with the same name already exists
+
         if (Groupes.find(nom_modifie) != Groupes.end())
         {
-            // Return a null shared_ptr<Groupe>
+
             return std::shared_ptr<Groupe>();
         }
 
-        // Create the new group
+
         std::shared_ptr<Groupe> groupe(new Groupe(nom_modifie));
         Groupes.insert(std::pair<std::string, std::shared_ptr<Groupe>>(nom_modifie, groupe));
         return groupe;
@@ -182,7 +182,7 @@ public:
         if (it != Multimedia.end())
         {
             it->second->jouer();
-            ss << "Jouant: " << nom << " ";
+            ss << "En train de jouer " << nom << " ";
         }
         else
         {
@@ -298,16 +298,16 @@ public:
         std::string classname;
         while (std::getline(f, classname))
         {
-            // Skip lines that are empty or only contain whitespace
+      
             if (classname.empty() || std::all_of(classname.begin(), classname.end(), ::isspace))
             {
                 continue;
             }
 
-            BasePointer obj = creerMultimedia(classname); // Assuming you have a createMultimedia method
+            BasePointer obj = creerMultimedia(classname); 
             if (obj)
             {
-                obj->read(f); // Assuming you have a read method in your base class
+                obj->read(f); 
                 if (f.fail())
                 {
                     std::cerr << "Read error in " << filename << std::endl;

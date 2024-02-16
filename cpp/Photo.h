@@ -93,7 +93,7 @@ public:
     void afficher(std::ostream &os) const override
     {
         Base::afficher(os);
-        os << "Latitude: " << latitude << "::" << " Longitude: " << longitude << "::";
+        os << "Latitude: " << latitude << "::" << "Longitude: " << longitude << "::";
     }
 
     // Linux

@@ -21,10 +21,11 @@ var searchData=
   ['setwriteseparator_84',['setWriteSeparator',['../classSocketBuffer.html#a165d87f2460de769fb09d84a46a793a4',1,'SocketBuffer']]],
   ['shutdowninput_85',['shutdownInput',['../classSocket.html#a417b47af24de10184192de00d9112589',1,'Socket']]],
   ['shutdownoutput_86',['shutdownOutput',['../classSocket.html#a650128aee2581e6695c6812d8afe14b5',1,'Socket']]],
-  ['socket_87',['Socket',['../classSocket.html',1,'Socket'],['../classSocket.html#a8e3f095dfe84d6599761c4ca54900487',1,'Socket::Socket(int type, SOCKET sockfd)'],['../classSocket.html#acd3cb39bc957be2f34c91b9e262e1cec',1,'Socket::Socket(int type=SOCK_STREAM)']]],
+  ['socket_87',['Socket',['../classSocket.html',1,'']]],
   ['socket_88',['socket',['../classSocketBuffer.html#aa9c14ec14e092fc58c4363d2bbc20ffd',1,'SocketBuffer']]],
-  ['socketbuffer_89',['SocketBuffer',['../classSocketBuffer.html',1,'SocketBuffer'],['../classSocketBuffer.html#ac5989bcaf64234947934c7106af1cf38',1,'SocketBuffer::SocketBuffer()']]],
-  ['socketcnx_90',['SocketCnx',['../classSocketCnx.html',1,'']]],
-  ['startup_91',['startup',['../classSocket.html#a1a662407744738aa56d1ccb6d7be26eb',1,'Socket']]],
-  ['supprimer_92',['supprimer',['../classDataBase.html#a0328b3ad10aafce0786267441ca847c4',1,'DataBase']]]
+  ['socket_89',['Socket',['../classSocket.html#a8e3f095dfe84d6599761c4ca54900487',1,'Socket::Socket(int type, SOCKET sockfd)'],['../classSocket.html#acd3cb39bc957be2f34c91b9e262e1cec',1,'Socket::Socket(int type=SOCK_STREAM)']]],
+  ['socketbuffer_90',['SocketBuffer',['../classSocketBuffer.html',1,'SocketBuffer'],['../classSocketBuffer.html#ac5989bcaf64234947934c7106af1cf38',1,'SocketBuffer::SocketBuffer()']]],
+  ['socketcnx_91',['SocketCnx',['../classSocketCnx.html',1,'']]],
+  ['startup_92',['startup',['../classSocket.html#a1a662407744738aa56d1ccb6d7be26eb',1,'Socket']]],
+  ['supprimer_93',['supprimer',['../classDataBase.html#a0328b3ad10aafce0786267441ca847c4',1,'DataBase']]]
 ];

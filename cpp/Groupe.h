@@ -57,7 +57,7 @@ public:
         os << "Nom : " << nom << "::";
         if (!this->empty())
         {
-            os << "membres: ";
+            os << "membres: " << "::";
             for (const BasePointer &base : *this)
             {
                 base->afficher(os);

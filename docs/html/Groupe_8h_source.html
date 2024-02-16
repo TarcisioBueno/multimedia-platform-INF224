@@ -98,30 +98,41 @@ $(function() {
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classGroupe.html#ad3c324f0195cd4a170291efdb2482b65">   55</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGroupe.html#ad3c324f0195cd4a170291efdb2482b65">afficher</a>(std::ostream &amp;os)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> BasePointer &amp;base : *<span class="keyword">this</span>)</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            base-&gt;afficher(os);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classGroupe.html#a55175002a8c0e14a72f658833a7fe70a">   67</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGroupe.html#a55175002a8c0e14a72f658833a7fe70a">enleverMultimedia</a>(<span class="keyword">const</span> BasePointer &amp;multimedia)</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        this-&gt;remove(multimedia);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classGroupe.html#ad1dc967bdf8e953b2d88c252173c4ff8">   76</a></span>&#160;    std::string <a class="code" href="classGroupe.html#ad1dc967bdf8e953b2d88c252173c4ff8">className</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Groupe&quot;</span>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        os &lt;&lt; <span class="stringliteral">&quot;Nom : &quot;</span> &lt;&lt; nom &lt;&lt; <span class="stringliteral">&quot;::&quot;</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span> (!this-&gt;empty())</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            os &lt;&lt; <span class="stringliteral">&quot;membres: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;::&quot;</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> BasePointer &amp;base : *<span class="keyword">this</span>)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                base-&gt;afficher(os);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            os &lt;&lt; <span class="stringliteral">&quot;Cette groupe n&#39;a pas de membres&quot;</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        os &lt;&lt; <span class="stringliteral">&quot;::&quot;</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classGroupe.html#a55175002a8c0e14a72f658833a7fe70a">   77</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGroupe.html#a55175002a8c0e14a72f658833a7fe70a">enleverMultimedia</a>(<span class="keyword">const</span> BasePointer &amp;multimedia)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        this-&gt;remove(multimedia);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classGroupe.html#ad1dc967bdf8e953b2d88c252173c4ff8">   86</a></span>&#160;    std::string <a class="code" href="classGroupe.html#ad1dc967bdf8e953b2d88c252173c4ff8">className</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Groupe&quot;</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aBase_8h_html"><div class="ttname"><a href="Base_8h.html">Base.h</a></div><div class="ttdoc">Ce fichier contient la classe Base, qui représente une entité de base abstraite.</div></div>
 <div class="ttc" id="aclassDataBase_html"><div class="ttname"><a href="classDataBase.html">DataBase</a></div><div class="ttdoc">Classe pour gérer une base de données multimédia.</div><div class="ttdef"><b>Definition:</b> DataBase.h:25</div></div>
 <div class="ttc" id="aclassGroupe_html"><div class="ttname"><a href="classGroupe.html">Groupe</a></div><div class="ttdoc">Représente un groupe d'objets de type Base.</div><div class="ttdef"><b>Definition:</b> Groupe.h:24</div></div>
-<div class="ttc" id="aclassGroupe_html_a55175002a8c0e14a72f658833a7fe70a"><div class="ttname"><a href="classGroupe.html#a55175002a8c0e14a72f658833a7fe70a">Groupe::enleverMultimedia</a></div><div class="ttdeci">void enleverMultimedia(const BasePointer &amp;multimedia)</div><div class="ttdoc">Enlève un objet multimédia du groupe.</div><div class="ttdef"><b>Definition:</b> Groupe.h:67</div></div>
+<div class="ttc" id="aclassGroupe_html_a55175002a8c0e14a72f658833a7fe70a"><div class="ttname"><a href="classGroupe.html#a55175002a8c0e14a72f658833a7fe70a">Groupe::enleverMultimedia</a></div><div class="ttdeci">void enleverMultimedia(const BasePointer &amp;multimedia)</div><div class="ttdoc">Enlève un objet multimédia du groupe.</div><div class="ttdef"><b>Definition:</b> Groupe.h:77</div></div>
 <div class="ttc" id="aclassGroupe_html_a99dd414922635dcc0585aabb2a330f63"><div class="ttname"><a href="classGroupe.html#a99dd414922635dcc0585aabb2a330f63">Groupe::~Groupe</a></div><div class="ttdeci">~Groupe()</div><div class="ttdoc">Destructeur de la classe Groupe.</div><div class="ttdef"><b>Definition:</b> Groupe.h:40</div></div>
 <div class="ttc" id="aclassGroupe_html_ac4e9d20e36ea6bdae74b7fed18c28dc4"><div class="ttname"><a href="classGroupe.html#ac4e9d20e36ea6bdae74b7fed18c28dc4">Groupe::getNom</a></div><div class="ttdeci">std::string getNom() const</div><div class="ttdoc">Obtient le nom du groupe.</div><div class="ttdef"><b>Definition:</b> Groupe.h:46</div></div>
-<div class="ttc" id="aclassGroupe_html_ad1dc967bdf8e953b2d88c252173c4ff8"><div class="ttname"><a href="classGroupe.html#ad1dc967bdf8e953b2d88c252173c4ff8">Groupe::className</a></div><div class="ttdeci">std::string className() const</div><div class="ttdoc">Obtient le nom de la classe.</div><div class="ttdef"><b>Definition:</b> Groupe.h:76</div></div>
+<div class="ttc" id="aclassGroupe_html_ad1dc967bdf8e953b2d88c252173c4ff8"><div class="ttname"><a href="classGroupe.html#ad1dc967bdf8e953b2d88c252173c4ff8">Groupe::className</a></div><div class="ttdeci">std::string className() const</div><div class="ttdoc">Obtient le nom de la classe.</div><div class="ttdef"><b>Definition:</b> Groupe.h:86</div></div>
 <div class="ttc" id="aclassGroupe_html_ad3c324f0195cd4a170291efdb2482b65"><div class="ttname"><a href="classGroupe.html#ad3c324f0195cd4a170291efdb2482b65">Groupe::afficher</a></div><div class="ttdeci">void afficher(std::ostream &amp;os) const</div><div class="ttdoc">Affiche les objets du groupe.</div><div class="ttdef"><b>Definition:</b> Groupe.h:55</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

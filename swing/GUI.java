@@ -13,8 +13,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * Cette classe représente une interface graphique pour une application de
- * recherche et de lecture de médias.
+ * @brief Cette classe représente une interface graphique pour une application de recherche et de lecture de médias.
  */
 
 public class GUI extends JFrame {
@@ -28,19 +27,19 @@ public class GUI extends JFrame {
     JMenuBar menuBar;
     JMenu menu;
     JToolBar toolBar;
-    static Client client; // add a Client instance
+    static Client client; 
     String message;
     JTextField textField;
     String emptyMessage = "Le champ de texte ne peut pas être vide";
-    String instructions = "Fonctionnalités disponibles : \"Rechercher\", \"Jouer\", \"Finaliser\" et \"Lister\".\n\n" +
-    "Pour utiliser ces fonctionnalités, saisissez le média que vous souhaitez rechercher ou jouer. \n\n" + 
-    "Ensuite, appuyez sur le bouton correspondant à l'action que vous souhaitez effectuer : \"Rechercher\" ou \"Jouer\".\n\n" +
+    String instructions = "Fonctionnalités disponibles : \"Rechercher média\", \"Rechercher groupe\", \"Jouer\", \"Finaliser\" et \"Lister\".\n\n" +
+    "Pour utiliser ces fonctionnalités, saisissez le média ou groupe que vous souhaitez jouer/rechercher ou rechercher. \n\n" + 
+    "Ensuite, appuyez sur le bouton correspondant à l'action que vous souhaitez effectuer : \"Rechercher groupe/média\" ou \"Jouer\".\n\n" +
     "Pour consulter la liste des éléments présents dans la base de données, appuyez sur le bouton \"Lister\".\n\n" +
     "Pour finaliser, appuyez sur le bouton \"Finaliser\".";
 
   
     /**
-     * Cette classe représente l'action du bouton "Rechercher média".
+     * @brief Cette classe représente l'action du bouton "Rechercher média".
      */
     class Button1Action extends AbstractAction {
         public Button1Action() {
@@ -52,8 +51,8 @@ public class GUI extends JFrame {
             if (textField.getText().trim().isEmpty()) {
                 JOptionPane.showMessageDialog(null, emptyMessage, "Error", JOptionPane.ERROR_MESSAGE);
             } else {
-                message = "search multimedia " + textField.getText(); // get the text from the JTextField
-                textField.setText(""); // clear the JTextField
+                message = "search multimedia " + textField.getText(); 
+                textField.setText(""); 
                 try {
                     String response = client.send(message);
                     textArea.append(formatResponse(response) + "\n");
@@ -65,7 +64,7 @@ public class GUI extends JFrame {
     }
 
     /**
-     * Cette classe représente l'action du bouton "Jouer".
+     * @brief Cette classe représente l'action du bouton "Jouer".
      */
     class Button2Action extends AbstractAction {
         public Button2Action() {
@@ -92,7 +91,7 @@ public class GUI extends JFrame {
     
 
     /**
-     * Cette classe représente l'action du bouton "Finaliser".
+     * @brief Cette classe représente l'action du bouton "Finaliser".
      */
     class Button3Action extends AbstractAction {
         public Button3Action() {
@@ -106,7 +105,7 @@ public class GUI extends JFrame {
     }
 
     /**
-     * Cette classe représente l'action du bouton "Lister".
+     * @brief Cette classe représente l'action du bouton "Lister".
      */
     class Button4Action extends AbstractAction {
         public Button4Action() {
@@ -116,8 +115,8 @@ public class GUI extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
 
-            message = "list"; // get the text from the JTextField
-            textField.setText(""); // clear the JTextField
+            message = "list"; 
+            textField.setText(""); 
             try {
                 String response = client.send(message);
                 textArea.append(formatResponse(response) + "\n");
@@ -129,7 +128,7 @@ public class GUI extends JFrame {
     }
 
        /**
-     * Cette classe représente l'action du bouton "Rechercher groupe".
+     * @brief Cette classe représente l'action du bouton "Rechercher groupe".
      */
     class Button5Action extends AbstractAction {
         public Button5Action() {
@@ -141,8 +140,8 @@ public class GUI extends JFrame {
             if (textField.getText().trim().isEmpty()) {
                 JOptionPane.showMessageDialog(null, emptyMessage, "Error", JOptionPane.ERROR_MESSAGE);
             } else {
-                message = "search group " + textField.getText(); // get the text from the JTextField
-                textField.setText(""); // clear the JTextField
+                message = "search group " + textField.getText(); 
+                textField.setText(""); 
                 try {
                     String response = client.send(message);
                     textArea.append(formatResponse(response) + "\n");
@@ -156,7 +155,7 @@ public class GUI extends JFrame {
     
 
     /**
-     * Cette classe représente l'action du bouton "Instructions".
+     * @brief Cette classe représente l'action du bouton "Instructions".
      */
     class ButtonInstructionsAction extends AbstractAction {
         public ButtonInstructionsAction() {
@@ -165,16 +164,16 @@ public class GUI extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-             // Replace with your instructions
+             
             JOptionPane.showMessageDialog(null, instructions, "Instructions", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
     /**
-     * Réinitialise le champ de texte.
+     * @brief Réinitialise le champ de texte.
      */
     void resetTextField() {
-        textField.setText(""); // set initial text
+        textField.setText(""); 
     }
 
     /**
@@ -185,16 +184,16 @@ public class GUI extends JFrame {
      */
     String formatResponse(String response) {
         String[] responseParts = response.split("::");
-        return String.join("\n", responseParts) + "\n-----------------------------------------------------------------------------";
+        return String.join("\n", responseParts) + "\n";
     }
 
     /**
-     * Constructeur de la classe GUI.
+     * @brief Constructeur de la classe GUI.
      */
     public GUI() {
 
         try {
-            client = new Client("localhost", 3331); // Initialize the Client instance
+            client = new Client("localhost", 3331); 
         } catch (Exception e) {
             System.err.println("Couldn't connect to the server");
             System.exit(1);
@@ -203,17 +202,17 @@ public class GUI extends JFrame {
         setLayout(new BorderLayout());
 
         // Create the menu bar
-        textField = new JTextField(50); // initialize the JTextField instance
+        textField = new JTextField(50); 
 
         menuBar = new JMenuBar();
         menu = new JMenu("Menu");
         menuBar.add(menu);
-        menuBar.add(textField); // add the JTextField to the menuBar
-        setJMenuBar(menuBar); // Add the menu bar to the JFrame
+        menuBar.add(textField); 
+        setJMenuBar(menuBar); 
 
-        // Create the tool bar
+     
         toolBar = new JToolBar();
-        add(toolBar, BorderLayout.NORTH); // Add the tool bar to the top (north) of the JFrame
+        add(toolBar, BorderLayout.NORTH); 
 
         textArea = new JTextArea("", 30, 30);
         scrollPane = new JScrollPane(textArea);
@@ -221,7 +220,7 @@ public class GUI extends JFrame {
 
         panel = new JPanel(new FlowLayout());
 
-        // Create the actions
+        
         Action action1 = new Button1Action();
         Action action2 = new Button2Action();
         Action action3 = new Button3Action();
@@ -229,7 +228,7 @@ public class GUI extends JFrame {
         Action action5 = new Button5Action();
         Action actionInstructions = new ButtonInstructionsAction();
 
-        // Add the actions to the menu and the tool bar
+       
         menu.add(new JMenuItem(action1));
         menu.add(new JMenuItem(action5));
         menu.add(new JMenuItem(action2));

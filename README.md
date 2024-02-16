@@ -180,9 +180,9 @@ Dans cette étape, une interface graphique Java/Swing a été développée pour 
 
 **Instructions :**
 
-Fonctionnalités disponibles : "Rechercher", "Jouer", "Finaliser" et "Lister".
+Fonctionnalités disponibles : "Rechercher média", "Rechercher groupe", "Jouer", "Finaliser" et "Lister".
 
-Pour utiliser ces fonctionnalités, saisissez le média que vous souhaitez rechercher ou jouer. Ensuite, appuyez sur le bouton correspondant à l'action que vous souhaitez effectuer : "Rechercher" ou "Jouer".
+Pour utiliser ces fonctionnalités, saisissez le média ou groupe que vous souhaitez jouer/rechercher ou rechercher. Ensuite, appuyez sur le bouton correspondant à l'action que vous souhaitez effectuer : "Rechercher média/groupe" ou "Jouer".
 
 Pour consulter la liste des éléments présents dans la base de données, appuyez sur le bouton "Lister".
 

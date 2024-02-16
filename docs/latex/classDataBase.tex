@@ -34,8 +34,11 @@ bool \mbox{\hyperlink{classDataBase_a4b82764e781f5c6d348ad14dc794570a}{save\+All
 \begin{DoxyCompactList}\small\item\em Sauvegarde tous les objets multimédia dans un fichier. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classDataBase_a0c5a04404f01a5c5e4ebe735be75a0de}{read\+All}} (const std\+::string \&filename)
 \begin{DoxyCompactList}\small\item\em Lit tous les objets multimédia à partir d\textquotesingle{}un fichier. \end{DoxyCompactList}\item 
-std\+::string \mbox{\hyperlink{classDataBase_a8852d6f52808e3bd462d0cc8955a8a97}{lister\+Multimedia}} ()
-\begin{DoxyCompactList}\small\item\em Liste tous les objets multimédia. \end{DoxyCompactList}\end{DoxyCompactItemize}
+std\+::string \mbox{\hyperlink{classDataBase_ad6588fd93d85db8de28a177fa6e53fde}{lister}} ()
+\begin{DoxyCompactList}\small\item\em Liste tous les objets multimédia et groupes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDataBase_a32641443d350e961868270fe8db22ec1}\label{classDataBase_a32641443d350e961868270fe8db22ec1}} 
+std\+::string {\bfseries replace\+Spaces\+With\+Underscores} (const std\+::string \&str)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -168,18 +171,18 @@ Joue un objet multimédia par son nom.
 \begin{DoxyReturn}{Returns}
 Une chaîne de caractères indiquant que l\textquotesingle{}objet multimédia est en cours de lecture si trouvé, sinon un message d\textquotesingle{}erreur. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classDataBase_a8852d6f52808e3bd462d0cc8955a8a97}\label{classDataBase_a8852d6f52808e3bd462d0cc8955a8a97}} 
-\index{DataBase@{DataBase}!listerMultimedia@{listerMultimedia}}
-\index{listerMultimedia@{listerMultimedia}!DataBase@{DataBase}}
-\doxysubsubsection{\texorpdfstring{listerMultimedia()}{listerMultimedia()}}
-{\footnotesize\ttfamily std\+::string Data\+Base\+::lister\+Multimedia (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{classDataBase_ad6588fd93d85db8de28a177fa6e53fde}\label{classDataBase_ad6588fd93d85db8de28a177fa6e53fde}} 
+\index{DataBase@{DataBase}!lister@{lister}}
+\index{lister@{lister}!DataBase@{DataBase}}
+\doxysubsubsection{\texorpdfstring{lister()}{lister()}}
+{\footnotesize\ttfamily std\+::string Data\+Base\+::lister (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Liste tous les objets multimédia. 
+Liste tous les objets multimédia et groupes. 
 
 \begin{DoxyReturn}{Returns}
-Une chaîne de caractères contenant les noms de tous les objets multimédia. 
+Une chaîne de caractères contenant les noms de tous les objets multimédia et groupes. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classDataBase_a0c5a04404f01a5c5e4ebe735be75a0de}\label{classDataBase_a0c5a04404f01a5c5e4ebe735be75a0de}} 
 \index{DataBase@{DataBase}!readAll@{readAll}}
