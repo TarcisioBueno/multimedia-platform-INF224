@@ -53,9 +53,9 @@ int main(int argc, const char *argv[]) {
     // Création des objets multimédias et ajout à la base de données
     group1 = db.creerGroupe("group 1");
     group2 = db.creerGroupe("group2");
-    photo1 = db.creerPhoto("photo 1", "./media/photo1.jpg", 40.748817, -73.985428);
-    photo1 = db.creerPhoto("photo 2", "./media/photo2.jpg", 40.748817, -73.985428);
-    photo1 = db.creerPhoto("photo3 ", "./media/photo3.jpg", 40.748817, -73.985428);
+    photo1 = db.creerPhoto("photo 1", "./media/photo1.jpg", 40.748817, 73.985428);
+    photo1 = db.creerPhoto("photo 2", "./media/photo2.jpg", 40.748817, 73.985428);
+    photo1 = db.creerPhoto("photo3 ", "./media/photo3.jpg", 40.748817, 73.985428);
     video1 = db.creerVideo("video1", "./media/video1.mp4", 120);
     video2 = db.creerVideo("video2", "./media/video2.mp4", 120);
     video3 = db.creerVideo("video3", "./media/video3.mp4", 120);
@@ -65,13 +65,13 @@ int main(int argc, const char *argv[]) {
     film3 = db.creerFilm("film3", "./media/video3.mp4", 100, chapters, 3);
 
     // Sauvegarde des objets multimédias dans un fichier
-    if (!db.saveAll("multimedia.txt")) {
+    if (!db.saveAll("serialization.txt")) {
         std::cerr << "Échec de l'enregistrement" << std::endl;
         return 1;
     }
 
     // Lecture des objets multimédias à partir du fichier
-    if (!db.readAll("multimedia.txt")) {
+    if (!db.readAll("serialization.txt")) {
         std::cerr << "Échec de la lecture" << std::endl;
         return 1;
     }
