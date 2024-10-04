@@ -188,5 +188,5 @@ Pour consulter la liste des éléments présents dans la base de données, appuy
 
 Pour finaliser, appuyez sur le bouton "Finaliser".
 
-## 4eme Etape (obligatoire): Créer un Makefile
+## 4eme Etape : Créer un Makefile
 
