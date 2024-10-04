@@ -6,17 +6,10 @@
 
 **Objectif du projet :** Créer l'ébauche du logiciel d'une set-top box multimédia permettant de jouer des vidéos, des films, d'afficher des photos, etc.
 
-<table>
-  <tr>
-    <td>
-      <img src="https://github.com/user-attachments/assets/ccb187c2-72e6-4dc0-89d8-5631811ed508" alt="image" width="300"/>
-    </td>
-    <td>
-      <img src="https://github.com/user-attachments/assets/06c4f2f0-cc3e-4148-97a7-35ff3d7179b4" alt="image" width="300"/>
-    </td>
-  </tr>
-</table>
-
+<div style="display: flex; justify-content: center;">
+  <img src="https://github.com/user-attachments/assets/ccb187c2-72e6-4dc0-89d8-5631811ed508" alt="image" width="500" style="margin: 10px;"/>
+  <img src="https://github.com/user-attachments/assets/06c4f2f0-cc3e-4148-97a7-35ff3d7179b4" alt="image" width="500" style="margin: 10px;"/>
+</div>
 
 **À propos de ce fichier README :** Ce fichier README a été créé dans le cadre du projet inf224. Il vise à fournir des informations essentielles sur le contenu du projet, y compris **les excercises traitées**, **les réponses correspondantes**, ainsi que tout commentaire jugé utile. Les sections suivantes détaillent les aspects traités dans ce document.
 
