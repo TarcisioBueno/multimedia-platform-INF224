@@ -1,4 +1,4 @@
-# Projet de développement logiciel
+# Création d'une solution multimédia sur set-top box avec Java/Swing et interaction avec un système C++/Objet
 
 **Nom du projet :** INF224 - Travaux Pratiques C++/Objet et Java/Swing
 
