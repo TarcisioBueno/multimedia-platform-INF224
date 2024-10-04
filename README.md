@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/02108f4b-96ef-4bb7-b997-47c66f614a27)# Solution logicielle de set-top box multimédia avec gestion des médias en C++ et intégration d'une interface graphique Java/Swing
+# Solution logicielle de set-top box multimédia avec gestion des médias en C++ et intégration d'une interface graphique Java/Swing
 
 **Nom du projet :** INF224 - Travaux Pratiques C++/Objet et Java/Swing
 
