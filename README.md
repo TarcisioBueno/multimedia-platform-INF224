@@ -1,4 +1,4 @@
-# Création d'une solution multimédia sur set-top box avec Java/Swing et interaction avec un système C++/Objet
+# Solution logicielle de set-top box multimédia avec gestion des médias en C++ et intégration d'une interface graphique Java/Swing
 
 **Nom du projet :** INF224 - Travaux Pratiques C++/Objet et Java/Swing
 
